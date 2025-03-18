@@ -18,6 +18,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 PLAYER_FILE = "players.json"
+AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal']
 
 def load_players():
     if os.path.exists(PLAYER_FILE):
@@ -42,6 +43,9 @@ async def on_ready():
 
 @bot.command(name="Admin")
 async def show_admin_menu(ctx):
+    if (ctx.author not in AUTHORIZED_USERS):
+        await ctx.send("Admin नाय भाऊ तू!! जास्त टाकली काय आज?")
+        return
     await ctx.send("📌 **Admin Menu - Select an action below:**", view=AdminMenuView())
 
 # ✅ Admin Menu View
@@ -229,10 +233,9 @@ class WinnerButton(Button):
 
     async def callback(self, interaction: discord.Interaction):  
         
-        user = interaction.user        
-        authorized_users =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal']
-        if (user.name not in authorized_users):
-            await interaction.response.send_message('You are not authorized to update the ELO ratings')
+        user = interaction.user
+        if (user.name not in AUTHORIZED_USERS):
+            await interaction.response.send_message('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
             return
             
         # Generate a unique match identifier
