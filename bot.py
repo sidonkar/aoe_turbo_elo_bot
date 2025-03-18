@@ -228,6 +228,13 @@ class WinnerButton(Button):
         self.losing_team = losing_team
 
     async def callback(self, interaction: discord.Interaction):  
+        
+        user = interaction.user        
+        authorized_users =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal']
+        if (user.name not in authorized_users):
+            await interaction.response.send_message('You are not authorized to update the ELO ratings')
+            return
+            
         # Generate a unique match identifier
         matchup_key = tuple(sorted(self.winning_team + self.losing_team))
         current_time = time.time()
