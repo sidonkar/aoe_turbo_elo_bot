@@ -6,6 +6,10 @@ import os
 import random
 from itertools import combinations
 import time
+
+from dotenv import load_dotenv
+load_dotenv()
+
 processed_matches = {}  # Use a dictionary to store match timestamps
 
     
