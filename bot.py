@@ -43,7 +43,7 @@ async def on_ready():
 
 @bot.command(name="Admin")
 async def show_admin_menu(ctx):
-    if (ctx.author not in AUTHORIZED_USERS):
+    if (ctx.author.name not in AUTHORIZED_USERS):
         await ctx.send("Admin नाय भाऊ तू!! जास्त टाकली काय आज?")
         return
     await ctx.send("📌 **Admin Menu - Select an action below:**", view=AdminMenuView())
