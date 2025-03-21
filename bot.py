@@ -18,7 +18,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 PLAYER_FILE = "players.json"
-AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal']
+AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1']
 
 def load_players():
     if os.path.exists(PLAYER_FILE):
