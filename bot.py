@@ -5,20 +5,71 @@ import json
 import os
 import random
 from itertools import combinations
-import time
 
 from dotenv import load_dotenv
 load_dotenv()
 
-processed_matches = {}  # Use a dictionary to store match timestamps
-
-    
-intents = discord.Intents.default()
-intents.message_content = True  
-bot = commands.Bot(command_prefix="!", intents=intents)
+################################################## Constants Start #################################################
 
 PLAYER_FILE = "players.json"
 AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1']
+
+################################################## Constants End #################################################
+################################################## Game Objects Code Start ###########################################
+
+#TODO eventually use these class (Ratings, Player, Team)
+class Rating:
+    def __init__(self):
+        self.mapToRatingDict = {}
+
+    def get_rating(self, map):
+        #this will return the rating specific to the map
+        return 1000
+
+class Player:
+    def __init__(self, name, rating: Rating):
+        self.name = name
+        self.rating = rating
+
+    def get_rating(self, map):
+        return self.rating.get_rating(map)
+
+class Team:
+    #TODO make this list of Players
+    def __init__(self, players):
+        self.players = players
+        pass
+
+    def get_rating(self, map):
+        ratings_sum = 0
+        for player in players:
+            ratings_sum += player.get_rating(map)
+        return ratings_sum
+
+class Game:
+    #TODO eventually make this def __init__(self, team1: Team, team2: Team):
+    def __init__(self, id, team1, team2, map="arabia"):
+        self.team1 = team1
+        self.team2 = team2
+        self.is_complete = False
+        self.id = id #random.randint(0,100000000000000)
+        self.map = map
+
+    #TODO add code to tell which team won
+    def markComplete(self):
+        self.is_complete = True
+
+    #TODO move the update rating function here
+    def _update_rating(self):
+        pass
+
+
+################################################## Game Objects Code End ###########################################
+################################################## Bot Initiation Start ###########################################
+
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 def load_players():
     if os.path.exists(PLAYER_FILE):
@@ -26,22 +77,29 @@ def load_players():
             with open(PLAYER_FILE, "r") as f:
                 data = json.load(f)
                 if isinstance(data, dict):
-                    return data  
+                    return data
         except (json.JSONDecodeError, ValueError):
-            pass  
-    return {}  
+            pass
+    return {}
 
 def save_players():
     with open(PLAYER_FILE, "w") as f:
         json.dump(players, f, indent=4)
 
+#TODO remove this global variable
 players = load_players()
+
+#global variables
+#ideally we should store them but this isn't needed for our use-case
+processed_matches = {}  # Use a dictionary to store match timestamps
+game_ids = set()
 
 @bot.event
 async def on_ready():
     print(f"✅ Bot is online! Logged in as {bot.user}")
 
-############################################ Admin Related Code Start ##############################################
+################################################## Bot Initiation End ###########################################
+############################################ Admin Commands Code Start ##############################################
 
 @bot.command(name="Admin")
 async def show_admin_menu(ctx):
@@ -120,7 +178,23 @@ async def send_all_players(interaction):
         embed.add_field(name=name, value=f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}", inline=False)
     await interaction.response.send_message(embed=embed)
 
-############################################ Admin Related Code End ##############################################
+@bot.command(name="result")
+async def set_result_manually(ctx, game_id):
+    if (ctx.author.name not in AUTHORIZED_USERS):
+        await ctx.send('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
+        return
+
+    if (game_id not in processed_matches):
+        await ctx.send('invalid game id!!!!')
+        return
+    if (processed_matches[game_id].isComplete):
+        await ctx.send('match result recorded already!!!')
+        return
+
+    game = processed_matches[game_id]
+    await ctx.send("**Select the winner!**", view=WinnerSelectionView(game_id, game.team1, game.team2))
+
+############################################ Admin Commands Code End ##############################################
 
 @bot.command(name="chala")
 async def pick_team(ctx):
@@ -206,32 +280,40 @@ class MatchupButton(Button):
         self.team2 = team2
 
     async def callback(self, interaction: discord.Interaction):
+        game_id = random.randint(0,100000000000000)
+        while game_id in game_ids:
+            game_id = random.randint(0,100000000000000)
+
+        game_ids.add(game_id)
+        game = Game(game_id, team1=self.team1, team2=self.team2, map="arabia") #TODO pass the map here
+        processed_matches[game_id] = game
+
         await interaction.response.send_message(
             f"✅ **You selected Matchup:**\n"
             f"**Team 1:** {', '.join(self.team1)}\n"
             f"**Team 2:** {', '.join(self.team2)}\n\n"
+            f"** Game id:** {', '.join(game_id)}\n\n"
             f"🔽 **Now select the winner!**",
-            view=WinnerSelectionView(self.team1, self.team2)
+            view=WinnerSelectionView(game_id, self.team1, self.team2)
         )
 
 class WinnerSelectionView(View):
-    def __init__(self, team1, team2):
+    def __init__(self, game_id, team1, team2):
         super().__init__()
+        self.game_id = game_id
         self.team1 = team1
         self.team2 = team2
 
-        self.add_item(WinnerButton("Team 1 Wins", team1, team2))
-        self.add_item(WinnerButton("Team 2 Wins", team2, team1))
+        self.add_item(WinnerButton("Team 1 Wins", game_id, team1, team2))
+        self.add_item(WinnerButton("Team 2 Wins", game_id, team2, team1))
 
 # Track processed matches to prevent duplicate ELO updates
 
-import time  # Ensure time is imported
 
-# Define a cooldown period (in seconds) before allowing the same matchup again
-MATCH_COOLDOWN = 20  # 20 seconds 
 class WinnerButton(Button):
-    def __init__(self, label, winning_team, losing_team):
+    def __init__(self, label, game_id, winning_team, losing_team):
         super().__init__(label=label, style=discord.ButtonStyle.success)
+        self.game_id = game_id
         self.winning_team = winning_team
         self.losing_team = losing_team
 
@@ -241,23 +323,16 @@ class WinnerButton(Button):
         if (user.name not in AUTHORIZED_USERS):
             await interaction.response.send_message('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
             return
-            
-        # Generate a unique match identifier
-        matchup_key = tuple(sorted(self.winning_team + self.losing_team))
-        current_time = time.time()
 
-        # Check if this matchup was processed recently
-        if matchup_key in processed_matches:
-            last_time = processed_matches[matchup_key]
-            if current_time - last_time < MATCH_COOLDOWN:
-                await interaction.response.send_message(
-                    "⚠️ ELO ratings have already been updated for this matchup recently! Try again later.", 
-                    ephemeral=True
-                )
-                return
+        if (self.game_id not in processed_matches):
+            await interaction.response.send_message("⚠️ Invalid Game Id. Try again later.",ephemeral=True)
+            return
 
-        # Update the match time to allow new results
-        processed_matches[matchup_key] = current_time  # ✅ Now it updates and allows future matches
+        if (processed_matches[game_id].isComplete):
+            await interaction.response.send_message(
+                "⚠️ ELO ratings have already been updated for this matchup recently! Try again later.",
+                ephemeral=True)
+            return
 
         # Get total team ratings
         winning_team_rating = sum(players[p]["current_rating"] for p in self.winning_team)
@@ -289,6 +364,7 @@ class WinnerButton(Button):
 
         # Save updated ratings
         save_players()
+        processed_matches[game_id].isComplete = True
 
         # Send the result message
         await interaction.response.send_message(message)
