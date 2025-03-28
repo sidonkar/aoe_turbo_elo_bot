@@ -12,7 +12,8 @@ load_dotenv()
 ################################################## Constants Start #################################################
 
 PLAYER_FILE = "players.json"
-AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1', 'adityasj3053']
+#TODO move this list to file
+AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1', 'adityasj3053', 'adityasj.','ajeya7182', '.sidonkar', 'sarthakss', 'shalmal90']
 
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
