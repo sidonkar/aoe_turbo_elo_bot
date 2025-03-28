@@ -41,6 +41,8 @@ players = load_players()
 async def on_ready():
     print(f"✅ Bot is online! Logged in as {bot.user}")
 
+############################################ Admin Related Code Start ##############################################
+
 @bot.command(name="Admin")
 async def show_admin_menu(ctx):
     if (ctx.author.name not in AUTHORIZED_USERS):
@@ -117,6 +119,8 @@ async def send_all_players(interaction):
         current_rating = data.get("current_rating", "N/A")
         embed.add_field(name=name, value=f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}", inline=False)
     await interaction.response.send_message(embed=embed)
+
+############################################ Admin Related Code End ##############################################
 
 @bot.command(name="chala")
 async def pick_team(ctx):
