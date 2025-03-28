@@ -12,7 +12,7 @@ load_dotenv()
 ################################################## Constants Start #################################################
 
 PLAYER_FILE = "players.json"
-AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1']
+AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1', 'adityasj3053']
 
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
@@ -93,6 +93,12 @@ players = load_players()
 #ideally we should store them but this isn't needed for our use-case
 processed_matches = {}  # Use a dictionary to store match timestamps
 game_ids = set()
+
+def print_game_state():
+    print("processed matches")
+    print(processed_matches)
+    print("game_ids")
+    print(game_ids)
 
 @bot.event
 async def on_ready():
@@ -179,15 +185,17 @@ async def send_all_players(interaction):
     await interaction.response.send_message(embed=embed)
 
 @bot.command(name="result")
-async def set_result_manually(ctx, game_id):
+async def set_result_manually(ctx, game_id_str):
     if (ctx.author.name not in AUTHORIZED_USERS):
         await ctx.send('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
         return
 
+    game_id = int(game_id_str)
+
     if (game_id not in processed_matches):
         await ctx.send('invalid game id!!!!')
         return
-    if (processed_matches[game_id].isComplete):
+    if (processed_matches[game_id].is_complete):
         await ctx.send('match result recorded already!!!')
         return
 
@@ -292,7 +300,7 @@ class MatchupButton(Button):
             f"✅ **You selected Matchup:**\n"
             f"**Team 1:** {', '.join(self.team1)}\n"
             f"**Team 2:** {', '.join(self.team2)}\n\n"
-            f"** Game id:** {', '.join(game_id)}\n\n"
+            f"** Game id:** {game_id}\n\n"
             f"🔽 **Now select the winner!**",
             view=WinnerSelectionView(game_id, self.team1, self.team2)
         )
@@ -317,7 +325,7 @@ class WinnerButton(Button):
         self.winning_team = winning_team
         self.losing_team = losing_team
 
-    async def callback(self, interaction: discord.Interaction):  
+    async def callback(self, interaction: discord.Interaction):
         
         user = interaction.user
         if (user.name not in AUTHORIZED_USERS):
@@ -328,7 +336,7 @@ class WinnerButton(Button):
             await interaction.response.send_message("⚠️ Invalid Game Id. Try again later.",ephemeral=True)
             return
 
-        if (processed_matches[game_id].isComplete):
+        if (processed_matches[self.game_id].is_complete):
             await interaction.response.send_message(
                 "⚠️ ELO ratings have already been updated for this matchup recently! Try again later.",
                 ephemeral=True)
@@ -364,7 +372,7 @@ class WinnerButton(Button):
 
         # Save updated ratings
         save_players()
-        processed_matches[game_id].isComplete = True
+        processed_matches[self.game_id].is_complete = True
 
         # Send the result message
         await interaction.response.send_message(message)
