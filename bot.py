@@ -7,6 +7,7 @@ import random
 from itertools import combinations
 import time
 from dotenv import load_dotenv
+import subprocess
 load_dotenv()
 
 ################################################## Constants Start #################################################
