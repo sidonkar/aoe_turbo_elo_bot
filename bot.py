@@ -89,6 +89,28 @@ def load_players():
 def save_players():
     with open(PLAYER_FILE, "w") as f:
         json.dump(players, f, indent=4)
+        # Call the function after updating the JSON file
+        push_to_github()
+
+def push_to_github():
+    """Commits and pushes changes to GitHub."""
+    repo_url = os.getenv("GITHUB_REPO")  # Get GitHub repo URL from environment variables
+    github_token = os.getenv("GITHUB_TOKEN")  # Get GitHub token
+
+    # Configure Git username & email
+    subprocess.run(["git", "config", "--global", "user.name", "Onkar"])
+    subprocess.run(["git", "config", "--global", "user.email", "sidonkar@gmail.com"])
+
+    # Set up authentication in the repo URL
+    auth_repo_url = repo_url.replace("https://", f"https://{github_token}@")
+
+    # Add, commit, and push changes
+    subprocess.run(["git", "add", PLAYER_FILE])
+    subprocess.run(["git", "commit", "-m", "Updated Match data"])
+    subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
+
+    print("✅ JSON file pushed to GitHub!")
+
 
 
 players = load_players()
