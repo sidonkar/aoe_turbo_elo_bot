@@ -1,27 +1,27 @@
 {
     "Karma": {
         "base_rating": 900,
-        "current_rating": 918
+        "current_rating": 906
     },
     "Baji": {
         "base_rating": 900,
-        "current_rating": 918
+        "current_rating": 942
     },
     "Immortal": {
         "base_rating": 875,
-        "current_rating": 863
+        "current_rating": 839
     },
     "Dexter": {
         "base_rating": 850,
-        "current_rating": 862
+        "current_rating": 874
     },
-    "Ajeya": {
+    "@jey@2": {
         "base_rating": 850,
-        "current_rating": 802
+        "current_rating": 784
     },
     "DLK": {
         "base_rating": 820,
-        "current_rating": 796
+        "current_rating": 808
     },
     "2Kminus": {
         "base_rating": 750,
@@ -29,7 +29,7 @@
     },
     "Kallu": {
         "base_rating": 750,
-        "current_rating": 732
+        "current_rating": 726
     },
     "Axiom": {
         "base_rating": 700,
@@ -37,35 +37,35 @@
     },
     "Endless": {
         "base_rating": 680,
-        "current_rating": 686
+        "current_rating": 710
     },
     "White Eagle": {
         "base_rating": 725,
-        "current_rating": 755
+        "current_rating": 761
     },
-    "Onkar": {
+    "Ghatak": {
         "base_rating": 650,
         "current_rating": 680
     },
     "Ojas": {
         "base_rating": 650,
-        "current_rating": 614
+        "current_rating": 626
     },
     "Mabba": {
         "base_rating": 650,
-        "current_rating": 668
+        "current_rating": 662
     },
     "Varad": {
         "base_rating": 700,
-        "current_rating": 700
+        "current_rating": 676
     },
     "Salazar": {
         "base_rating": 550,
-        "current_rating": 550
+        "current_rating": 544
     },
     "Zxc": {
         "base_rating": 830,
-        "current_rating": 830
+        "current_rating": 836
     },
     "Addy": {
         "base_rating": 725,
@@ -73,11 +73,11 @@
     },
     "Gautami": {
         "base_rating": 500,
-        "current_rating": 506
+        "current_rating": 500
     },
     "Ship": {
         "base_rating": 600,
-        "current_rating": 636
+        "current_rating": 642
     },
     "Mateesh": {
         "base_rating": 400,
@@ -91,7 +91,7 @@
         "base_rating": 550,
         "current_rating": 538
     },
-    "mAnia": {
+    "mAniA": {
         "base_rating": 1000,
         "current_rating": 1006
     }
