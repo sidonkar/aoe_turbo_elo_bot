@@ -74,6 +74,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 PLAYER_FILE = "players.json"
 #TODO move this list to file
 AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1', 'adityasj3053', 'adityasj.','ajeya7182', '.sidonkar', 'sarthakss', 'shalmal90']
+MAX_CHECK = 6
 
 def load_players():
     if os.path.exists(PLAYER_FILE):
@@ -90,10 +91,17 @@ def load_players():
 def save_players():
     with open(PLAYER_FILE, "w") as f:
         json.dump(players, f, indent=4)
+        f.flush()  # Ensure data is written before closing
+        os.fsync(f.fileno())  # Force write to disk
         # Call the function after updating the JSON file
         push_to_github()
 
 def push_to_github():
+    # Check if the file is empty before pushing
+    if os.path.getsize(PLAYER_FILE) == 0:
+        print("⚠️ Error: File is empty. Not pushing to GitHub.")
+        return  
+    
     """Commits and pushes changes to GitHub."""
     repo_url = os.getenv("GITHUB_REPO")  # Get GitHub repo URL from environment variables
     github_token = os.getenv("GITHUB_TOKEN")  # Get GitHub token
@@ -107,7 +115,7 @@ def push_to_github():
 
     # Add, commit, and push changes
     subprocess.run(["git", "add", PLAYER_FILE])
-    subprocess.run(["git", "commit", "-m", "Updated Match data"])
+    subprocess.run(["git", "commit", "-m", "Updated Player and Match data 30 march"])
     subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
@@ -253,7 +261,9 @@ class RegisterModal(Modal, title="Player Registration"):
             return
         players[name] = {
             "base_rating": base_rating,
-            "current_rating": base_rating
+            "current_rating": base_rating,
+            "highest_rating": base_rating,
+            "lowest_rating": base_rating
         }
         save_players()
         await interaction.response.send_message(
@@ -277,10 +287,12 @@ async def send_all_players(interaction):
                 i:i + MAX_FIELDS]:  # Process only 25 at a time
             base_rating = data.get("base_rating", "N/A")
             current_rating = data.get("current_rating", "N/A")
+            max_rating = data.get("highest_rating", "N/A")
+            min_rating = data.get("lowest_rating", "N/A")
             embed.add_field(
                 name=name,
                 value=
-                f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}",
+                f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}\n💥 Min Rating: {min_rating}\n🚀 Max Rating: {max_rating}\n",
                 inline=False)
 
         embeds.append(embed)
@@ -370,7 +382,7 @@ class MultiColumnPlayerSelectionView(View):
         # self.clear_button = ClearSelectionButton(self)
         self.add_item(self.confirm_button)
         # self.add_item(self.clear_button)
-        if (len(self.selected_players) < 6):
+        if (len(self.selected_players) < MAX_CHECK):
             self.confirm_button.disabled = True
         if self.total_pages > 1:
             self.add_item(NextPageButton(self))
@@ -400,7 +412,7 @@ class PlayerButton(Button):
 
         self.parent_view.confirm_button.label = f"Confirm Selection ({len(self.parent_view.selected_players)}/8)"
         self.parent_view.confirm_button.disabled = len(
-            self.parent_view.selected_players) < 6
+            self.parent_view.selected_players) < MAX_CHECK
         await interaction.response.edit_message(view=self.parent_view)
 
 
@@ -444,7 +456,7 @@ class ConfirmMatchupsButton(Button):
         self.parent_view = parent_view
 
     async def callback(self, interaction: discord.Interaction):
-        if len(self.parent_view.selected_players) < 6:
+        if len(self.parent_view.selected_players) < MAX_CHECK:
             await interaction.response.send_message(
                 "⚠️ Select at least 6 players to form teams.", ephemeral=True)
             return
@@ -575,10 +587,12 @@ class WinnerButton(Button):
 
         for player in self.winning_team:
             players[player]["current_rating"] += gain
+            players[player]["highest_rating"] = max(players[player]["highest_rating"], players[player]["current_rating"])
             message += f"✅ **{player}**: +{gain} (New: {players[player]['current_rating']})\n"
 
         for player in self.losing_team:
             players[player]["current_rating"] += loss
+            players[player]["lowest_rating"] = min(players[player]["lowest_rating"], players[player]["current_rating"])            
             message += f"❌ **{player}**: {loss} (New: {players[player]['current_rating']})\n"
 
         # Save updated ratings
