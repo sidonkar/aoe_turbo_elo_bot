@@ -115,7 +115,7 @@ def push_to_github():
 
     # Add, commit, and push changes
     subprocess.run(["git", "add", PLAYER_FILE])
-    subprocess.run(["git", "commit", "-m", "Updated Player and Match data 30 march"])
+    subprocess.run(["git", "commit", "-m", "Updated Player and Match data "+time.strftime("%Y-%m-%d %H:%M:%S")])
     subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
@@ -263,7 +263,10 @@ class RegisterModal(Modal, title="Player Registration"):
             "base_rating": base_rating,
             "current_rating": base_rating,
             "highest_rating": base_rating,
-            "lowest_rating": base_rating
+            "lowest_rating": base_rating,
+            "matches_played": 0,
+            "wins": 0,
+            "losses": 0
         }
         save_players()
         await interaction.response.send_message(
@@ -278,10 +281,11 @@ async def send_all_players(interaction):
 
     MAX_FIELDS = 25  # Discord limit
     embeds = []
+    player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
 
-    player_items = list(players.items())  # Convert dict to list
+    # player_items = list(player_list.keys())  # Convert dict to list
     for i in range(0, len(player_items), MAX_FIELDS):
-        embed = discord.Embed(title="📋 **Registered Players**",
+        embed = discord.Embed(title="**Player Name**  |  🔥 **Live**  |  🚀 **Max** |  💥 **Min**  \n  🏅 **Base**  |  ⚔️ **Matches**  |  🎯 **Win**  | 💀 **Loss**",
                               color=discord.Color.blue())
         for name, data in player_items[
                 i:i + MAX_FIELDS]:  # Process only 25 at a time
@@ -289,11 +293,27 @@ async def send_all_players(interaction):
             current_rating = data.get("current_rating", "N/A")
             max_rating = data.get("highest_rating", "N/A")
             min_rating = data.get("lowest_rating", "N/A")
+            matches_played = data.get("matches_played", "N/A")
+            wins= data.get("wins", "N/A")
+            losses = data.get("losses", "N/A")
+            # embed.add_field(
+            #     name=name,
+            #     value=
+            #     f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}\n💥 Min Rating: {min_rating}\n🚀 Max Rating: {max_rating}\n",
+            #     inline=False)
             embed.add_field(
-                name=name,
-                value=
-                f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}\n💥 Min Rating: {min_rating}\n🚀 Max Rating: {max_rating}\n",
-                inline=False)
+                name="\u200b",
+                value=f"```"
+                f"{name} | 🔥 {current_rating} |"
+                f" 🚀 {max_rating} |"
+                f" 💥 {min_rating}\n"
+                f" 🏅 {base_rating} |"
+                f" ⚔️ {matches_played} |"
+                f" 🎯 {wins} |"
+                f" 💀 {losses}"
+                f"```",
+                inline=False
+            )
 
         embeds.append(embed)
 
@@ -585,22 +605,53 @@ class WinnerButton(Button):
         # Update ratings and generate message
         message = "🏆 **Match Result**\n\n"
 
+        embed = discord.Embed(
+            title="📊 Match Result",
+            description="Here are your match results:",
+            color=discord.Color.blue()
+        )
+
+        
+        
+
         for player in self.winning_team:
             players[player]["current_rating"] += gain
+            players[player]["matches_played"] += 1
+            players[player]["wins"] += 1
             players[player]["highest_rating"] = max(players[player]["highest_rating"], players[player]["current_rating"])
-            message += f"✅ **{player}**: +{gain} (New: {players[player]['current_rating']})\n"
-
+            message += f"🎯 **{player}**\t\t+{gain}\t🔥 {players[player]['current_rating']}\t⚔️ {players[player]["matches_played"]}\t🎯 {players[player]["wins"]}\t💀 {players[player]["losses"]}\n"
+            # embed.add_field(
+            #     name=player,
+            #     value=f"```"
+            #     f"+ {gain}  | 🔥 {players[player]['current_rating']} |"
+            #     f" ⚔️ {players[player]["matches_played"]} |"
+            #     f" 🎯 {players[player]["wins"]} |"
+            #     f" 💀 {players[player]["losses"]}"
+            #     f"```",
+            #     inline=False)
+        message+="\n"
         for player in self.losing_team:
             players[player]["current_rating"] += loss
+            players[player]["matches_played"] += 1
+            players[player]["losses"] += 1
             players[player]["lowest_rating"] = min(players[player]["lowest_rating"], players[player]["current_rating"])            
-            message += f"❌ **{player}**: {loss} (New: {players[player]['current_rating']})\n"
-
+            message += f"💀 **{player}**\t\t{loss}\t🔥 {players[player]['current_rating']}\t⚔️ {players[player]["matches_played"]}\t🎯 {players[player]["wins"]}\t💀 {players[player]["losses"]}\n"
+            # embed.add_field(
+            #     name=player,
+            #     value=f"```"
+            #     f"{loss}  | 🔥 {players[player]['current_rating']} |"
+            #     f" ⚔️ {players[player]["matches_played"]} |"
+            #     f" 🎯 {players[player]["wins"]} |"
+            #     f" 💀 {players[player]["losses"]}"
+            #     f"```",
+            #     inline=False)
         # Save updated ratings
         save_players()
         processed_matches[self.game_id].is_complete = True
 
         # Send the result message
         await interaction.response.send_message(message)
+        # await interaction.response.send_message(embed=embed)
 
 
 def update_elo_ratings(winning_team, losing_team, k_factor=10):
