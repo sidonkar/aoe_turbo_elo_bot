@@ -148,5 +148,11 @@
         "current_rating": 11,
         "highest_rating": 11,
         "lowest_rating": 11
+    },
+    "BB": {
+        "base_rating": 22,
+        "current_rating": 22,
+        "highest_rating": 22,
+        "lowest_rating": 22
     }
 }
