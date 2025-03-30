@@ -154,11 +154,5 @@
         "current_rating": 22,
         "highest_rating": 22,
         "lowest_rating": 22
-    },
-    "CC": {
-        "base_rating": 33,
-        "current_rating": 33,
-        "highest_rating": 33,
-        "lowest_rating": 33
     }
 }
