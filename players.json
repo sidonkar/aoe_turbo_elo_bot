@@ -142,5 +142,11 @@
         "current_rating": 1006,
         "highest_rating": 1018,
         "lowest_rating": 1000
+    },
+    "AA": {
+        "base_rating": 11,
+        "current_rating": 11,
+        "highest_rating": 11,
+        "lowest_rating": 11
     }
 }
