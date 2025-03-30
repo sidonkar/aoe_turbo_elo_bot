@@ -143,10 +143,10 @@
         "highest_rating": 1018,
         "lowest_rating": 1000
     },
-    "A": {
-        "base_rating": 100,
-        "current_rating": 100,
-        "highest_rating": 100,
-        "lowest_rating": 100
+    "B": {
+        "base_rating": 121,
+        "current_rating": 121,
+        "highest_rating": 121,
+        "lowest_rating": 121
     }
 }
