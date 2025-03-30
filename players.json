@@ -136,12 +136,12 @@
     },
     "Salazar": {
         "base_rating": 550,
-        "current_rating": 546,
+        "current_rating": 540,
         "highest_rating": 550,
-        "lowest_rating": 546,
-        "matches_played": 0,
+        "lowest_rating": 540,
+        "matches_played": 1,
         "wins": 0,
-        "losses": 0
+        "losses": 1
     },
     "Zxc": {
         "base_rating": 830,
@@ -163,48 +163,48 @@
     },
     "Gautami": {
         "base_rating": 500,
-        "current_rating": 506,
+        "current_rating": 500,
         "highest_rating": 506,
         "lowest_rating": 500,
-        "matches_played": 0,
+        "matches_played": 1,
         "wins": 0,
-        "losses": 0
+        "losses": 1
     },
     "Ship": {
         "base_rating": 600,
-        "current_rating": 642,
-        "highest_rating": 642,
+        "current_rating": 648,
+        "highest_rating": 648,
         "lowest_rating": 600,
-        "matches_played": 0,
-        "wins": 0,
+        "matches_played": 1,
+        "wins": 1,
         "losses": 0
     },
     "Mateesh": {
         "base_rating": 400,
-        "current_rating": 382,
+        "current_rating": 388,
         "highest_rating": 400,
         "lowest_rating": 382,
-        "matches_played": 0,
-        "wins": 0,
+        "matches_played": 1,
+        "wins": 1,
         "losses": 0
     },
     "Outlier": {
         "base_rating": 650,
-        "current_rating": 626,
+        "current_rating": 632,
         "highest_rating": 650,
         "lowest_rating": 626,
-        "matches_played": 0,
-        "wins": 0,
+        "matches_played": 1,
+        "wins": 1,
         "losses": 0
     },
     "Auror": {
         "base_rating": 550,
-        "current_rating": 538,
+        "current_rating": 532,
         "highest_rating": 550,
-        "lowest_rating": 538,
-        "matches_played": 0,
+        "lowest_rating": 532,
+        "matches_played": 1,
         "wins": 0,
-        "losses": 0
+        "losses": 1
     },
     "mAniA": {
         "base_rating": 1000,
