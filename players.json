@@ -214,14 +214,5 @@
         "matches_played": 2,
         "wins": 1,
         "losses": 1
-    },
-    "A": {
-        "base_rating": 10000,
-        "current_rating": 10000,
-        "highest_rating": 10000,
-        "lowest_rating": 10000,
-        "matches_played": 0,
-        "wins": 0,
-        "losses": 0
     }
 }
