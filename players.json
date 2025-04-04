@@ -1,218 +1,227 @@
 {
     "mAniA": {
-      "current_rating": 1006,
-      "highest_rating": 1018,
-      "lowest_rating": 1000,
-      "base_rating": 1000,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 1006,
+        "highest_rating": 1018,
+        "lowest_rating": 1000,
+        "base_rating": 1000,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Baji": {
-      "current_rating": 942,
-      "highest_rating": 948,
-      "lowest_rating": 900,
-      "base_rating": 900,
-      "matches_played": 1,
-      "wins": 0,
-      "losses": 1
+        "current_rating": 942,
+        "highest_rating": 948,
+        "lowest_rating": 900,
+        "base_rating": 900,
+        "matches_played": 1,
+        "wins": 0,
+        "losses": 1
     },
     "Karma": {
-      "current_rating": 882,
-      "highest_rating": 900,
-      "lowest_rating": 870,
-      "base_rating": 900,
-      "matches_played": 4,
-      "wins": 3,
-      "losses": 1
+        "current_rating": 882,
+        "highest_rating": 900,
+        "lowest_rating": 870,
+        "base_rating": 900,
+        "matches_played": 4,
+        "wins": 3,
+        "losses": 1
     },
     "Dexter": {
-      "current_rating": 862,
-      "highest_rating": 880,
-      "lowest_rating": 850,
-      "base_rating": 850,
-      "matches_played": 3,
-      "wins": 0,
-      "losses": 3
+        "current_rating": 862,
+        "highest_rating": 880,
+        "lowest_rating": 850,
+        "base_rating": 850,
+        "matches_played": 3,
+        "wins": 0,
+        "losses": 3
     },
     "DLK": {
-      "current_rating": 844,
-      "highest_rating": 844,
-      "lowest_rating": 796,
-      "base_rating": 820,
-      "matches_played": 3,
-      "wins": 2,
-      "losses": 1
+        "current_rating": 844,
+        "highest_rating": 844,
+        "lowest_rating": 796,
+        "base_rating": 820,
+        "matches_played": 3,
+        "wins": 2,
+        "losses": 1
     },
     "Immortal": {
-      "current_rating": 839,
-      "highest_rating": 875,
-      "lowest_rating": 827,
-      "base_rating": 875,
-      "matches_played": 3,
-      "wins": 2,
-      "losses": 1
+        "current_rating": 839,
+        "highest_rating": 875,
+        "lowest_rating": 827,
+        "base_rating": 875,
+        "matches_played": 3,
+        "wins": 2,
+        "losses": 1
     },
     "Zxc": {
-      "current_rating": 818,
-      "highest_rating": 830,
-      "lowest_rating": 818,
-      "base_rating": 830,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 818,
+        "highest_rating": 830,
+        "lowest_rating": 818,
+        "base_rating": 830,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "@jey@2": {
-      "current_rating": 808,
-      "highest_rating": 850,
-      "lowest_rating": 766,
-      "base_rating": 850,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 808,
+        "highest_rating": 850,
+        "lowest_rating": 766,
+        "base_rating": 850,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "2Kminus": {
-      "current_rating": 750,
-      "highest_rating": 750,
-      "lowest_rating": 750,
-      "base_rating": 750,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 750,
+        "highest_rating": 750,
+        "lowest_rating": 750,
+        "base_rating": 750,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Addy": {
-      "current_rating": 749,
-      "highest_rating": 749,
-      "lowest_rating": 725,
-      "base_rating": 725,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 749,
+        "highest_rating": 749,
+        "lowest_rating": 725,
+        "base_rating": 725,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "White Eagle": {
-      "current_rating": 743,
-      "highest_rating": 785,
-      "lowest_rating": 725,
-      "base_rating": 725,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 743,
+        "highest_rating": 785,
+        "lowest_rating": 725,
+        "base_rating": 725,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Kallu": {
-      "current_rating": 720,
-      "highest_rating": 750,
-      "lowest_rating": 720,
-      "base_rating": 750,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 720,
+        "highest_rating": 750,
+        "lowest_rating": 720,
+        "base_rating": 750,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Ghatak": {
-      "current_rating": 698,
-      "highest_rating": 704,
-      "lowest_rating": 650,
-      "base_rating": 650,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 698,
+        "highest_rating": 704,
+        "lowest_rating": 650,
+        "base_rating": 650,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Endless": {
-      "current_rating": 692,
-      "highest_rating": 692,
-      "lowest_rating": 680,
-      "base_rating": 680,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 692,
+        "highest_rating": 692,
+        "lowest_rating": 680,
+        "base_rating": 680,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Axiom": {
-      "current_rating": 688,
-      "highest_rating": 700,
-      "lowest_rating": 688,
-      "base_rating": 700,
-      "matches_played": 0,
-      "wins": 0,
-      "losses": 0
+        "current_rating": 688,
+        "highest_rating": 700,
+        "lowest_rating": 688,
+        "base_rating": 700,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     },
     "Varad": {
-      "current_rating": 688,
-      "highest_rating": 700,
-      "lowest_rating": 682,
-      "base_rating": 700,
-      "matches_played": 4,
-      "wins": 2,
-      "losses": 2
+        "current_rating": 688,
+        "highest_rating": 700,
+        "lowest_rating": 682,
+        "base_rating": 700,
+        "matches_played": 4,
+        "wins": 2,
+        "losses": 2
     },
     "Mabba": {
-      "current_rating": 662,
-      "highest_rating": 662,
-      "lowest_rating": 650,
-      "base_rating": 650,
-      "matches_played": 3,
-      "wins": 2,
-      "losses": 1
+        "current_rating": 662,
+        "highest_rating": 662,
+        "lowest_rating": 650,
+        "base_rating": 650,
+        "matches_played": 3,
+        "wins": 2,
+        "losses": 1
     },
     "Ojas": {
-      "current_rating": 650,
-      "highest_rating": 656,
-      "lowest_rating": 602,
-      "base_rating": 650,
-      "matches_played": 3,
-      "wins": 2,
-      "losses": 1
+        "current_rating": 650,
+        "highest_rating": 656,
+        "lowest_rating": 602,
+        "base_rating": 650,
+        "matches_played": 3,
+        "wins": 2,
+        "losses": 1
     },
     "Ship": {
-      "current_rating": 636,
-      "highest_rating": 648,
-      "lowest_rating": 600,
-      "base_rating": 600,
-      "matches_played": 3,
-      "wins": 1,
-      "losses": 2
+        "current_rating": 636,
+        "highest_rating": 648,
+        "lowest_rating": 600,
+        "base_rating": 600,
+        "matches_played": 3,
+        "wins": 1,
+        "losses": 2
     },
     "Outlier": {
-      "current_rating": 626,
-      "highest_rating": 650,
-      "lowest_rating": 626,
-      "base_rating": 650,
-      "matches_played": 2,
-      "wins": 1,
-      "losses": 1
+        "current_rating": 626,
+        "highest_rating": 650,
+        "lowest_rating": 626,
+        "base_rating": 650,
+        "matches_played": 2,
+        "wins": 1,
+        "losses": 1
     },
     "Salazar": {
-      "current_rating": 546,
-      "highest_rating": 552,
-      "lowest_rating": 540,
-      "base_rating": 550,
-      "matches_played": 6,
-      "wins": 3,
-      "losses": 3
+        "current_rating": 546,
+        "highest_rating": 552,
+        "lowest_rating": 540,
+        "base_rating": 550,
+        "matches_played": 6,
+        "wins": 3,
+        "losses": 3
     },
     "Auror": {
-      "current_rating": 544,
-      "highest_rating": 550,
-      "lowest_rating": 532,
-      "base_rating": 550,
-      "matches_played": 3,
-      "wins": 2,
-      "losses": 1
+        "current_rating": 544,
+        "highest_rating": 550,
+        "lowest_rating": 532,
+        "base_rating": 550,
+        "matches_played": 3,
+        "wins": 2,
+        "losses": 1
     },
     "Gautami": {
-      "current_rating": 494,
-      "highest_rating": 506,
-      "lowest_rating": 494,
-      "base_rating": 500,
-      "matches_played": 4,
-      "wins": 1,
-      "losses": 3
+        "current_rating": 494,
+        "highest_rating": 506,
+        "lowest_rating": 494,
+        "base_rating": 500,
+        "matches_played": 4,
+        "wins": 1,
+        "losses": 3
     },
     "Mateesh": {
-      "current_rating": 382,
-      "highest_rating": 400,
-      "lowest_rating": 382,
-      "base_rating": 400,
-      "matches_played": 2,
-      "wins": 1,
-      "losses": 1
+        "current_rating": 382,
+        "highest_rating": 400,
+        "lowest_rating": 382,
+        "base_rating": 400,
+        "matches_played": 2,
+        "wins": 1,
+        "losses": 1
+    },
+    "A": {
+        "base_rating": 10000,
+        "current_rating": 10000,
+        "highest_rating": 10000,
+        "lowest_rating": 10000,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0
     }
-  }
+}
