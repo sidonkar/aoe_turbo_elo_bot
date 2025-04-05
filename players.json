@@ -18,30 +18,30 @@
         "losses": 1
     },
     "Karma": {
-        "current_rating": 882,
+        "current_rating": 876,
         "highest_rating": 900,
         "lowest_rating": 870,
         "base_rating": 900,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 3,
-        "losses": 1
+        "losses": 2
     },
     "Dexter": {
-        "current_rating": 862,
+        "current_rating": 868,
         "highest_rating": 880,
         "lowest_rating": 850,
         "base_rating": 850,
-        "matches_played": 3,
-        "wins": 0,
+        "matches_played": 4,
+        "wins": 1,
         "losses": 3
     },
     "DLK": {
-        "current_rating": 844,
-        "highest_rating": 844,
+        "current_rating": 850,
+        "highest_rating": 850,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 3,
-        "wins": 2,
+        "matches_played": 4,
+        "wins": 3,
         "losses": 1
     },
     "Immortal": {
@@ -63,12 +63,12 @@
         "losses": 0
     },
     "@jey@2": {
-        "current_rating": 808,
+        "current_rating": 814,
         "highest_rating": 850,
         "lowest_rating": 766,
         "base_rating": 850,
-        "matches_played": 0,
-        "wins": 0,
+        "matches_played": 1,
+        "wins": 1,
         "losses": 0
     },
     "2Kminus": {
@@ -135,13 +135,13 @@
         "losses": 0
     },
     "Varad": {
-        "current_rating": 688,
+        "current_rating": 682,
         "highest_rating": 700,
         "lowest_rating": 682,
         "base_rating": 700,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 2,
-        "losses": 2
+        "losses": 3
     },
     "Mabba": {
         "current_rating": 662,
@@ -153,22 +153,22 @@
         "losses": 1
     },
     "Ojas": {
-        "current_rating": 650,
+        "current_rating": 644,
         "highest_rating": 656,
         "lowest_rating": 602,
         "base_rating": 650,
-        "matches_played": 3,
+        "matches_played": 4,
         "wins": 2,
-        "losses": 1
+        "losses": 2
     },
     "Ship": {
-        "current_rating": 636,
+        "current_rating": 630,
         "highest_rating": 648,
         "lowest_rating": 600,
         "base_rating": 600,
-        "matches_played": 3,
+        "matches_played": 4,
         "wins": 1,
-        "losses": 2
+        "losses": 3
     },
     "Outlier": {
         "current_rating": 626,
@@ -207,12 +207,12 @@
         "losses": 3
     },
     "Mateesh": {
-        "current_rating": 382,
+        "current_rating": 388,
         "highest_rating": 400,
         "lowest_rating": 382,
         "base_rating": 400,
-        "matches_played": 2,
-        "wins": 1,
+        "matches_played": 3,
+        "wins": 2,
         "losses": 1
     }
 }
