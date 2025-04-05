@@ -27,13 +27,13 @@
         "losses": 2
     },
     "Dexter": {
-        "current_rating": 868,
+        "current_rating": 862,
         "highest_rating": 880,
         "lowest_rating": 850,
         "base_rating": 850,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 1,
-        "losses": 3
+        "losses": 4
     },
     "DLK": {
         "current_rating": 850,
@@ -45,12 +45,12 @@
         "losses": 1
     },
     "Immortal": {
-        "current_rating": 839,
+        "current_rating": 845,
         "highest_rating": 875,
         "lowest_rating": 827,
         "base_rating": 875,
-        "matches_played": 3,
-        "wins": 2,
+        "matches_played": 4,
+        "wins": 3,
         "losses": 1
     },
     "Zxc": {
@@ -81,13 +81,13 @@
         "losses": 0
     },
     "Addy": {
-        "current_rating": 749,
+        "current_rating": 743,
         "highest_rating": 749,
         "lowest_rating": 725,
         "base_rating": 725,
-        "matches_played": 0,
+        "matches_played": 1,
         "wins": 0,
-        "losses": 0
+        "losses": 1
     },
     "White Eagle": {
         "current_rating": 743,
@@ -108,12 +108,12 @@
         "losses": 0
     },
     "Ghatak": {
-        "current_rating": 698,
+        "current_rating": 704,
         "highest_rating": 704,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 0,
-        "wins": 0,
+        "matches_played": 1,
+        "wins": 1,
         "losses": 0
     },
     "Endless": {
@@ -135,12 +135,12 @@
         "losses": 0
     },
     "Varad": {
-        "current_rating": 682,
+        "current_rating": 688,
         "highest_rating": 700,
         "lowest_rating": 682,
         "base_rating": 700,
-        "matches_played": 5,
-        "wins": 2,
+        "matches_played": 6,
+        "wins": 3,
         "losses": 3
     },
     "Mabba": {
@@ -162,13 +162,13 @@
         "losses": 2
     },
     "Ship": {
-        "current_rating": 630,
+        "current_rating": 624,
         "highest_rating": 648,
         "lowest_rating": 600,
         "base_rating": 600,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 1,
-        "losses": 3
+        "losses": 4
     },
     "Outlier": {
         "current_rating": 626,
