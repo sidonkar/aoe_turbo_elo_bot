@@ -9,13 +9,13 @@
         "losses": 0
     },
     "Baji": {
-        "current_rating": 936,
+        "current_rating": 930,
         "highest_rating": 948,
         "lowest_rating": 900,
         "base_rating": 900,
-        "matches_played": 2,
+        "matches_played": 3,
         "wins": 0,
-        "losses": 2
+        "losses": 3
     },
     "Karma": {
         "current_rating": 876,
@@ -45,12 +45,12 @@
         "losses": 1
     },
     "Immortal": {
-        "current_rating": 845,
+        "current_rating": 851,
         "highest_rating": 875,
         "lowest_rating": 827,
         "base_rating": 875,
-        "matches_played": 4,
-        "wins": 3,
+        "matches_played": 5,
+        "wins": 4,
         "losses": 1
     },
     "Zxc": {
@@ -108,12 +108,12 @@
         "losses": 0
     },
     "Ghatak": {
-        "current_rating": 698,
+        "current_rating": 704,
         "highest_rating": 704,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 2,
-        "wins": 1,
+        "matches_played": 3,
+        "wins": 2,
         "losses": 1
     },
     "Endless": {
@@ -135,12 +135,12 @@
         "losses": 0
     },
     "Varad": {
-        "current_rating": 694,
+        "current_rating": 700,
         "highest_rating": 700,
         "lowest_rating": 682,
         "base_rating": 700,
-        "matches_played": 7,
-        "wins": 4,
+        "matches_played": 8,
+        "wins": 5,
         "losses": 3
     },
     "Mabba": {
@@ -162,13 +162,13 @@
         "losses": 2
     },
     "Ship": {
-        "current_rating": 624,
+        "current_rating": 618,
         "highest_rating": 648,
         "lowest_rating": 600,
         "base_rating": 600,
-        "matches_played": 5,
+        "matches_played": 6,
         "wins": 1,
-        "losses": 4
+        "losses": 5
     },
     "Outlier": {
         "current_rating": 626,
@@ -180,13 +180,13 @@
         "losses": 1
     },
     "Salazar": {
-        "current_rating": 546,
+        "current_rating": 540,
         "highest_rating": 552,
         "lowest_rating": 540,
         "base_rating": 550,
-        "matches_played": 6,
+        "matches_played": 7,
         "wins": 3,
-        "losses": 3
+        "losses": 4
     },
     "Auror": {
         "current_rating": 544,
@@ -198,21 +198,21 @@
         "losses": 1
     },
     "Gautami": {
-        "current_rating": 488,
+        "current_rating": 482,
         "highest_rating": 506,
-        "lowest_rating": 488,
+        "lowest_rating": 482,
         "base_rating": 500,
-        "matches_played": 5,
+        "matches_played": 6,
         "wins": 1,
-        "losses": 4
+        "losses": 5
     },
     "Mateesh": {
-        "current_rating": 388,
+        "current_rating": 394,
         "highest_rating": 400,
         "lowest_rating": 382,
         "base_rating": 400,
-        "matches_played": 3,
-        "wins": 2,
+        "matches_played": 4,
+        "wins": 3,
         "losses": 1
     }
 }
