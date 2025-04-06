@@ -16,93 +16,100 @@
         }
     },
     "B": {
-        "current_rating": 1024,
+        "current_rating": 1030,
         "highest_rating": 1030,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 9,
-        "wins": 6,
+        "matches_played": 10,
+        "wins": 7,
         "losses": 3,
         "matchesList": {
             "49496150375404": "win",
             "66304796155653": "win",
             "94842847060749": "loss",
             "91335412562302": "win",
-            "74549780978756": "loss"
+            "74549780978756": "loss",
+            "70970529424368": "win"
         }
     },
     "C": {
-        "current_rating": 1000,
+        "current_rating": 994,
         "highest_rating": 1018,
         "lowest_rating": 988,
         "base_rating": 1000,
-        "matches_played": 9,
+        "matches_played": 10,
         "wins": 4,
-        "losses": 5,
-        "matchesList": {
-            "49496150375404": "loss",
-            "66304796155653": "loss",
-            "94842847060749": "loss",
-            "91335412562302": "win",
-            "74549780978756": "win"
-        }
-    },
-    "D": {
-        "current_rating": 988,
-        "highest_rating": 1018,
-        "lowest_rating": 988,
-        "base_rating": 1000,
-        "matches_played": 9,
-        "wins": 3,
         "losses": 6,
         "matchesList": {
             "49496150375404": "loss",
             "66304796155653": "loss",
             "94842847060749": "loss",
             "91335412562302": "win",
-            "74549780978756": "loss"
+            "74549780978756": "win",
+            "70970529424368": "loss"
+        }
+    },
+    "D": {
+        "current_rating": 994,
+        "highest_rating": 1018,
+        "lowest_rating": 988,
+        "base_rating": 1000,
+        "matches_played": 10,
+        "wins": 4,
+        "losses": 6,
+        "matchesList": {
+            "49496150375404": "loss",
+            "66304796155653": "loss",
+            "94842847060749": "loss",
+            "91335412562302": "win",
+            "74549780978756": "loss",
+            "70970529424368": "win"
         }
     },
     "E": {
-        "current_rating": 1012,
+        "current_rating": 1006,
         "highest_rating": 1018,
         "lowest_rating": 994,
         "base_rating": 1000,
-        "matches_played": 9,
+        "matches_played": 10,
         "wins": 5,
-        "losses": 4,
+        "losses": 5,
         "matchesList": {
             "49496150375404": "win",
             "66304796155653": "loss",
             "94842847060749": "win",
             "91335412562302": "loss",
-            "74549780978756": "win"
+            "74549780978756": "win",
+            "70970529424368": "loss"
         }
     },
     "F": {
-        "current_rating": 988,
+        "current_rating": 994,
         "highest_rating": 1018,
         "lowest_rating": 982,
         "base_rating": 1000,
-        "matches_played": 9,
-        "wins": 3,
+        "matches_played": 10,
+        "wins": 4,
         "losses": 6,
         "matchesList": {
             "49496150375404": "win",
             "66304796155653": "win",
             "94842847060749": "win",
             "91335412562302": "loss",
-            "74549780978756": "loss"
+            "74549780978756": "loss",
+            "70970529424368": "win"
         }
     },
     "G": {
         "base_rating": 1000,
-        "current_rating": 1000,
+        "current_rating": 994,
         "highest_rating": 1000,
-        "lowest_rating": 1000,
-        "matches_played": 0,
+        "lowest_rating": 994,
+        "matches_played": 1,
         "wins": 0,
-        "losses": 0,
-        "matchesList": {}
+        "losses": 1,
+        "matchesList": {
+            "70970529424368": "loss"
+        }
     }
 }
