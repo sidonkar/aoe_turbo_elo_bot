@@ -6,13 +6,14 @@ import os
 import random
 from itertools import combinations
 import time
-from dotenv import load_dotenv
 import subprocess
+from dotenv import load_dotenv
 load_dotenv()
 
 ################################################## Constants Start #################################################
 
 PLAYER_FILE = "players.json"
+MATCHES_FILE = "matches.json"
 
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
@@ -31,6 +32,15 @@ class Player:
         self.name = name
         self.rating = rating
 
+    def __str__(self):
+        return self.name
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "rating": self.rating
+        }
+
     def get_rating(self, map):
         return self.rating.get_rating(map)
 
@@ -39,6 +49,14 @@ class Team:
     def __init__(self, players):
         self.players = players
         pass
+
+    def __str__(self):
+        return json.dumps(self.to_dict(), indent=2)
+
+    def to_dict(self):
+        return {
+            "players": str(self.players)
+        }
 
     def get_rating(self, map):
         ratings_sum = 0
@@ -55,6 +73,17 @@ class Game:
         self.id = id #random.randint(0,100000000000000)
         self.map = map
 
+    def __str__(self):
+        return json.dumps(self.to_dict(), indent=2)
+
+    def to_dict(self):
+        return {
+            "map": self.map,
+            "is_complete": self.is_complete,
+            "team1": str(self.team1),  # You might want to also make team1/team2 serializable
+            "team2": str(self.team2),
+        }
+    
     #TODO add code to tell which team won
     def markComplete(self):
         self.is_complete = True
@@ -71,7 +100,6 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-PLAYER_FILE = "players.json"
 #TODO move this list to file
 AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1', 'adityasj3053', 'adityasj.','ajeya7182', '.sidonkar', 'sarthakss', 'shalmal90']
 MAX_CHECK = 6
@@ -87,6 +115,26 @@ def load_players():
             pass
     return {}
 
+
+def load_matches():
+    if os.path.exists(MATCHES_FILE):
+        try:
+            with open(MATCHES_FILE, "r") as f:
+                data = json.load(f)
+                if isinstance(data, dict):
+                    return data
+        except (json.JSONDecodeError, ValueError):
+            pass
+    return {}
+
+
+def save_matches():
+    with open(MATCHES_FILE, "w") as f:
+        json.dump(processed_matches, f, indent=4)
+        f.flush()  # Ensure data is written before closing
+        os.fsync(f.fileno())  # Force write to disk
+        # Call the function after updating the JSON file
+        #push_to_github()
 
 def save_players():
     with open(PLAYER_FILE, "w") as f:
@@ -126,7 +174,7 @@ players = load_players()
 
 #global variables
 #ideally we should store them but this isn't needed for our use-case
-processed_matches = {}  # Use a dictionary to store match timestamps
+processed_matches = load_matches()  # Use a dictionary to store match timestamps
 game_ids = set()
 
 def print_game_state():
@@ -278,7 +326,7 @@ async def send_all_players(interaction):
         await interaction.response.send_message("⚠️ No players registered yet!"
                                                 )
         return
-
+    print(f"players:{players}")
     MAX_FIELDS = 25  # Discord limit
     embeds = []
     player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
@@ -342,7 +390,7 @@ async def set_result_manually(ctx, game_id_str):
         return
 
     game_id = int(game_id_str)
-
+    # print(json.dumps(processed_matches, indent=2))
     if (game_id not in processed_matches):
         await ctx.send('invalid game id!!!!')
         return
@@ -526,7 +574,9 @@ class MatchupButton(Button):
 
         game_ids.add(game_id)
         game = Game(game_id, team1=self.team1, team2=self.team2, map="arabia") #TODO pass the map here
+        # print(f"game:{game}")
         processed_matches[game_id] = game
+        # print(json.dumps(processed_matches[game_id], indent=2))
 
         await interaction.response.send_message(
             f"✅ **You selected Matchup:**\n"
@@ -648,7 +698,8 @@ class WinnerButton(Button):
         # Save updated ratings
         save_players()
         processed_matches[self.game_id].is_complete = True
-
+        # print(f"processed_matches:{processed_matches}")
+        # save_matches()
         # Send the result message
         await interaction.response.send_message(message)
         # await interaction.response.send_message(embed=embed)
