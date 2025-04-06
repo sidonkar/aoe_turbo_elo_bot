@@ -1,57 +1,57 @@
 {
     "A": {
-        "current_rating": 1012,
+        "current_rating": 1018,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 1,
-        "wins": 1,
+        "matches_played": 2,
+        "wins": 2,
         "losses": 0
     },
     "B": {
-        "current_rating": 1012,
+        "current_rating": 1018,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 1,
-        "wins": 1,
+        "matches_played": 2,
+        "wins": 2,
         "losses": 0
     },
     "C": {
-        "current_rating": 1012,
+        "current_rating": 1006,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 1,
+        "matches_played": 2,
         "wins": 1,
-        "losses": 0
+        "losses": 1
     },
     "D": {
-        "current_rating": 1000,
+        "current_rating": 1006,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 1,
-        "wins": 0,
+        "matches_played": 2,
+        "wins": 1,
         "losses": 1
     },
     "E": {
-        "current_rating": 1000,
+        "current_rating": 994,
         "highest_rating": 1018,
-        "lowest_rating": 1000,
+        "lowest_rating": 994,
         "base_rating": 1000,
-        "matches_played": 1,
+        "matches_played": 2,
         "wins": 0,
-        "losses": 1
+        "losses": 2
     },
     "F": {
-        "current_rating": 1000,
+        "current_rating": 994,
         "highest_rating": 1018,
-        "lowest_rating": 1000,
+        "lowest_rating": 994,
         "base_rating": 1000,
-        "matches_played": 1,
+        "matches_played": 2,
         "wins": 0,
-        "losses": 1
+        "losses": 2
     },
     "Outlier": {
         "current_rating": 626,
