@@ -18,6 +18,16 @@ MATCHES_FILE = "matches.json"
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
 
+def to_dict(obj):
+    if isinstance(obj, dict):
+        return {k: to_dict(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [to_dict(item) for item in obj]
+    elif hasattr(obj, "__dict__"):
+        return {k: to_dict(v) for k, v in obj.__dict__.items()}
+    else:
+        return obj  # base case: int, str, etc.
+
 #TODO eventually use these class (Ratings, Player, Team)
 class Rating:
     def __init__(self):
@@ -74,15 +84,7 @@ class Game:
         self.map = map
 
     def __str__(self):
-        return json.dumps(self.to_dict(), indent=2)
-
-    def to_dict(self):
-        return {
-            "map": self.map,
-            "is_complete": self.is_complete,
-            "team1": str(self.team1),  # You might want to also make team1/team2 serializable
-            "team2": str(self.team2),
-        }
+        return json.dumps(to_dict(self), indent=4)
     
     #TODO add code to tell which team won
     def markComplete(self):
@@ -130,7 +132,7 @@ def load_matches():
 
 def save_matches():
     with open(MATCHES_FILE, "w") as f:
-        json.dump(processed_matches, f, indent=4)
+        json.dump(to_dict(processed_matches), f, indent=4)
         f.flush()  # Ensure data is written before closing
         os.fsync(f.fileno())  # Force write to disk
         # Call the function after updating the JSON file
