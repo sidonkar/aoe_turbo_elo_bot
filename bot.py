@@ -169,7 +169,7 @@ def push_to_github(isMatchesFile):
     subprocess.run(["git", "add", MATCHES_FILE]) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE])
     commitMsg = "Updated Match data "+time.strftime("%Y-%m-%d %H:%M:%S") if isMatchesFile else "Updated Player data "+time.strftime("%Y-%m-%d %H:%M:%S")
     subprocess.run(["git", "commit", "-m", commitMsg])
-    subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
+    subprocess.run(["git", "push", auth_repo_url, "forAditya"])  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
 
