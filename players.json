@@ -9,35 +9,35 @@
         "losses": 1,
         "matchesList": [
             {
-                "73192827179511": "win"
+                "99938492543246": "win"
             }
         ]
     },
     "B": {
-        "current_rating": 1024,
+        "current_rating": 1012,
         "highest_rating": 1024,
         "lowest_rating": 1000,
         "base_rating": 1000,
         "matches_played": 5,
-        "wins": 4,
-        "losses": 1,
+        "wins": 3,
+        "losses": 2,
         "matchesList": [
             {
-                "73192827179511": "win"
+                "99938492543246": "loss"
             }
         ]
     },
     "C": {
-        "current_rating": 1000,
+        "current_rating": 1012,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
         "matches_played": 5,
-        "wins": 2,
-        "losses": 3,
+        "wins": 3,
+        "losses": 2,
         "matchesList": [
             {
-                "73192827179511": "loss"
+                "99938492543246": "win"
             }
         ]
     },
@@ -51,7 +51,7 @@
         "losses": 3,
         "matchesList": [
             {
-                "73192827179511": "loss"
+                "99938492543246": "loss"
             }
         ]
     },
@@ -65,7 +65,7 @@
         "losses": 3,
         "matchesList": [
             {
-                "73192827179511": "loss"
+                "99938492543246": "loss"
             }
         ]
     },
@@ -79,7 +79,7 @@
         "losses": 4,
         "matchesList": [
             {
-                "73192827179511": "win"
+                "99938492543246": "win"
             }
         ]
     }
