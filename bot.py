@@ -85,6 +85,7 @@ class Game:
 
     def __str__(self):
         return json.dumps(to_dict(self), indent=4)
+
     
     #TODO add code to tell which team won
     def markComplete(self,team):
@@ -708,6 +709,7 @@ class WinnerButton(Button):
         processed_matches[self.game_id].markComplete(self.winning_team)
         # print(f"processed_matches:{processed_matches}")
         save_matches()
+
         # Send the result message
         await interaction.response.send_message(message)
         # await interaction.response.send_message(embed=embed)
