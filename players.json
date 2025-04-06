@@ -1,101 +1,86 @@
 {
     "A": {
-        "current_rating": 1018,
+        "current_rating": 1012,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 3,
-        "losses": 1
+        "losses": 2,
+        "matchesList": [
+            {
+                "25288645725274": "loss"
+            }
+        ]
     },
     "B": {
-        "current_rating": 1018,
+        "current_rating": 1024,
         "highest_rating": 1024,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 4,
-        "wins": 3,
-        "losses": 1
+        "matches_played": 5,
+        "wins": 4,
+        "losses": 1,
+        "matchesList": [
+            {
+                "25288645725274": "win"
+            }
+        ]
     },
     "C": {
-        "current_rating": 1006,
+        "current_rating": 1000,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 2,
-        "losses": 2
+        "losses": 3,
+        "matchesList": [
+            {
+                "25288645725274": "loss"
+            }
+        ]
     },
     "D": {
-        "current_rating": 1006,
+        "current_rating": 1012,
         "highest_rating": 1018,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 4,
-        "wins": 2,
-        "losses": 2
+        "matches_played": 5,
+        "wins": 3,
+        "losses": 2,
+        "matchesList": [
+            {
+                "25288645725274": "win"
+            }
+        ]
     },
     "E": {
-        "current_rating": 1006,
+        "current_rating": 1012,
         "highest_rating": 1018,
         "lowest_rating": 994,
         "base_rating": 1000,
-        "matches_played": 4,
-        "wins": 2,
-        "losses": 2
+        "matches_played": 5,
+        "wins": 3,
+        "losses": 2,
+        "matchesList": [
+            {
+                "25288645725274": "win"
+            }
+        ]
     },
     "F": {
-        "current_rating": 982,
+        "current_rating": 976,
         "highest_rating": 1018,
-        "lowest_rating": 982,
+        "lowest_rating": 976,
         "base_rating": 1000,
-        "matches_played": 4,
+        "matches_played": 5,
         "wins": 0,
-        "losses": 4
-    },
-    "Outlier": {
-        "current_rating": 626,
-        "highest_rating": 650,
-        "lowest_rating": 626,
-        "base_rating": 650,
-        "matches_played": 2,
-        "wins": 1,
-        "losses": 1
-    },
-    "Salazar": {
-        "current_rating": 540,
-        "highest_rating": 558,
-        "lowest_rating": 540,
-        "base_rating": 550,
-        "matches_played": 13,
-        "wins": 6,
-        "losses": 7
-    },
-    "Auror": {
-        "current_rating": 544,
-        "highest_rating": 550,
-        "lowest_rating": 532,
-        "base_rating": 550,
-        "matches_played": 3,
-        "wins": 2,
-        "losses": 1
-    },
-    "Gautami": {
-        "current_rating": 482,
-        "highest_rating": 506,
-        "lowest_rating": 482,
-        "base_rating": 500,
-        "matches_played": 10,
-        "wins": 3,
-        "losses": 7
-    },
-    "Mateesh": {
-        "current_rating": 388,
-        "highest_rating": 400,
-        "lowest_rating": 376,
-        "base_rating": 400,
-        "matches_played": 9,
-        "wins": 5,
-        "losses": 4
+        "losses": 5,
+        "matchesList": [
+            {
+                "25288645725274": "loss"
+            }
+        ]
     }
 }
