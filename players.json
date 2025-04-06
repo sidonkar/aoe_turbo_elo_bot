@@ -6,7 +6,8 @@
     "base_rating": 1000,
     "matches_played": 1,
     "wins": 1,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "Baji": {
     "current_rating": 930,
@@ -15,7 +16,8 @@
     "base_rating": 900,
     "matches_played": 7,
     "wins": 2,
-    "losses": 5
+    "losses": 5,
+	"matchesList": {}
   },
   "Karma": {
     "current_rating": 870,
@@ -24,7 +26,8 @@
     "base_rating": 900,
     "matches_played": 10,
     "wins": 5,
-    "losses": 5
+    "losses": 5,
+	"matchesList": {}
   },
   "Dexter": {
     "current_rating": 874,
@@ -33,7 +36,8 @@
     "base_rating": 850,
     "matches_played": 15,
     "wins": 7,
-    "losses": 8
+    "losses": 8,
+	"matchesList": {}
   },
   "DLK": {
     "current_rating": 832,
@@ -42,7 +46,8 @@
     "base_rating": 820,
     "matches_played": 13,
     "wins": 6,
-    "losses": 7
+    "losses": 7,
+	"matchesList": {}
   },
   "Immortal": {
     "current_rating": 851,
@@ -51,7 +56,8 @@
     "base_rating": 875,
     "matches_played": 11,
     "wins": 7,
-    "losses": 4
+    "losses": 4,
+	"matchesList": {}
   },
   "Zxc": {
     "current_rating": 818,
@@ -60,7 +66,8 @@
     "base_rating": 830,
     "matches_played": 0,
     "wins": 0,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "@jey@2": {
     "current_rating": 790,
@@ -69,7 +76,8 @@
     "base_rating": 850,
     "matches_played": 7,
     "wins": 2,
-    "losses": 5
+    "losses": 5,
+	"matchesList": {}
   },
   "2Kminus": {
     "current_rating": 750,
@@ -78,7 +86,8 @@
     "base_rating": 750,
     "matches_played": 0,
     "wins": 0,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "Addy": {
     "current_rating": 749,
@@ -87,7 +96,8 @@
     "base_rating": 725,
     "matches_played": 2,
     "wins": 1,
-    "losses": 1
+    "losses": 1,
+	"matchesList": {}
   },
   "White Eagle": {
     "current_rating": 743,
@@ -96,7 +106,8 @@
     "base_rating": 725,
     "matches_played": 0,
     "wins": 0,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "Kallu": {
     "current_rating": 726,
@@ -105,7 +116,8 @@
     "base_rating": 750,
     "matches_played": 1,
     "wins": 1,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "Ghatak": {
     "current_rating": 716,
@@ -114,7 +126,8 @@
     "base_rating": 650,
     "matches_played": 5,
     "wins": 4,
-    "losses": 1
+    "losses": 1,
+	"matchesList": {}
   },
   "Endless": {
     "current_rating": 704,
@@ -123,7 +136,8 @@
     "base_rating": 680,
     "matches_played": 2,
     "wins": 2,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "Axiom": {
     "current_rating": 688,
@@ -132,7 +146,8 @@
     "base_rating": 700,
     "matches_played": 0,
     "wins": 0,
-    "losses": 0
+    "losses": 0,
+	"matchesList": {}
   },
   "Varad": {
     "current_rating": 718,
@@ -141,7 +156,8 @@
     "base_rating": 700,
     "matches_played": 17,
     "wins": 11,
-    "losses": 6
+    "losses": 6,
+	"matchesList": {}
   },
   "Mabba": {
     "current_rating": 662,
@@ -150,7 +166,8 @@
     "base_rating": 650,
     "matches_played": 9,
     "wins": 5,
-    "losses": 4
+    "losses": 4,
+	"matchesList": {}
   },
   "Ojas": {
     "current_rating": 644,
@@ -159,7 +176,8 @@
     "base_rating": 650,
     "matches_played": 4,
     "wins": 2,
-    "losses": 2
+    "losses": 2,
+	"matchesList": {}
   },
   "Ship": {
     "current_rating": 606,
@@ -168,7 +186,8 @@
     "base_rating": 600,
     "matches_played": 12,
     "wins": 3,
-    "losses": 9
+    "losses": 9,
+	"matchesList": {}
   },
   "Outlier": {
     "current_rating": 626,
@@ -177,7 +196,8 @@
     "base_rating": 650,
     "matches_played": 2,
     "wins": 1,
-    "losses": 1
+    "losses": 1,
+	"matchesList": {}
   },
   "Salazar": {
     "current_rating": 558,
@@ -186,7 +206,8 @@
     "base_rating": 550,
     "matches_played": 18,
     "wins": 10,
-    "losses": 8
+    "losses": 8,
+	"matchesList": {}
   },
   "Auror": {
     "current_rating": 544,
@@ -195,7 +216,8 @@
     "base_rating": 550,
     "matches_played": 3,
     "wins": 2,
-    "losses": 1
+    "losses": 1,
+	"matchesList": {}
   },
   "Gautami": {
     "current_rating": 470,
@@ -204,7 +226,8 @@
     "base_rating": 500,
     "matches_played": 14,
     "wins": 4,
-    "losses": 10
+    "losses": 10,
+	"matchesList": {}
   },
   "Mateesh": {
     "current_rating": 388,
@@ -213,6 +236,7 @@
     "base_rating": 400,
     "matches_played": 9,
     "wins": 5,
-    "losses": 4
+    "losses": 4,
+	"matchesList": {}
   }
 }

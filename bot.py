@@ -18,6 +18,16 @@ MATCHES_FILE = "matches.json"
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
 
+def to_dict(obj):
+    if isinstance(obj, dict):
+        return {k: to_dict(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [to_dict(item) for item in obj]
+    elif hasattr(obj, "__dict__"):
+        return {k: to_dict(v) for k, v in obj.__dict__.items()}
+    else:
+        return obj  # base case: int, str, etc.
+
 #TODO eventually use these class (Ratings, Player, Team)
 class Rating:
     def __init__(self):
@@ -74,19 +84,14 @@ class Game:
         self.map = map
 
     def __str__(self):
-        return json.dumps(self.to_dict(), indent=2)
+        return json.dumps(to_dict(self), indent=4)
 
-    def to_dict(self):
-        return {
-            "map": self.map,
-            "is_complete": self.is_complete,
-            "team1": str(self.team1),  # You might want to also make team1/team2 serializable
-            "team2": str(self.team2),
-        }
     
     #TODO add code to tell which team won
-    def markComplete(self):
+    def markComplete(self,team):
         self.is_complete = True
+        self.winTeam = 1 if team==self.team1 else 2
+        self.playedDateTime = time.strftime("%Y-%m-%d %H:%M:%S")
 
     #TODO move the update rating function here
     def _update_rating(self):
@@ -130,11 +135,11 @@ def load_matches():
 
 def save_matches():
     with open(MATCHES_FILE, "w") as f:
-        json.dump(processed_matches, f, indent=4)
+        json.dump(to_dict(processed_matches), f, indent=4)
         f.flush()  # Ensure data is written before closing
         os.fsync(f.fileno())  # Force write to disk
         # Call the function after updating the JSON file
-        #push_to_github()
+        push_to_github(True)
 
 def save_players():
     with open(PLAYER_FILE, "w") as f:
@@ -142,9 +147,9 @@ def save_players():
         f.flush()  # Ensure data is written before closing
         os.fsync(f.fileno())  # Force write to disk
         # Call the function after updating the JSON file
-        push_to_github()
+        push_to_github(False)
 
-def push_to_github():
+def push_to_github(isMatchesFile):
     # Check if the file is empty before pushing
     if os.path.getsize(PLAYER_FILE) == 0:
         print("⚠️ Error: File is empty. Not pushing to GitHub.")
@@ -162,9 +167,10 @@ def push_to_github():
     auth_repo_url = repo_url.replace("https://", f"https://{github_token}@")
 
     # Add, commit, and push changes
-    subprocess.run(["git", "add", PLAYER_FILE])
-    subprocess.run(["git", "commit", "-m", "Updated Player and Match data "+time.strftime("%Y-%m-%d %H:%M:%S")])
-    subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
+    subprocess.run(["git", "add", MATCHES_FILE]) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE])
+    commitMsg = "Updated Match data "+time.strftime("%Y-%m-%d %H:%M:%S") if isMatchesFile else "Updated Player data "+time.strftime("%Y-%m-%d %H:%M:%S")
+    subprocess.run(["git", "commit", "-m", commitMsg])
+    subprocess.run(["git", "push", auth_repo_url, "forAditya"])  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
 
@@ -314,7 +320,8 @@ class RegisterModal(Modal, title="Player Registration"):
             "lowest_rating": base_rating,
             "matches_played": 0,
             "wins": 0,
-            "losses": 0
+            "losses": 0,
+            "matchesList": {}
         }
         save_players()
         await interaction.response.send_message(
@@ -326,7 +333,7 @@ async def send_all_players(interaction):
         await interaction.response.send_message("⚠️ No players registered yet!"
                                                 )
         return
-    print(f"players:{players}")
+    print(f"players:{json.dumps(players, indent=4)}")
     MAX_FIELDS = 25  # Discord limit
     embeds = []
     player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
@@ -666,6 +673,7 @@ class WinnerButton(Button):
 
         for player in self.winning_team:
             players[player]["current_rating"] += gain
+            players[player]["matchesList"][self.game_id]="win"
             players[player]["matches_played"] += 1
             players[player]["wins"] += 1
             players[player]["highest_rating"] = max(players[player]["highest_rating"], players[player]["current_rating"])
@@ -682,6 +690,7 @@ class WinnerButton(Button):
         message+="\n"
         for player in self.losing_team:
             players[player]["current_rating"] += loss
+            players[player]["matchesList"][self.game_id]="loss"
             players[player]["matches_played"] += 1
             players[player]["losses"] += 1
             players[player]["lowest_rating"] = min(players[player]["lowest_rating"], players[player]["current_rating"])            
@@ -697,9 +706,10 @@ class WinnerButton(Button):
             #     inline=False)
         # Save updated ratings
         save_players()
-        processed_matches[self.game_id].is_complete = True
+        processed_matches[self.game_id].markComplete(self.winning_team)
         # print(f"processed_matches:{processed_matches}")
-        # save_matches()
+        save_matches()
+
         # Send the result message
         await interaction.response.send_message(message)
         # await interaction.response.send_message(embed=embed)
