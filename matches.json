@@ -1,0 +1,70 @@
+{
+    "49496150375404": {
+        "team1": [
+            "A",
+            "C",
+            "D"
+        ],
+        "team2": [
+            "B",
+            "E",
+            "F"
+        ],
+        "is_complete": true,
+        "id": 49496150375404,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-06 16:33:47"
+    },
+    "66304796155653": {
+        "team1": [
+            "A",
+            "B",
+            "F"
+        ],
+        "team2": [
+            "C",
+            "D",
+            "E"
+        ],
+        "is_complete": true,
+        "id": 66304796155653,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-06 16:34:07"
+    },
+    "94842847060749": {
+        "team1": [
+            "E",
+            "A",
+            "F"
+        ],
+        "team2": [
+            "B",
+            "C",
+            "D"
+        ],
+        "is_complete": true,
+        "id": 94842847060749,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-06 16:35:31"
+    },
+    "91335412562302": {
+        "team1": [
+            "E",
+            "A",
+            "F"
+        ],
+        "team2": [
+            "B",
+            "C",
+            "D"
+        ],
+        "is_complete": true,
+        "id": 91335412562302,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-06 16:35:36"
+    }
+}

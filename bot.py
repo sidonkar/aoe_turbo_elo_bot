@@ -87,8 +87,10 @@ class Game:
         return json.dumps(to_dict(self), indent=4)
     
     #TODO add code to tell which team won
-    def markComplete(self):
+    def markComplete(self,team):
         self.is_complete = True
+        self.winTeam = 1 if team==self.team1 else 2
+        self.playedDateTime = time.strftime("%Y-%m-%d %H:%M:%S")
 
     #TODO move the update rating function here
     def _update_rating(self):
@@ -316,7 +318,8 @@ class RegisterModal(Modal, title="Player Registration"):
             "lowest_rating": base_rating,
             "matches_played": 0,
             "wins": 0,
-            "losses": 0
+            "losses": 0,
+            "matchesList": {}
         }
         save_players()
         await interaction.response.send_message(
@@ -328,7 +331,7 @@ async def send_all_players(interaction):
         await interaction.response.send_message("⚠️ No players registered yet!"
                                                 )
         return
-    print(f"players:{players}")
+    print(f"players:{json.dumps(players, indent=4)}")
     MAX_FIELDS = 25  # Discord limit
     embeds = []
     player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
@@ -668,6 +671,7 @@ class WinnerButton(Button):
 
         for player in self.winning_team:
             players[player]["current_rating"] += gain
+            players[player]["matchesList"][self.game_id]="win"
             players[player]["matches_played"] += 1
             players[player]["wins"] += 1
             players[player]["highest_rating"] = max(players[player]["highest_rating"], players[player]["current_rating"])
@@ -684,6 +688,7 @@ class WinnerButton(Button):
         message+="\n"
         for player in self.losing_team:
             players[player]["current_rating"] += loss
+            players[player]["matchesList"][self.game_id]="loss"
             players[player]["matches_played"] += 1
             players[player]["losses"] += 1
             players[player]["lowest_rating"] = min(players[player]["lowest_rating"], players[player]["current_rating"])            
@@ -699,9 +704,9 @@ class WinnerButton(Button):
             #     inline=False)
         # Save updated ratings
         save_players()
-        processed_matches[self.game_id].is_complete = True
+        processed_matches[self.game_id].markComplete(self.winning_team)
         # print(f"processed_matches:{processed_matches}")
-        # save_matches()
+        save_matches()
         # Send the result message
         await interaction.response.send_message(message)
         # await interaction.response.send_message(embed=embed)
