@@ -66,5 +66,22 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-04-06 16:35:36"
+    },
+    "74549780978756": {
+        "team1": [
+            "B",
+            "F",
+            "D"
+        ],
+        "team2": [
+            "C",
+            "E",
+            "A"
+        ],
+        "is_complete": true,
+        "id": 74549780978756,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-06 16:47:13"
     }
 }
