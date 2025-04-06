@@ -1,26 +1,28 @@
 {
     "mAniA": {
-        "current_rating": 1018,
-        "highest_rating": 1018,
+        "current_rating": 1024,
+        "highest_rating": 1024,
         "lowest_rating": 1000,
         "base_rating": 1000,
-        "matches_played": 2,
-        "wins": 2,
+        "matches_played": 3,
+        "wins": 3,
         "losses": 0,
         "matchesList": {
-            "39489303062308": "win"
+            "39489303062308": "win",
+            "41688183904221": "win"
         }
     },
     "Baji": {
-        "current_rating": 924,
+        "current_rating": 918,
         "highest_rating": 948,
         "lowest_rating": 900,
         "base_rating": 900,
-        "matches_played": 8,
+        "matches_played": 9,
         "wins": 2,
-        "losses": 6,
+        "losses": 7,
         "matchesList": {
-            "39489303062308": "loss"
+            "39489303062308": "loss",
+            "41688183904221": "loss"
         }
     },
     "Karma": {
@@ -54,15 +56,16 @@
         "matchesList": {}
     },
     "Immortal": {
-        "current_rating": 857,
+        "current_rating": 851,
         "highest_rating": 875,
         "lowest_rating": 827,
         "base_rating": 875,
-        "matches_played": 12,
+        "matches_played": 13,
         "wins": 8,
-        "losses": 4,
+        "losses": 5,
         "matchesList": {
-            "39489303062308": "win"
+            "39489303062308": "win",
+            "41688183904221": "loss"
         }
     },
     "Zxc": {
@@ -126,27 +129,29 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 722,
-        "highest_rating": 722,
+        "current_rating": 728,
+        "highest_rating": 728,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 6,
-        "wins": 5,
+        "matches_played": 7,
+        "wins": 6,
         "losses": 1,
         "matchesList": {
-            "39489303062308": "win"
+            "39489303062308": "win",
+            "41688183904221": "win"
         }
     },
     "Endless": {
-        "current_rating": 698,
+        "current_rating": 704,
         "highest_rating": 704,
         "lowest_rating": 680,
         "base_rating": 680,
-        "matches_played": 3,
-        "wins": 2,
+        "matches_played": 4,
+        "wins": 3,
         "losses": 1,
         "matchesList": {
-            "39489303062308": "loss"
+            "39489303062308": "loss",
+            "41688183904221": "win"
         }
     },
     "Axiom": {
@@ -160,15 +165,16 @@
         "matchesList": {}
     },
     "Varad": {
-        "current_rating": 712,
+        "current_rating": 706,
         "highest_rating": 718,
         "lowest_rating": 682,
         "base_rating": 700,
-        "matches_played": 18,
+        "matches_played": 19,
         "wins": 11,
-        "losses": 7,
+        "losses": 8,
         "matchesList": {
-            "39489303062308": "loss"
+            "39489303062308": "loss",
+            "41688183904221": "loss"
         }
     },
     "Mabba": {
@@ -192,15 +198,16 @@
         "matchesList": {}
     },
     "Ship": {
-        "current_rating": 600,
+        "current_rating": 606,
         "highest_rating": 648,
         "lowest_rating": 600,
         "base_rating": 600,
-        "matches_played": 13,
-        "wins": 3,
+        "matches_played": 14,
+        "wins": 4,
         "losses": 10,
         "matchesList": {
-            "39489303062308": "loss"
+            "39489303062308": "loss",
+            "41688183904221": "win"
         }
     },
     "Outlier": {
@@ -244,15 +251,16 @@
         "matchesList": {}
     },
     "Mateesh": {
-        "current_rating": 394,
-        "highest_rating": 400,
+        "current_rating": 542,
+        "highest_rating": 548,
         "lowest_rating": 376,
-        "base_rating": 400,
-        "matches_played": 10,
+        "base_rating": 500,
+        "matches_played": 11,
         "wins": 6,
-        "losses": 4,
+        "losses": 5,
         "matchesList": {
-            "39489303062308": "win"
+            "39489303062308": "win",
+            "41688183904221": "loss"
         }
     }
 }
