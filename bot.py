@@ -138,7 +138,7 @@ def save_matches():
         f.flush()  # Ensure data is written before closing
         os.fsync(f.fileno())  # Force write to disk
         # Call the function after updating the JSON file
-        #push_to_github()
+        push_to_github(True)
 
 def save_players():
     with open(PLAYER_FILE, "w") as f:
@@ -146,9 +146,9 @@ def save_players():
         f.flush()  # Ensure data is written before closing
         os.fsync(f.fileno())  # Force write to disk
         # Call the function after updating the JSON file
-        push_to_github()
+        push_to_github(False)
 
-def push_to_github():
+def push_to_github(isMatchesFile):
     # Check if the file is empty before pushing
     if os.path.getsize(PLAYER_FILE) == 0:
         print("⚠️ Error: File is empty. Not pushing to GitHub.")
@@ -166,8 +166,9 @@ def push_to_github():
     auth_repo_url = repo_url.replace("https://", f"https://{github_token}@")
 
     # Add, commit, and push changes
-    subprocess.run(["git", "add", PLAYER_FILE])
-    subprocess.run(["git", "commit", "-m", "Updated Player and Match data "+time.strftime("%Y-%m-%d %H:%M:%S")])
+    subprocess.run(["git", "add", MATCHES_FILE]) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE])
+    commitMsg = "Updated Match data "+time.strftime("%Y-%m-%d %H:%M:%S") if isMatchesFile else "Updated Player data "+time.strftime("%Y-%m-%d %H:%M:%S")
+    subprocess.run(["git", "commit", "-m", commitMsg])
     subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
