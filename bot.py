@@ -571,10 +571,16 @@ class MatchupButton(Button):
 
     def __init__(self, label, team1, team2):
         super().__init__(label=label, style=discord.ButtonStyle.primary)
+        self.is_selected = False
         self.team1 = team1
         self.team2 = team2
 
     async def callback(self, interaction: discord.Interaction):
+        if self.is_selected:
+            await interaction.response.send_message(
+                "⚠️ Matchup already selected!", ephemeral=True)
+            return
+        self.is_selected = True
         game_id = random.randint(0,100000000000000)
         while game_id in game_ids:
             game_id = random.randint(0,100000000000000)
