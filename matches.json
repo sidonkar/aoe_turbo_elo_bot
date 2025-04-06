@@ -1,0 +1,21 @@
+{
+    "39489303062308": {
+        "team1": [
+            "Endless",
+            "Ship",
+            "Baji",
+            "Varad"
+        ],
+        "team2": [
+            "mAniA",
+            "Mateesh",
+            "Ghatak",
+            "Immortal"
+        ],
+        "is_complete": true,
+        "id": 39489303062308,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-06 23:17:47"
+    }
+}
