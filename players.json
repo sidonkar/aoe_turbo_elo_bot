@@ -94,5 +94,15 @@
             "91335412562302": "loss",
             "74549780978756": "loss"
         }
+    },
+    "G": {
+        "base_rating": 1000,
+        "current_rating": 1000,
+        "highest_rating": 1000,
+        "lowest_rating": 1000,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0,
+        "matchesList": {}
     }
 }
