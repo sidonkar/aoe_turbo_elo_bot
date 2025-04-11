@@ -26,53 +26,57 @@
         }
     },
     "Karma": {
-        "current_rating": 864,
+        "current_rating": 858,
         "highest_rating": 900,
         "lowest_rating": 858,
         "base_rating": 900,
-        "matches_played": 11,
+        "matches_played": 12,
         "wins": 5,
-        "losses": 6,
+        "losses": 7,
         "matchesList": {
-            "72809569186051": "L"
+            "72809569186051": "L",
+            "63802188612238": "L"
         }
     },
     "Dexter": {
-        "current_rating": 880,
-        "highest_rating": 880,
+        "current_rating": 886,
+        "highest_rating": 886,
         "lowest_rating": 850,
         "base_rating": 850,
-        "matches_played": 16,
-        "wins": 8,
+        "matches_played": 17,
+        "wins": 9,
         "losses": 8,
         "matchesList": {
-            "72809569186051": "W"
+            "72809569186051": "W",
+            "63802188612238": "W"
         }
     },
     "DLK": {
-        "current_rating": 826,
+        "current_rating": 832,
         "highest_rating": 850,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 14,
-        "wins": 6,
+        "matches_played": 15,
+        "wins": 7,
         "losses": 8,
         "matchesList": {
-            "72809569186051": "L"
+            "72809569186051": "L",
+            "63802188612238": "W"
         }
     },
     "Immortal": {
-        "current_rating": 857,
+        "current_rating": 851,
         "highest_rating": 875,
         "lowest_rating": 827,
         "base_rating": 875,
-        "matches_played": 14,
+        "matches_played": 15,
         "wins": 9,
-        "losses": 5,
+        "losses": 6,
         "matchesList": {
             "39489303062308": "W",
             "41688183904221": "L",
-            "72809569186051": "W"
+            "72809569186051": "W",
+            "63802188612238": "L"
         }
     },
     "Zxc": {
@@ -138,17 +142,18 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 722,
+        "current_rating": 716,
         "highest_rating": 728,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 8,
+        "matches_played": 9,
         "wins": 6,
-        "losses": 2,
+        "losses": 3,
         "matchesList": {
             "39489303062308": "W",
             "41688183904221": "W",
-            "72809569186051": "L"
+            "72809569186051": "L",
+            "63802188612238": "L"
         }
     },
     "Endless": {
@@ -165,15 +170,16 @@
         }
     },
     "Axiom": {
-        "current_rating": 682,
+        "current_rating": 688,
         "highest_rating": 700,
         "lowest_rating": 682,
         "base_rating": 700,
-        "matches_played": 1,
-        "wins": 0,
+        "matches_played": 2,
+        "wins": 1,
         "losses": 1,
         "matchesList": {
-            "72809569186051": "L"
+            "72809569186051": "L",
+            "63802188612238": "W"
         }
     },
     "Varad": {
@@ -200,28 +206,30 @@
         "matchesList": {}
     },
     "Ojas": {
-        "current_rating": 650,
+        "current_rating": 656,
         "highest_rating": 656,
         "lowest_rating": 602,
         "base_rating": 650,
-        "matches_played": 5,
-        "wins": 3,
+        "matches_played": 6,
+        "wins": 4,
         "losses": 2,
         "matchesList": {
-            "72809569186051": "W"
+            "72809569186051": "W",
+            "63802188612238": "W"
         }
     },
     "Ship": {
-        "current_rating": 606,
+        "current_rating": 600,
         "highest_rating": 648,
         "lowest_rating": 600,
         "base_rating": 600,
-        "matches_played": 14,
+        "matches_played": 15,
         "wins": 4,
-        "losses": 10,
+        "losses": 11,
         "matchesList": {
             "39489303062308": "L",
-            "41688183904221": "W"
+            "41688183904221": "W",
+            "63802188612238": "L"
         }
     },
     "Outlier": {
