@@ -36,5 +36,41 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-04-06 23:58:25"
+    },
+    "78366345600756": {
+        "team1": [
+            "Dexter",
+            "DLK",
+            "Axiom",
+            "2Kminus"
+        ],
+        "team2": [
+            "Karma",
+            "Immortal",
+            "Varad",
+            "Ghatak"
+        ],
+        "is_complete": false,
+        "id": 78366345600756,
+        "map": "arabia"
+    },
+    "72809569186051": {
+        "team1": [
+            "Dexter",
+            "Immortal",
+            "2Kminus",
+            "Ojas"
+        ],
+        "team2": [
+            "Karma",
+            "DLK",
+            "Ghatak",
+            "Axiom"
+        ],
+        "is_complete": true,
+        "id": 72809569186051,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-11 22:40:40"
     }
 }
