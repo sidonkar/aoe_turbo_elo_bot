@@ -315,5 +315,41 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-04-12 23:17:38"
+    },
+    "96211454173302": {
+        "team1": [
+            "Outlier",
+            "Mateesh",
+            "2Kminus",
+            "Ghatak"
+        ],
+        "team2": [
+            "Gautami",
+            "Dee LK",
+            "Ojas",
+            "Mabba"
+        ],
+        "is_complete": false,
+        "id": 96211454173302,
+        "map": "arabia"
+    },
+    "5918722429921": {
+        "team1": [
+            "Outlier",
+            "Dee LK",
+            "Ojas",
+            "Ghatak"
+        ],
+        "team2": [
+            "Mateesh",
+            "2Kminus",
+            "Mabba",
+            "Karma"
+        ],
+        "is_complete": true,
+        "id": 5918722429921,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 23:44:21"
     }
 }
