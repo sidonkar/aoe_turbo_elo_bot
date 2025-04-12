@@ -365,11 +365,13 @@ async def send_player_streak(interaction):
         for name, data in player_items[
                 i:i + MAX_FIELDS]:  # Process only 25 at a time
             current_rating = data.get("current_rating", "N/A")
-            streak_list = data.get("matchesList", "N/A")
-            value=""
-            for match_id, result in streak_list.items():
-                value+=" "+result.capitalize()
-            
+            streak_list = data.get("matchesList", {})
+            value = ""
+
+            # Limit to first 10 items
+            for match_id, result in list(streak_list.items())[:10]:
+                value += " " + result.capitalize()
+
             embed.add_field(
             name="\u200b",
             value=f"```"
