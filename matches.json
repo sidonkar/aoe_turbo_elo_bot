@@ -37,23 +37,6 @@
         "winTeam": 1,
         "playedDateTime": "2025-04-06 23:58:25"
     },
-    "78366345600756": {
-        "team1": [
-            "Dexter",
-            "DLK",
-            "Axiom",
-            "2Kminus"
-        ],
-        "team2": [
-            "Karma",
-            "Immortal",
-            "Varad",
-            "Ghatak"
-        ],
-        "is_complete": false,
-        "id": 78366345600756,
-        "map": "arabia"
-    },
     "72809569186051": {
         "team1": [
             "Dexter",
@@ -206,23 +189,6 @@
         "winTeam": 2,
         "playedDateTime": "2025-04-12 11:37:25"
     },
-    "84668233417886": {
-        "team1": [
-            "Karma",
-            "@jey@2",
-            "2Kminus",
-            "Varad"
-        ],
-        "team2": [
-            "Dexter",
-            "Dee LK",
-            "Ghatak",
-            "Axiom"
-        ],
-        "is_complete": false,
-        "id": 84668233417886,
-        "map": "arabia"
-    },
     "25032388340691": {
         "team1": [
             "Dexter",
@@ -315,23 +281,6 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-04-12 23:17:38"
-    },
-    "96211454173302": {
-        "team1": [
-            "Outlier",
-            "Mateesh",
-            "2Kminus",
-            "Ghatak"
-        ],
-        "team2": [
-            "Gautami",
-            "Dee LK",
-            "Ojas",
-            "Mabba"
-        ],
-        "is_complete": false,
-        "id": 96211454173302,
-        "map": "arabia"
     },
     "5918722429921": {
         "team1": [
@@ -541,5 +490,22 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-04-13 16:34:57"
+    },
+    "46751098175005": {
+        "team1": [
+            "Immortal",
+            "Mateesh",
+            "@jey@2"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ojas",
+            "White Eagle"
+        ],
+        "is_complete": true,
+        "id": 46751098175005,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-13 22:21:15"
     }
 }
