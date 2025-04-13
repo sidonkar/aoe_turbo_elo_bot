@@ -638,5 +638,24 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-04-14 00:59:50"
+    },
+    "89330947238794": {
+        "team1": [
+            "Karma",
+            "Endless",
+            "Ship",
+            "Mateesh"
+        ],
+        "team2": [
+            "Varad",
+            "Ojas",
+            "Ghatak",
+            "Mabba"
+        ],
+        "is_complete": true,
+        "id": 89330947238794,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-14 01:18:59"
     }
 }
