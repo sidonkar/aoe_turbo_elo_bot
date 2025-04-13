@@ -484,5 +484,24 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-04-13 15:13:20"
+    },
+    "69162982675959": {
+        "team1": [
+            "@jey@2",
+            "Baji",
+            "Mateesh",
+            "Ship"
+        ],
+        "team2": [
+            "Immortal",
+            "Mabba",
+            "Ghatak",
+            "Ojas"
+        ],
+        "is_complete": true,
+        "id": 69162982675959,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 15:44:05"
     }
 }
