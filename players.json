@@ -558,5 +558,15 @@
             "30420769145946": "L",
             "46802468151282": "W"
         }
+    },
+    "A": {
+        "base_rating": 2000,
+        "current_rating": 2000,
+        "highest_rating": 2000,
+        "lowest_rating": 2000,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0,
+        "matchesList": {}
     }
 }
