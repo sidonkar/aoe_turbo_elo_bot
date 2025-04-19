@@ -755,23 +755,6 @@
         "winTeam": 1,
         "playedDateTime": "2025-04-19 23:35:05"
     },
-    "93655195930074": {
-        "team1": [
-            "Dee LK",
-            "Varad",
-            "Ojas",
-            "Ship"
-        ],
-        "team2": [
-            "Ghatak",
-            "Immortal",
-            "Axiom",
-            "Gautami"
-        ],
-        "is_complete": false,
-        "id": 93655195930074,
-        "map": "arabia"
-    },
     "30679319945277": {
         "team1": [
             "Karma",
