@@ -887,5 +887,75 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-04-20 16:46:53"
+    },
+    "69087083925794": {
+        "team1": [
+            "mAniA",
+            "Ghatak",
+            "Axiom",
+            "Ship"
+        ],
+        "team2": [
+            "Dee LK",
+            "Immortal",
+            "2Kminus",
+            "Ojas"
+        ],
+        "is_complete": false,
+        "id": 69087083925794,
+        "map": "arabia"
+    },
+    "41036831361675": {
+        "team1": [
+            "mAniA",
+            "2Kminus",
+            "Ojas",
+            "Endless"
+        ],
+        "team2": [
+            "Dee LK",
+            "Immortal",
+            "Ghatak",
+            "Axiom"
+        ],
+        "is_complete": false,
+        "id": 41036831361675,
+        "map": "arabia"
+    },
+    "6894325451313": {
+        "team1": [
+            "Dee LK",
+            "Ghatak",
+            "Ojas",
+            "Endless"
+        ],
+        "team2": [
+            "Immortal",
+            "2Kminus",
+            "Axiom",
+            "Gautami"
+        ],
+        "is_complete": false,
+        "id": 6894325451313,
+        "map": "arabia"
+    },
+    "92419572278603": {
+        "team1": [
+            "Immortal",
+            "Endless",
+            "Gautami",
+            "Varad"
+        ],
+        "team2": [
+            "2Kminus",
+            "Ghatak",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 92419572278603,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 17:20:07"
     }
 }
