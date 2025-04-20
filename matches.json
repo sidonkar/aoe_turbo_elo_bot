@@ -830,5 +830,24 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-04-20 15:45:25"
+    },
+    "82773490240311": {
+        "team1": [
+            "mAniA",
+            "2Kminus",
+            "Ojas",
+            "Ship"
+        ],
+        "team2": [
+            "Dee LK",
+            "Axiom",
+            "Ghatak",
+            "Immortal"
+        ],
+        "is_complete": true,
+        "id": 82773490240311,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 16:05:33"
     }
 }
