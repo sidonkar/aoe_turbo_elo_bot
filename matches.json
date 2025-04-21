@@ -888,23 +888,6 @@
         "winTeam": 2,
         "playedDateTime": "2025-04-20 16:46:53"
     },
-    "41036831361675": {
-        "team1": [
-            "mAniA",
-            "2Kminus",
-            "Ojas",
-            "Endless"
-        ],
-        "team2": [
-            "Dee LK",
-            "Immortal",
-            "Ghatak",
-            "Axiom"
-        ],
-        "is_complete": false,
-        "id": 41036831361675,
-        "map": "arabia"
-    },
     "6894325451313": {
         "team1": [
             "Dee LK",
