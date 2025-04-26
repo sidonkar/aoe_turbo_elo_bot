@@ -134,6 +134,7 @@ def load_matches():
 
 
 def save_matches():
+    # return
     with open(MATCHES_FILE, "w") as f:
         json.dump(to_dict(processed_matches), f, indent=4)
         f.flush()  # Ensure data is written before closing
@@ -142,6 +143,7 @@ def save_matches():
         push_to_github(True)
 
 def save_players():
+    # return
     with open(PLAYER_FILE, "w") as f:
         json.dump(players, f, indent=4)
         f.flush()  # Ensure data is written before closing
@@ -192,17 +194,19 @@ def print_game_state():
 @bot.event
 async def on_ready():
     print(f"✅ Bot is online! Logged in as {bot.user}")
+    await bot.tree.sync()
     # bot.add_view(MultiColumnPlayerSelectionView())  # Register persistent view
     # bot.add_view(MatchupSelectionView(bot))  # Register persistent view
-    bot.add_view(WinnerSelectionView(bot,bot,bot))  # Register persistent view
+    # bot.add_view(WinnerSelectionView(bot,bot,bot))  # Register persistent view
 
 
-@bot.command(name="Admin")
-async def show_admin_menu(ctx):
-    if (ctx.author.name not in AUTHORIZED_USERS):
-        await ctx.send("Admin नाय भाऊ तू!! जास्त टाकली काय आज?")
+# @bot.command(name="Admin")
+@bot.tree.command(name="admin", description="Admin Menu, noobs stay away")
+async def show_admin_menu(interaction: discord.Interaction):
+    if (interaction.user.name not in AUTHORIZED_USERS):
+        await interaction.response.send_message("Admin नाय भाऊ तू!! जास्त टाकली काय आज?")
         return
-    await ctx.send("📌 **Admin Menu - Select an action below:**", view=AdminMenuView())
+    await interaction.response.send_message("📌 **Admin Menu - Select an action below:**", view=AdminMenuView())
 
 # ✅ Admin Menu View
 class AdminMenuView(View):
@@ -212,6 +216,7 @@ class AdminMenuView(View):
         self.add_item(RegisterButton())
         self.add_item(AllPlayersButton())
         self.add_item(RemovePlayerButton())
+        self.add_item(ClearDCMatchesButton())
 
 
 class RegisterButton(Button):
@@ -223,6 +228,24 @@ class RegisterButton(Button):
     async def callback(self, interaction: discord.Interaction):
         await interaction.response.send_modal(RegisterModal())
 
+
+class StreakButton(Button):
+
+    def __init__(self):
+        super().__init__(label="Show Streaks",
+                         style=discord.ButtonStyle.primary)
+
+    async def callback(self, interaction: discord.Interaction):
+        await send_player_streak(interaction)
+
+class MatchesButton(Button):
+
+    def __init__(self):
+        super().__init__(label="Show Last 10 Matches",
+                         style=discord.ButtonStyle.primary)
+
+    async def callback(self, interaction: discord.Interaction):
+        await send_last_10_matches(interaction)
 
 class AllPlayersButton(Button):
 
@@ -243,6 +266,53 @@ class RemovePlayerButton(Button):
     async def callback(self, interaction: discord.Interaction):
         await interaction.response.send_message(
             "🗑️ Select a player to remove:", view=RemovePlayerView())
+
+
+class ClearDCMatchesButton(Button):
+
+    def __init__(self):
+        super().__init__(label="Cleanup Matches",
+                         style=discord.ButtonStyle.danger)
+
+    async def callback(self, interaction: discord.Interaction):
+        await interaction.response.send_message(
+            "🗑️ Select a match to remove:", view=ClearMatchView())
+
+
+class ClearMatchView(View):
+
+    def __init__(self):
+        super().__init__(timeout=60)
+
+        # matches_list = sorted(processed_matches.items(),key=lambda x: x[1]["is_complete"], reverse=True)
+        matches_list = [(key, value) for key, value in processed_matches.items() if value.get("is_complete") == False]
+        # matches_list.sort(key=lambda x: x[1], reverse=True)
+        self.matches = matches_list
+        self.current_page = 0
+        self.matches_per_page = 20
+        self.total_pages = (len(matches_list) - 1) // self.matches_per_page + 1
+
+        self.remove_matches_update_buttons()
+
+    def remove_matches_update_buttons(self):
+        self.clear_items()
+        start_idx = self.current_page * self.matches_per_page
+        end_idx = min(start_idx + self.matches_per_page, len(self.matches))
+        for name,val in self.matches[start_idx:end_idx]:
+            self.add_item(RemoveMatchesButtonOption(name))
+        if self.total_pages > 1:
+            # Dynamically add line breaks based on last row count
+            last_row_count = (end_idx - start_idx) % 5
+            linebreak_count = max(0, 5 -
+                                  last_row_count) if last_row_count > 0 else 0
+            for _ in range(linebreak_count):
+                self.add_item(SpacerButton())
+            self.add_item(PrevPageButton(self))
+            self.add_item(NextPageButton(self))
+
+    async def update_message(self, interaction: discord.Interaction):
+        self.remove_matches_update_buttons()
+        await interaction.response.edit_message(view=self)
 
 
 class RemovePlayerView(View):
@@ -281,6 +351,18 @@ class RemovePlayerView(View):
         self.remove_player_update_buttons()
         await interaction.response.edit_message(view=self)
 
+
+class RemoveMatchesButtonOption(Button):
+
+    def __init__(self, match_name):
+        super().__init__(label=match_name, style=discord.ButtonStyle.danger)
+        self.match_name = match_name
+
+    async def callback(self, interaction: discord.Interaction):
+        del processed_matches[self.match_name]
+        save_matches()
+        await interaction.response.send_message(
+            f"🗑️ Match {self.match_name} has been removed.")
 
 class RemovePlayerButtonOption(Button):
 
@@ -328,6 +410,108 @@ class RegisterModal(Modal, title="Player Registration"):
             f"✅ Player {name} registered with base rating {base_rating}!")
 
 
+async def send_player_streak(interaction):
+    if not players:
+        await interaction.response.send_message("⚠️ No players registered yet!"
+                                                )
+        return
+    print(f"players:{json.dumps(players, indent=4)}")
+    MAX_FIELDS = 25  # Discord limit
+    embeds = []
+    player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
+
+    # player_items = list(player_list.keys())  # Convert dict to list
+    for i in range(0, len(player_items), MAX_FIELDS):
+        embed = discord.Embed(title="**Player Name**  |  🔥 **Live**  | ⚔️ **Streak**",
+                              color=discord.Color.blue())
+        for name, data in player_items[
+                i:i + MAX_FIELDS]:  # Process only 25 at a time
+            current_rating = data.get("current_rating", "N/A")
+            streak_list = data.get("matchesList", {})
+            value = ""
+
+            # Limit to last 10 or fewer items
+            for match_id, result in list(streak_list.items())[-10:]:
+                value += " " + result.capitalize()
+
+
+            embed.add_field(
+            name="\u200b",
+            value=f"```"
+            f"{name} | 🔥 {current_rating} | "
+            f" 📈 {value.lstrip(" ")} "
+            f"```",
+            inline=False
+            )
+
+        embeds.append(embed)
+
+    await interaction.response.defer()
+
+    # ✅ Use followup to send multiple embeds
+    for embed in embeds:
+        await interaction.followup.send(embed=embed)
+
+    # embed = discord.Embed(title="📋 **Registered Players**",
+    #                       color=discord.Color.blue())
+    # for name, data in players.items():
+    #     base_rating = data.get("base_rating", "N/A")
+    #     current_rating = data.get("current_rating", "N/A")
+    #     embed.add_field(
+    #         name=name,
+    #         value=
+    #         f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}",
+    #         inline=False)
+    # await interaction.response.send_message(embed=embed)
+
+async def send_last_10_matches(interaction):
+    if not processed_matches:
+        await interaction.response.send_message("⚠️ No matches registered yet!"
+                                                )
+        return
+    print(f"matches:{json.dumps(processed_matches, indent=4)}")
+    MAX_FIELDS = 10  
+    # Discord limit
+    embeds = []
+    # processed_matches_items = sorted(processed_matches.items(),key=lambda x: x[1]["playedDateTime"], reverse=True)
+    # processed_matches_items = sorted(processed_matches.items(),key=lambda x: x[1].get("playedDateTime", datetime.min),reverse=True)
+    processed_matches_items = sorted(processed_matches.items(),key=lambda x: ( "playedDateTime" not in x[1], x[1].get("playedDateTime") ),reverse=True)
+    length_var = len(processed_matches_items)
+    #min(10,len(processed_matches_items))
+
+    # player_items = list(player_list.keys())  # Convert dict to list
+    #for i in range(0, length_var, MAX_FIELDS):
+    i=0
+    embed = discord.Embed(title="⚔️ **Matches**  |  🎯 **Win Team**  | 💀 **Loser Team**",
+                            color=discord.Color.blue())
+    for name, data in processed_matches_items[-length_var + i: -length_var + i + MAX_FIELDS]:
+        game_id = data.get("id", "N/A")
+        win_team = data.get("team2", "N/A") if data.get("winTeam", "N/A") == 2 else data.get("team1", "N/A")
+        loser_team = data.get("team1", "N/A") if data.get("winTeam", "N/A") == 2 else data.get("team2", "N/A")
+        embed.add_field(
+            name=str(game_id) +" - "+data.get("playedDateTime", "N/A"),
+            value=f"🎯 {win_team} \n 💀 {loser_team}",
+            inline=False
+        )   
+    # embed = discord.Embed(title="⚔️ **Matches**  |  🎯 **Win Team**  | 💀 **Loser Team**",
+    #                       color=discord.Color.blue())
+    # for name, data in players.items():
+    #     base_rating = data.get("base_rating", "N/A")
+    #     current_rating = data.get("current_rating", "N/A")
+    #     embed.add_field(
+    #         name=name,
+    #         value=
+    #         f"🏅 Base Rating: {base_rating}\n🔥 Current Rating: {current_rating}",
+    #         inline=False)
+    # await interaction.response.send_message(embed=embed)
+    embeds.append(embed)
+
+    await interaction.response.defer()
+
+    # ✅ Use followup to send multiple embeds
+    for embed in embeds:
+        await interaction.followup.send(embed=embed)
+
 async def send_all_players(interaction):
     if not players:
         await interaction.response.send_message("⚠️ No players registered yet!"
@@ -351,6 +535,11 @@ async def send_all_players(interaction):
             matches_played = data.get("matches_played", "N/A")
             wins= data.get("wins", "N/A")
             losses = data.get("losses", "N/A")
+            streak = data.get("matchesList", "N/A")
+            value = ""
+            for match_id, result in list(streak.items())[-10:]:
+                value += " " + result.capitalize()
+
             # embed.add_field(
             #     name=name,
             #     value=
@@ -365,7 +554,8 @@ async def send_all_players(interaction):
                 f" 🏅 {base_rating} |"
                 f" ⚔️ {matches_played} |"
                 f" 🎯 {wins} |"
-                f" 💀 {losses}"
+                f" 💀 {losses}\n"
+                f" 📈 {value.lstrip(" ")}" 
                 f"```",
                 inline=False
             )
@@ -390,30 +580,31 @@ async def send_all_players(interaction):
     #         inline=False)
     # await interaction.response.send_message(embed=embed)
 
-@bot.command(name="result")
-async def set_result_manually(ctx, game_id_str):
-    if (ctx.author.name not in AUTHORIZED_USERS):
-        await ctx.send('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
+#@bot.command(name="result")
+@bot.tree.command(name="result", description="Register a match result based on game id")
+@discord.app_commands.describe(game_id_str="The game ID")
+async def set_result_manually(interaction: discord.Interaction, game_id_str:str):
+    if (interaction.user.name not in AUTHORIZED_USERS):
+        await interaction.response.send_message('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
         return
-
     game_id = int(game_id_str)
     # print(json.dumps(processed_matches, indent=2))
     if (game_id not in processed_matches):
-        await ctx.send('invalid game id!!!!')
+        await interaction.response.send_message('invalid game id!!!!')
         return
     if (processed_matches[game_id].is_complete):
-        await ctx.send('match result recorded already!!!')
+        await interaction.response.send_message('match result recorded already!!!')
         return
-
     game = processed_matches[game_id]
-    await ctx.send("**Select the winner!**", view=WinnerSelectionView(game_id, game.team1, game.team2))
+    await interaction.response.send_message("**Select the winner!**", view=WinnerSelectionView(game_id, game.team1, game.team2))
 
-@bot.command(name="chala")
-async def pick_team(ctx):
+#@bot.command(name="chala")
+@bot.tree.command(name="chala", description="Player Selection for Matchmaking 3v3 / 4v4")
+async def pick_team(interaction: discord.Interaction):
     if not players:
-        await ctx.send("⚠️ No players registered yet!")
+        await interaction.response.send_message("⚠️ No players registered yet!")
         return
-    await ctx.send("👥 **Select up to 8 players for the match:**",
+    await interaction.response.send_message("👥 **Select up to 8 players for the match:**",
                    view=MultiColumnPlayerSelectionView())
 
 
@@ -571,10 +762,16 @@ class MatchupButton(Button):
 
     def __init__(self, label, team1, team2):
         super().__init__(label=label, style=discord.ButtonStyle.primary)
+        self.is_selected = False
         self.team1 = team1
         self.team2 = team2
 
     async def callback(self, interaction: discord.Interaction):
+        if self.is_selected:
+            await interaction.response.send_message(
+                "⚠️ Matchup already selected!", ephemeral=True)
+            return
+        self.is_selected = True
         game_id = random.randint(0,100000000000000)
         while game_id in game_ids:
             game_id = random.randint(0,100000000000000)
@@ -673,7 +870,7 @@ class WinnerButton(Button):
 
         for player in self.winning_team:
             players[player]["current_rating"] += gain
-            players[player]["matchesList"][self.game_id]="win"
+            players[player]["matchesList"][self.game_id]="W"
             players[player]["matches_played"] += 1
             players[player]["wins"] += 1
             players[player]["highest_rating"] = max(players[player]["highest_rating"], players[player]["current_rating"])
@@ -690,7 +887,7 @@ class WinnerButton(Button):
         message+="\n"
         for player in self.losing_team:
             players[player]["current_rating"] += loss
-            players[player]["matchesList"][self.game_id]="loss"
+            players[player]["matchesList"][self.game_id]="L"
             players[player]["matches_played"] += 1
             players[player]["losses"] += 1
             players[player]["lowest_rating"] = min(players[player]["lowest_rating"], players[player]["current_rating"])            
@@ -800,9 +997,34 @@ def create_matchup_embed(matchups):
     return embed
 
 
-@bot.command(name="show")
-async def show_players_menu(ctx):
-    await ctx.send("📋 **Player List - Click below to view all players**",
+#@bot.command(name="recent")
+@bot.tree.command(name="recent", description="Show recent 10 matches")
+async def show_matches_menu(interaction: discord.Interaction):
+    await interaction.response.send_message("📋 **Matches List - Click below to view last 10 Matches**",
+                   view=MatchesView())
+
+class MatchesView(View):
+
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(MatchesButton())  # Reusing the button from Admin Menu
+
+#@bot.command(name="streak")
+@bot.tree.command(name="streak", description="Show player streaks")
+async def show_streak_menu(interaction: discord.Interaction):
+    await interaction.response.send_message("📋 **Show streaks**",
+                   view=StreakView())
+
+class StreakView(View):
+
+    def __init__(self):
+        super().__init__(timeout=None)
+        self.add_item(StreakButton())  # Reusing the button from Admin Menu
+
+#@bot.command(name="show")
+@bot.tree.command(name="show", description="Show all players")
+async def show_players_menu(interaction: discord.Interaction):
+    await interaction.response.send_message("📋 **Player List - Click below to view all players**",
                    view=AllPlayersView())
 
 
@@ -811,6 +1033,14 @@ class AllPlayersView(View):
     def __init__(self):
         super().__init__(timeout=None)
         self.add_item(AllPlayersButton())  # Reusing the button from Admin Menu
+
+
+
+# # Slash command with a parameter
+# @bot.tree.command(name="ping", description="Ping a target user or thing.")
+# @discord.app_commands.describe(target="Who or what you want to ping")
+# async def pinger(interaction: discord.Interaction, target: str):
+#     await interaction.response.send_message(f"🏓 Pong! You pinged **{target}**")
 
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")

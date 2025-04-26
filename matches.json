@@ -1,0 +1,1020 @@
+{
+    "39489303062308": {
+        "team1": [
+            "Endless",
+            "Ship",
+            "Baji",
+            "Varad"
+        ],
+        "team2": [
+            "mAniA",
+            "Mateesh",
+            "Ghatak",
+            "Immortal"
+        ],
+        "is_complete": true,
+        "id": 39489303062308,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-06 23:17:47"
+    },
+    "41688183904221": {
+        "team1": [
+            "mAniA",
+            "Ship",
+            "Endless",
+            "Ghatak"
+        ],
+        "team2": [
+            "Baji",
+            "Immortal",
+            "Varad",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 41688183904221,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-06 23:58:25"
+    },
+    "72809569186051": {
+        "team1": [
+            "Dexter",
+            "Immortal",
+            "2Kminus",
+            "Ojas"
+        ],
+        "team2": [
+            "Karma",
+            "DLK",
+            "Ghatak",
+            "Axiom"
+        ],
+        "is_complete": true,
+        "id": 72809569186051,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-11 22:40:40"
+    },
+    "63802188612238": {
+        "team1": [
+            "Dexter",
+            "DLK",
+            "Axiom",
+            "Ojas"
+        ],
+        "team2": [
+            "Karma",
+            "Immortal",
+            "Ghatak",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 63802188612238,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-11 23:04:20"
+    },
+    "55103162042188": {
+        "team1": [
+            "Karma",
+            "Ojas",
+            "Immortal",
+            "Gautami"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ghatak",
+            "Ship",
+            "Varad"
+        ],
+        "is_complete": true,
+        "id": 55103162042188,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-11 23:35:06"
+    },
+    "19303155184793": {
+        "team1": [
+            "Ojas",
+            "Ghatak",
+            "Ship",
+            "Dee LK"
+        ],
+        "team2": [
+            "Karma",
+            "Varad",
+            "Gautami",
+            "2Kminus"
+        ],
+        "is_complete": true,
+        "id": 19303155184793,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-12 00:13:25"
+    },
+    "40122721469070": {
+        "team1": [
+            "Dexter",
+            "Addy",
+            "Varad",
+            "Ojas"
+        ],
+        "team2": [
+            "Karma",
+            "Immortal",
+            "Dee LK",
+            "Gautami"
+        ],
+        "is_complete": true,
+        "id": 40122721469070,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 00:43:31"
+    },
+    "67409177064796": {
+        "team1": [
+            "Karma",
+            "Dee LK",
+            "Immortal",
+            "Gautami"
+        ],
+        "team2": [
+            "Dexter",
+            "Addy",
+            "Varad",
+            "Ojas"
+        ],
+        "is_complete": true,
+        "id": 67409177064796,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-12 01:02:45"
+    },
+    "66599589449489": {
+        "team1": [
+            "Dexter",
+            "Varad",
+            "Dee LK",
+            "Ojas"
+        ],
+        "team2": [
+            "Karma",
+            "Immortal",
+            "Ship",
+            "Addy"
+        ],
+        "is_complete": true,
+        "id": 66599589449489,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 01:26:52"
+    },
+    "44918248946158": {
+        "team1": [
+            "Dexter",
+            "Dee LK",
+            "Ghatak",
+            "Varad"
+        ],
+        "team2": [
+            "Karma",
+            "@jey@2",
+            "Axiom",
+            "2Kminus"
+        ],
+        "is_complete": true,
+        "id": 44918248946158,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 11:37:25"
+    },
+    "25032388340691": {
+        "team1": [
+            "Dexter",
+            "Dee LK",
+            "2Kminus",
+            "Varad"
+        ],
+        "team2": [
+            "@jey@2",
+            "Ghatak",
+            "Axiom",
+            "Baji"
+        ],
+        "is_complete": true,
+        "id": 25032388340691,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 12:10:27"
+    },
+    "29992602867295": {
+        "team1": [
+            "Ghatak",
+            "Endless",
+            "Varad",
+            "Dexter"
+        ],
+        "team2": [
+            "Baji",
+            "2Kminus",
+            "Gautami",
+            "@jey@2"
+        ],
+        "is_complete": true,
+        "id": 29992602867295,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 12:56:27"
+    },
+    "60823556026671": {
+        "team1": [
+            "Baji",
+            "Dexter",
+            "Endless",
+            "Gautami"
+        ],
+        "team2": [
+            "@jey@2",
+            "2Kminus",
+            "Ghatak",
+            "Mabba"
+        ],
+        "is_complete": true,
+        "id": 60823556026671,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 13:22:19"
+    },
+    "49165087841854": {
+        "team1": [
+            "Dexter",
+            "Ghatak",
+            "Dee LK"
+        ],
+        "team2": [
+            "@jey@2",
+            "Mabba",
+            "Baji"
+        ],
+        "is_complete": true,
+        "id": 49165087841854,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-12 13:50:25"
+    },
+    "50850864734454": {
+        "team1": [
+            "Dee LK",
+            "Mateesh",
+            "Ghatak",
+            "Mabba"
+        ],
+        "team2": [
+            "Outlier",
+            "2Kminus",
+            "Immortal",
+            "Gautami"
+        ],
+        "is_complete": true,
+        "id": 50850864734454,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-12 23:17:38"
+    },
+    "5918722429921": {
+        "team1": [
+            "Outlier",
+            "Dee LK",
+            "Ojas",
+            "Ghatak"
+        ],
+        "team2": [
+            "Mateesh",
+            "2Kminus",
+            "Mabba",
+            "Karma"
+        ],
+        "is_complete": true,
+        "id": 5918722429921,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-12 23:44:21"
+    },
+    "19123141756524": {
+        "team1": [
+            "Outlier",
+            "Dee LK",
+            "Ghatak",
+            "Mabba"
+        ],
+        "team2": [
+            "Ojas",
+            "Karma",
+            "Mateesh",
+            "2Kminus"
+        ],
+        "is_complete": true,
+        "id": 19123141756524,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 00:10:05"
+    },
+    "73411125177852": {
+        "team1": [
+            "Dee LK",
+            "Outlier",
+            "Immortal",
+            "Mateesh"
+        ],
+        "team2": [
+            "Ojas",
+            "Varad",
+            "Axiom",
+            "Dexter"
+        ],
+        "is_complete": true,
+        "id": 73411125177852,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 11:54:53"
+    },
+    "50539451552348": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "Ojas",
+            "Varad"
+        ],
+        "team2": [
+            "Dexter",
+            "Axiom",
+            "Baji",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 50539451552348,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 12:19:18"
+    },
+    "46352471460121": {
+        "team1": [
+            "Baji",
+            "Dee LK",
+            "Axiom",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dexter",
+            "Immortal",
+            "Ojas",
+            "Varad"
+        ],
+        "is_complete": true,
+        "id": 46352471460121,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 12:34:31"
+    },
+    "444347034947": {
+        "team1": [
+            "Ojas",
+            "Ghatak",
+            "Immortal",
+            "Ship"
+        ],
+        "team2": [
+            "Dee LK",
+            "Varad",
+            "@jey@2",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 444347034947,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 13:01:39"
+    },
+    "35358268855570": {
+        "team1": [
+            "@jey@2",
+            "Immortal",
+            "Ghatak",
+            "Mateesh"
+        ],
+        "team2": [
+            "Baji",
+            "Mabba",
+            "Ship",
+            "2Kminus"
+        ],
+        "is_complete": true,
+        "id": 35358268855570,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-13 14:54:51"
+    },
+    "11735979705019": {
+        "team1": [
+            "Ghatak",
+            "2Kminus",
+            "Baji",
+            "Mateesh"
+        ],
+        "team2": [
+            "Mabba",
+            "Ship",
+            "Immortal",
+            "@jey@2"
+        ],
+        "is_complete": true,
+        "id": 11735979705019,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-13 15:13:20"
+    },
+    "69162982675959": {
+        "team1": [
+            "@jey@2",
+            "Baji",
+            "Mateesh",
+            "Ship"
+        ],
+        "team2": [
+            "Immortal",
+            "Mabba",
+            "Ghatak",
+            "Ojas"
+        ],
+        "is_complete": true,
+        "id": 69162982675959,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 15:44:05"
+    },
+    "91383254113855": {
+        "team1": [
+            "Ghatak",
+            "Immortal",
+            "@jey@2",
+            "Ship"
+        ],
+        "team2": [
+            "Ojas",
+            "Mabba",
+            "Baji",
+            "White Eagle"
+        ],
+        "is_complete": true,
+        "id": 91383254113855,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 16:16:55"
+    },
+    "50134483822084": {
+        "team1": [
+            "Ghatak",
+            "2Kminus",
+            "Immortal",
+            "Ship"
+        ],
+        "team2": [
+            "@jey@2",
+            "White Eagle",
+            "Mateesh",
+            "Dee LK"
+        ],
+        "is_complete": true,
+        "id": 50134483822084,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-13 16:34:57"
+    },
+    "46751098175005": {
+        "team1": [
+            "Immortal",
+            "Mateesh",
+            "@jey@2"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ojas",
+            "White Eagle"
+        ],
+        "is_complete": true,
+        "id": 46751098175005,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-13 22:21:15"
+    },
+    "2127305476069": {
+        "team1": [
+            "Ojas",
+            "Varad",
+            "@jey@2",
+            "Immortal"
+        ],
+        "team2": [
+            "Mateesh",
+            "White Eagle",
+            "Dee LK",
+            "Karma"
+        ],
+        "is_complete": true,
+        "id": 2127305476069,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 22:39:42"
+    },
+    "66967919975325": {
+        "team1": [
+            "Immortal",
+            "Varad",
+            "Karma",
+            "Mateesh"
+        ],
+        "team2": [
+            "Ojas",
+            "White Eagle",
+            "Dee LK",
+            "@jey@2"
+        ],
+        "is_complete": true,
+        "id": 66967919975325,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 23:03:37"
+    },
+    "36191462559730": {
+        "team1": [
+            "Karma",
+            "Ojas",
+            "Varad",
+            "@jey@2"
+        ],
+        "team2": [
+            "Immortal",
+            "White Eagle",
+            "Dee LK",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 36191462559730,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-13 23:22:13"
+    },
+    "14171778127677": {
+        "team1": [
+            "@jey@2",
+            "Ghatak",
+            "Mateesh",
+            "Ojas"
+        ],
+        "team2": [
+            "Endless",
+            "Ship",
+            "Varad",
+            "Dee LK"
+        ],
+        "is_complete": true,
+        "id": 14171778127677,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-13 23:44:16"
+    },
+    "38531213521076": {
+        "team1": [
+            "Ojas",
+            "Endless",
+            "Mateesh",
+            "White Eagle"
+        ],
+        "team2": [
+            "Ship",
+            "Ghatak",
+            "Varad",
+            "Mabba"
+        ],
+        "is_complete": true,
+        "id": 38531213521076,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-14 00:36:01"
+    },
+    "255126593430": {
+        "team1": [
+            "Ship",
+            "Ghatak",
+            "Mabba",
+            "@jey@2"
+        ],
+        "team2": [
+            "Ojas",
+            "Endless",
+            "Karma",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 255126593430,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-14 00:59:50"
+    },
+    "89330947238794": {
+        "team1": [
+            "Karma",
+            "Endless",
+            "Ship",
+            "Mateesh"
+        ],
+        "team2": [
+            "Varad",
+            "Ojas",
+            "Ghatak",
+            "Mabba"
+        ],
+        "is_complete": true,
+        "id": 89330947238794,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-14 01:18:59"
+    },
+    "80135455856462": {
+        "team1": [
+            "Dexter",
+            "Mateesh",
+            "Ship",
+            "mAniA"
+        ],
+        "team2": [
+            "Ojas",
+            "Immortal",
+            "Ghatak",
+            "Dee LK"
+        ],
+        "is_complete": true,
+        "id": 80135455856462,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-17 23:06:43"
+    },
+    "57870536531924": {
+        "team1": [
+            "Immortal",
+            "Ojas",
+            "Mateesh",
+            "Dexter"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ship",
+            "Ghatak",
+            "2Kminus"
+        ],
+        "is_complete": true,
+        "id": 57870536531924,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-17 23:27:24"
+    },
+    "30420769145946": {
+        "team1": [
+            "Immortal",
+            "@jey@2",
+            "Ojas",
+            "Ship"
+        ],
+        "team2": [
+            "Dee LK",
+            "2Kminus",
+            "Ghatak",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 30420769145946,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-17 23:56:36"
+    },
+    "46802468151282": {
+        "team1": [
+            "Dee LK",
+            "@jey@2",
+            "Ojas",
+            "Mateesh"
+        ],
+        "team2": [
+            "2Kminus",
+            "Ghatak",
+            "Ship",
+            "Endless"
+        ],
+        "is_complete": true,
+        "id": 46802468151282,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-18 00:14:00"
+    },
+    "74148487088010": {
+        "team1": [
+            "Varad",
+            "Ghatak",
+            "@jey@2",
+            "Ojas"
+        ],
+        "team2": [
+            "Axiom",
+            "Immortal",
+            "Gautami",
+            "Dee LK"
+        ],
+        "is_complete": true,
+        "id": 74148487088010,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-19 23:14:58"
+    },
+    "33743376381920": {
+        "team1": [
+            "Varad",
+            "Gautami",
+            "Immortal",
+            "Karma"
+        ],
+        "team2": [
+            "Ojas",
+            "Ghatak",
+            "Axiom",
+            "Dee LK"
+        ],
+        "is_complete": true,
+        "id": 33743376381920,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-19 23:35:05"
+    },
+    "30679319945277": {
+        "team1": [
+            "Karma",
+            "Ojas",
+            "Dee LK",
+            "Gautami"
+        ],
+        "team2": [
+            "Ship",
+            "Varad",
+            "Axiom",
+            "Immortal"
+        ],
+        "is_complete": true,
+        "id": 30679319945277,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 00:06:59"
+    },
+    "48115970168800": {
+        "team1": [
+            "2Kminus",
+            "Karma",
+            "Ojas",
+            "@jey@2"
+        ],
+        "team2": [
+            "mAniA",
+            "Varad",
+            "Dee LK",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 48115970168800,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 00:25:14"
+    },
+    "13612959179322": {
+        "team1": [
+            "mAniA",
+            "2Kminus",
+            "Ship",
+            "Varad"
+        ],
+        "team2": [
+            "Karma",
+            "Dee LK",
+            "Ojas",
+            "Ghatak"
+        ],
+        "is_complete": true,
+        "id": 13612959179322,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 00:43:04"
+    },
+    "31909888933290": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "2Kminus",
+            "Ship"
+        ],
+        "team2": [
+            "Ojas",
+            "mAniA",
+            "Ghatak",
+            "Axiom"
+        ],
+        "is_complete": true,
+        "id": 31909888933290,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 15:45:25"
+    },
+    "82773490240311": {
+        "team1": [
+            "mAniA",
+            "2Kminus",
+            "Ojas",
+            "Ship"
+        ],
+        "team2": [
+            "Dee LK",
+            "Axiom",
+            "Ghatak",
+            "Immortal"
+        ],
+        "is_complete": true,
+        "id": 82773490240311,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 16:05:33"
+    },
+    "21792433736662": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "2Kminus",
+            "Ojas"
+        ],
+        "team2": [
+            "mAniA",
+            "Axiom",
+            "Ghatak",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 21792433736662,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 16:24:18"
+    },
+    "46550823224331": {
+        "team1": [
+            "Dee LK",
+            "2Kminus",
+            "Ojas",
+            "Immortal"
+        ],
+        "team2": [
+            "Ghatak",
+            "Ship",
+            "Axiom",
+            "mAniA"
+        ],
+        "is_complete": true,
+        "id": 46550823224331,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 16:46:53"
+    },
+    "92419572278603": {
+        "team1": [
+            "Immortal",
+            "Endless",
+            "Gautami",
+            "Varad"
+        ],
+        "team2": [
+            "2Kminus",
+            "Ghatak",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 92419572278603,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 17:20:07"
+    },
+    "29592892398528": {
+        "team1": [
+            "mAniA",
+            "Dee LK",
+            "Ojas",
+            "Gautami"
+        ],
+        "team2": [
+            "Immortal",
+            "2Kminus",
+            "Endless",
+            "Varad"
+        ],
+        "is_complete": true,
+        "id": 29592892398528,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 17:43:29"
+    },
+    "9167939296283": {
+        "team1": [
+            "mAniA",
+            "Endless",
+            "Gautami",
+            "Axiom"
+        ],
+        "team2": [
+            "Immortal",
+            "Dee LK",
+            "Varad",
+            "Ojas"
+        ],
+        "is_complete": true,
+        "id": 9167939296283,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-04-20 18:03:01"
+    },
+    "94096487985210": {
+        "team1": [
+            "mAniA",
+            "Varad",
+            "Gautami",
+            "Axiom"
+        ],
+        "team2": [
+            "Immortal",
+            "Dee LK",
+            "Endless",
+            "Ojas"
+        ],
+        "is_complete": true,
+        "id": 94096487985210,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 18:56:19"
+    },
+    "93278338191569": {
+        "team1": [
+            "mAniA",
+            "White Eagle",
+            "Axiom"
+        ],
+        "team2": [
+            "@jey@2",
+            "Dee LK",
+            "Immortal"
+        ],
+        "is_complete": true,
+        "id": 93278338191569,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-20 22:31:32"
+    },
+    "43502351295541": {
+        "team1": [
+            "mAniA",
+            "Immortal",
+            "Axiom",
+            "Endless"
+        ],
+        "team2": [
+            "Baji",
+            "Dee LK",
+            "White Eagle",
+            "@jey@2"
+        ],
+        "is_complete": true,
+        "id": 43502351295541,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-21 09:39:39"
+    },
+    "79220829351162": {
+        "team1": [
+            "mAniA",
+            "Dee LK",
+            "Axiom"
+        ],
+        "team2": [
+            "Immortal",
+            "@jey@2",
+            "Baji"
+        ],
+        "is_complete": true,
+        "id": 79220829351162,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-04-21 09:40:45"
+    }
+}
