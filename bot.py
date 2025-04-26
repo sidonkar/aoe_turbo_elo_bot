@@ -8,6 +8,11 @@ from itertools import combinations
 import time
 import subprocess
 from dotenv import load_dotenv
+from os import environ
+
+env = environ.copy()
+env['GIT_TERMINAL_PROMPT'] = '0'
+
 load_dotenv()
 
 ################################################## Constants Start #################################################
@@ -162,17 +167,17 @@ def push_to_github(isMatchesFile):
     github_token = os.getenv("GITHUB_TOKEN")  # Get GitHub token
 
     # Configure Git username & email
-    subprocess.run(["git", "config", "--global", "user.name", "Onkar"])
-    subprocess.run(["git", "config", "--global", "user.email", "sidonkar@gmail.com"])
+    subprocess.run(["git", "config", "--global", "user.name", "Onkar"], env=env)
+    subprocess.run(["git", "config", "--global", "user.email", "sidonkar@gmail.com"], env=env)
 
     # Set up authentication in the repo URL
     auth_repo_url = repo_url.replace("https://", f"https://{github_token}@")
 
     # Add, commit, and push changes
-    subprocess.run(["git", "add", MATCHES_FILE]) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE])
+    subprocess.run(["git", "add", MATCHES_FILE], env=env) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE], env=env)
     commitMsg = "Updated Match data "+time.strftime("%Y-%m-%d %H:%M:%S") if isMatchesFile else "Updated Player data "+time.strftime("%Y-%m-%d %H:%M:%S")
-    subprocess.run(["git", "commit", "-m", commitMsg])
-    subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
+    subprocess.run(["git", "commit", "-m", commitMsg], env=env)
+    subprocess.run(["git", "push", auth_repo_url, "main"], env=env)  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
 
