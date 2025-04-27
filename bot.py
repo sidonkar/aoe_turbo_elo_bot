@@ -8,6 +8,7 @@ from itertools import combinations
 import time
 import subprocess
 from dotenv import load_dotenv
+
 load_dotenv()
 
 ################################################## Constants Start #################################################
@@ -17,6 +18,7 @@ MATCHES_FILE = "matches.json"
 
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
+
 
 def to_dict(obj):
     if isinstance(obj, dict):
@@ -28,8 +30,10 @@ def to_dict(obj):
     else:
         return obj  # base case: int, str, etc.
 
+
 #TODO eventually use these class (Ratings, Player, Team)
 class Rating:
+
     def __init__(self):
         self.mapToRatingDict = {}
 
@@ -37,7 +41,9 @@ class Rating:
         #this will return the rating specific to the map
         return 1000
 
+
 class Player:
+
     def __init__(self, name, rating: Rating):
         self.name = name
         self.rating = rating
@@ -46,13 +52,11 @@ class Player:
         return self.name
 
     def to_dict(self):
-        return {
-            "name": self.name,
-            "rating": self.rating
-        }
+        return {"name": self.name, "rating": self.rating}
 
     def get_rating(self, map):
         return self.rating.get_rating(map)
+
 
 class Team:
     #TODO make this list of Players
@@ -64,9 +68,7 @@ class Team:
         return json.dumps(self.to_dict(), indent=2)
 
     def to_dict(self):
-        return {
-            "players": str(self.players)
-        }
+        return {"players": str(self.players)}
 
     def get_rating(self, map):
         ratings_sum = 0
@@ -74,23 +76,23 @@ class Team:
             ratings_sum += player.get_rating(map)
         return ratings_sum
 
+
 class Game:
     #TODO eventually make this def __init__(self, team1: Team, team2: Team):
     def __init__(self, id, team1, team2, map="arabia"):
         self.team1 = team1
         self.team2 = team2
         self.is_complete = False
-        self.id = id #random.randint(0,100000000000000)
+        self.id = id  #random.randint(0,100000000000000)
         self.map = map
 
     def __str__(self):
         return json.dumps(to_dict(self), indent=4)
 
-    
     #TODO add code to tell which team won
-    def markComplete(self,team):
+    def markComplete(self, team):
         self.is_complete = True
-        self.winTeam = 1 if team==self.team1 else 2
+        self.winTeam = 1 if team == self.team1 else 2
         self.playedDateTime = time.strftime("%Y-%m-%d %H:%M:%S")
 
     #TODO move the update rating function here
@@ -106,8 +108,13 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 #TODO move this list to file
-AUTHORIZED_USERS =  ['adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1', 'adityasj3053', 'adityasj.','ajeya7182', '.sidonkar', 'sarthakss', 'shalmal90']
+AUTHORIZED_USERS = [
+    'adwaitmathkari', 'mania4861', 'bajirao2', 'darklordkunal', '2kminus1',
+    'adityasj3053', 'adityasj.', 'ajeya7182', '.sidonkar', 'sarthakss',
+    'shalmal90'
+]
 MAX_CHECK = 6
+
 
 def load_players():
     if os.path.exists(PLAYER_FILE):
@@ -142,6 +149,7 @@ def save_matches():
         # Call the function after updating the JSON file
         push_to_github(True)
 
+
 def save_players():
     # return
     with open(PLAYER_FILE, "w") as f:
@@ -151,45 +159,59 @@ def save_players():
         # Call the function after updating the JSON file
         push_to_github(False)
 
+
 def push_to_github(isMatchesFile):
     # Check if the file is empty before pushing
     if os.path.getsize(PLAYER_FILE) == 0:
         print("⚠️ Error: File is empty. Not pushing to GitHub.")
-        return  
-    
+        return
     """Commits and pushes changes to GitHub."""
-    repo_url = os.getenv("GITHUB_REPO")  # Get GitHub repo URL from environment variables
+    repo_url = os.getenv(
+        "GITHUB_REPO")  # Get GitHub repo URL from environment variables
     github_token = os.getenv("GITHUB_TOKEN")  # Get GitHub token
 
     # Configure Git username & email
     subprocess.run(["git", "config", "--global", "user.name", "Onkar"])
-    subprocess.run(["git", "config", "--global", "user.email", "sidonkar@gmail.com"])
+    subprocess.run(
+        ["git", "config", "--global", "user.email", "sidonkar@gmail.com"])
 
     # Set up authentication in the repo URL
     auth_repo_url = repo_url.replace("https://", f"https://{github_token}@")
 
+    # Fetch the repo
+    subprocess.run(["git", "fetch", auth_repo_url])
+    subprocess.run(["git", "pull", "--no-rebase", auth_repo_url,"main"])
+
     # Add, commit, and push changes
-    subprocess.run(["git", "add", MATCHES_FILE]) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE])
-    commitMsg = "Updated Match data "+time.strftime("%Y-%m-%d %H:%M:%S") if isMatchesFile else "Updated Player data "+time.strftime("%Y-%m-%d %H:%M:%S")
+    subprocess.run([
+        "git", "add", MATCHES_FILE
+    ]) if isMatchesFile else subprocess.run(["git", "add", PLAYER_FILE])
+    commitMsg = "Updated Match data " + time.strftime(
+        "%Y-%m-%d %H:%M:%S"
+    ) if isMatchesFile else "Updated Player data " + time.strftime(
+        "%Y-%m-%d %H:%M:%S")
     subprocess.run(["git", "commit", "-m", commitMsg])
-    subprocess.run(["git", "push", auth_repo_url, "main"])  # Change "main" to your branch name if different
+    subprocess.run(["git", "push", auth_repo_url,
+                    "main"])  # Change "main" to your branch name if different
 
     print("✅ JSON file pushed to GitHub!")
-
 
 
 players = load_players()
 
 #global variables
 #ideally we should store them but this isn't needed for our use-case
-processed_matches = load_matches()  # Use a dictionary to store match timestamps
+processed_matches = load_matches(
+)  # Use a dictionary to store match timestamps
 game_ids = set()
+
 
 def print_game_state():
     print("processed matches")
     print(processed_matches)
     print("game_ids")
     print(game_ids)
+
 
 @bot.event
 async def on_ready():
@@ -204,9 +226,12 @@ async def on_ready():
 @bot.tree.command(name="admin", description="Admin Menu, noobs stay away")
 async def show_admin_menu(interaction: discord.Interaction):
     if (interaction.user.name not in AUTHORIZED_USERS):
-        await interaction.response.send_message("Admin नाय भाऊ तू!! जास्त टाकली काय आज?")
+        await interaction.response.send_message(
+            "Admin नाय भाऊ तू!! जास्त टाकली काय आज?")
         return
-    await interaction.response.send_message("📌 **Admin Menu - Select an action below:**", view=AdminMenuView())
+    await interaction.response.send_message(
+        "📌 **Admin Menu - Select an action below:**", view=AdminMenuView())
+
 
 # ✅ Admin Menu View
 class AdminMenuView(View):
@@ -238,6 +263,7 @@ class StreakButton(Button):
     async def callback(self, interaction: discord.Interaction):
         await send_player_streak(interaction)
 
+
 class MatchesButton(Button):
 
     def __init__(self):
@@ -246,6 +272,7 @@ class MatchesButton(Button):
 
     async def callback(self, interaction: discord.Interaction):
         await send_last_10_matches(interaction)
+
 
 class AllPlayersButton(Button):
 
@@ -275,8 +302,8 @@ class ClearDCMatchesButton(Button):
                          style=discord.ButtonStyle.danger)
 
     async def callback(self, interaction: discord.Interaction):
-        await interaction.response.send_message(
-            "🗑️ Select a match to remove:", view=ClearMatchView())
+        await interaction.response.send_message("🗑️ Select a match to remove:",
+                                                view=ClearMatchView())
 
 
 class ClearMatchView(View):
@@ -285,7 +312,9 @@ class ClearMatchView(View):
         super().__init__(timeout=60)
 
         # matches_list = sorted(processed_matches.items(),key=lambda x: x[1]["is_complete"], reverse=True)
-        matches_list = [(key, value) for key, value in processed_matches.items() if value.get("is_complete") == False]
+        matches_list = [(key, value)
+                        for key, value in processed_matches.items()
+                        if value.get("is_complete") == False]
         # matches_list.sort(key=lambda x: x[1], reverse=True)
         self.matches = matches_list
         self.current_page = 0
@@ -298,7 +327,7 @@ class ClearMatchView(View):
         self.clear_items()
         start_idx = self.current_page * self.matches_per_page
         end_idx = min(start_idx + self.matches_per_page, len(self.matches))
-        for name,val in self.matches[start_idx:end_idx]:
+        for name, val in self.matches[start_idx:end_idx]:
             self.add_item(RemoveMatchesButtonOption(name))
         if self.total_pages > 1:
             # Dynamically add line breaks based on last row count
@@ -364,6 +393,7 @@ class RemoveMatchesButtonOption(Button):
         await interaction.response.send_message(
             f"🗑️ Match {self.match_name} has been removed.")
 
+
 class RemovePlayerButtonOption(Button):
 
     def __init__(self, player_name):
@@ -418,12 +448,15 @@ async def send_player_streak(interaction):
     print(f"players:{json.dumps(players, indent=4)}")
     MAX_FIELDS = 25  # Discord limit
     embeds = []
-    player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
+    player_items = sorted(players.items(),
+                          key=lambda x: x[1]["current_rating"],
+                          reverse=True)
 
     # player_items = list(player_list.keys())  # Convert dict to list
     for i in range(0, len(player_items), MAX_FIELDS):
-        embed = discord.Embed(title="**Player Name**  |  🔥 **Live**  | ⚔️ **Streak**",
-                              color=discord.Color.blue())
+        embed = discord.Embed(
+            title="**Player Name**  |  🔥 **Live**  | ⚔️ **Streak**",
+            color=discord.Color.blue())
         for name, data in player_items[
                 i:i + MAX_FIELDS]:  # Process only 25 at a time
             current_rating = data.get("current_rating", "N/A")
@@ -434,15 +467,11 @@ async def send_player_streak(interaction):
             for match_id, result in list(streak_list.items())[-10:]:
                 value += " " + result.capitalize()
 
-
             embed.add_field(
-            name="\u200b",
-            value=f"```"
-            f"{name} | 🔥 {current_rating} | "
-            f" 📈 {value.lstrip(" ")} "
-            f"```",
-            inline=False
-            )
+                name="\u200b",
+                value=
+                f"```{name} | 🔥 {current_rating} | 📈 {value.lstrip(' ')}```",
+                inline=False)
 
         embeds.append(embed)
 
@@ -464,35 +493,43 @@ async def send_player_streak(interaction):
     #         inline=False)
     # await interaction.response.send_message(embed=embed)
 
+
 async def send_last_10_matches(interaction):
     if not processed_matches:
         await interaction.response.send_message("⚠️ No matches registered yet!"
                                                 )
         return
     print(f"matches:{json.dumps(processed_matches, indent=4)}")
-    MAX_FIELDS = 10  
+    MAX_FIELDS = 10
     # Discord limit
     embeds = []
     # processed_matches_items = sorted(processed_matches.items(),key=lambda x: x[1]["playedDateTime"], reverse=True)
     # processed_matches_items = sorted(processed_matches.items(),key=lambda x: x[1].get("playedDateTime", datetime.min),reverse=True)
-    processed_matches_items = sorted(processed_matches.items(),key=lambda x: ( "playedDateTime" not in x[1], x[1].get("playedDateTime") ),reverse=True)
+    processed_matches_items = sorted(
+        processed_matches.items(),
+        key=lambda x:
+        ("playedDateTime" not in x[1], x[1].get("playedDateTime")),
+        reverse=True)
     length_var = len(processed_matches_items)
     #min(10,len(processed_matches_items))
 
     # player_items = list(player_list.keys())  # Convert dict to list
     #for i in range(0, length_var, MAX_FIELDS):
-    i=0
-    embed = discord.Embed(title="⚔️ **Matches**  |  🎯 **Win Team**  | 💀 **Loser Team**",
-                            color=discord.Color.blue())
-    for name, data in processed_matches_items[-length_var + i: -length_var + i + MAX_FIELDS]:
+    i = 0
+    embed = discord.Embed(
+        title="⚔️ **Matches**  |  🎯 **Win Team**  | 💀 **Loser Team**",
+        color=discord.Color.blue())
+    for name, data in processed_matches_items[-length_var + i:-length_var + i +
+                                              MAX_FIELDS]:
         game_id = data.get("id", "N/A")
-        win_team = data.get("team2", "N/A") if data.get("winTeam", "N/A") == 2 else data.get("team1", "N/A")
-        loser_team = data.get("team1", "N/A") if data.get("winTeam", "N/A") == 2 else data.get("team2", "N/A")
-        embed.add_field(
-            name=str(game_id) +" - "+data.get("playedDateTime", "N/A"),
-            value=f"🎯 {win_team} \n 💀 {loser_team}",
-            inline=False
-        )   
+        win_team = data.get("team2", "N/A") if data.get(
+            "winTeam", "N/A") == 2 else data.get("team1", "N/A")
+        loser_team = data.get("team1", "N/A") if data.get(
+            "winTeam", "N/A") == 2 else data.get("team2", "N/A")
+        embed.add_field(name=str(game_id) + " - " +
+                        data.get("playedDateTime", "N/A"),
+                        value=f"🎯 {win_team} \n 💀 {loser_team}",
+                        inline=False)
     # embed = discord.Embed(title="⚔️ **Matches**  |  🎯 **Win Team**  | 💀 **Loser Team**",
     #                       color=discord.Color.blue())
     # for name, data in players.items():
@@ -512,6 +549,7 @@ async def send_last_10_matches(interaction):
     for embed in embeds:
         await interaction.followup.send(embed=embed)
 
+
 async def send_all_players(interaction):
     if not players:
         await interaction.response.send_message("⚠️ No players registered yet!"
@@ -520,12 +558,16 @@ async def send_all_players(interaction):
     print(f"players:{json.dumps(players, indent=4)}")
     MAX_FIELDS = 25  # Discord limit
     embeds = []
-    player_items = sorted(players.items(),key=lambda x: x[1]["current_rating"], reverse=True)
+    player_items = sorted(players.items(),
+                          key=lambda x: x[1]["current_rating"],
+                          reverse=True)
 
     # player_items = list(player_list.keys())  # Convert dict to list
     for i in range(0, len(player_items), MAX_FIELDS):
-        embed = discord.Embed(title="**Player Name**  |  🔥 **Live**  |  🚀 **Max** |  💥 **Min**  \n  🏅 **Base**  |  ⚔️ **Matches**  |  🎯 **Win**  | 💀 **Loss**",
-                              color=discord.Color.blue())
+        embed = discord.Embed(
+            title=
+            "**Player Name**  |  🔥 **Live**  |  🚀 **Max** |  💥 **Min**  \n  🏅 **Base**  |  ⚔️ **Matches**  |  🎯 **Win**  | 💀 **Loss**",
+            color=discord.Color.blue())
         for name, data in player_items[
                 i:i + MAX_FIELDS]:  # Process only 25 at a time
             base_rating = data.get("base_rating", "N/A")
@@ -533,7 +575,7 @@ async def send_all_players(interaction):
             max_rating = data.get("highest_rating", "N/A")
             min_rating = data.get("lowest_rating", "N/A")
             matches_played = data.get("matches_played", "N/A")
-            wins= data.get("wins", "N/A")
+            wins = data.get("wins", "N/A")
             losses = data.get("losses", "N/A")
             streak = data.get("matchesList", "N/A")
             value = ""
@@ -547,18 +589,9 @@ async def send_all_players(interaction):
             #     inline=False)
             embed.add_field(
                 name="\u200b",
-                value=f"```"
-                f"{name} | 🔥 {current_rating} |"
-                f" 🚀 {max_rating} |"
-                f" 💥 {min_rating}\n"
-                f" 🏅 {base_rating} |"
-                f" ⚔️ {matches_played} |"
-                f" 🎯 {wins} |"
-                f" 💀 {losses}\n"
-                f" 📈 {value.lstrip(" ")}" 
-                f"```",
-                inline=False
-            )
+                value=
+                f"```{name} | 🔥 {current_rating} | 🚀 {max_rating} | 💥 {min_rating}\n 🏅 {base_rating} | ⚔️ {matches_played} | 🎯 {wins} | 💀 {losses}\n 📈 {value.lstrip('')}```",
+                inline=False)
 
         embeds.append(embed)
 
@@ -580,12 +613,16 @@ async def send_all_players(interaction):
     #         inline=False)
     # await interaction.response.send_message(embed=embed)
 
+
 #@bot.command(name="result")
-@bot.tree.command(name="result", description="Register a match result based on game id")
+@bot.tree.command(name="result",
+                  description="Register a match result based on game id")
 @discord.app_commands.describe(game_id_str="The game ID")
-async def set_result_manually(interaction: discord.Interaction, game_id_str:str):
+async def set_result_manually(interaction: discord.Interaction,
+                              game_id_str: str):
     if (interaction.user.name not in AUTHORIZED_USERS):
-        await interaction.response.send_message('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
+        await interaction.response.send_message(
+            'Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
         return
     game_id = int(game_id_str)
     # print(json.dumps(processed_matches, indent=2))
@@ -593,19 +630,27 @@ async def set_result_manually(interaction: discord.Interaction, game_id_str:str)
         await interaction.response.send_message('invalid game id!!!!')
         return
     if (processed_matches[game_id].is_complete):
-        await interaction.response.send_message('match result recorded already!!!')
+        await interaction.response.send_message(
+            'match result recorded already!!!')
         return
     game = processed_matches[game_id]
-    await interaction.response.send_message("**Select the winner!**", view=WinnerSelectionView(game_id, game.team1, game.team2))
+    await interaction.response.send_message("**Select the winner!**",
+                                            view=WinnerSelectionView(
+                                                game_id, game.team1,
+                                                game.team2))
+
 
 #@bot.command(name="chala")
-@bot.tree.command(name="chala", description="Player Selection for Matchmaking 3v3 / 4v4")
+@bot.tree.command(name="chala",
+                  description="Player Selection for Matchmaking 3v3 / 4v4")
 async def pick_team(interaction: discord.Interaction):
     if not players:
-        await interaction.response.send_message("⚠️ No players registered yet!")
+        await interaction.response.send_message("⚠️ No players registered yet!"
+                                                )
         return
-    await interaction.response.send_message("👥 **Select up to 8 players for the match:**",
-                   view=MultiColumnPlayerSelectionView())
+    await interaction.response.send_message(
+        "👥 **Select up to 8 players for the match:**",
+        view=MultiColumnPlayerSelectionView())
 
 
 class MultiColumnPlayerSelectionView(View):
@@ -772,12 +817,13 @@ class MatchupButton(Button):
                 "⚠️ Matchup already selected!", ephemeral=True)
             return
         self.is_selected = True
-        game_id = random.randint(0,100000000000000)
+        game_id = random.randint(0, 100000000000000)
         while game_id in game_ids:
-            game_id = random.randint(0,100000000000000)
+            game_id = random.randint(0, 100000000000000)
 
         game_ids.add(game_id)
-        game = Game(game_id, team1=self.team1, team2=self.team2, map="arabia") #TODO pass the map here
+        game = Game(game_id, team1=self.team1, team2=self.team2,
+                    map="arabia")  #TODO pass the map here
         # print(f"game:{game}")
         processed_matches[game_id] = game
         # print(json.dumps(processed_matches[game_id], indent=2))
@@ -788,10 +834,11 @@ class MatchupButton(Button):
             f"**Team 2:** {', '.join(self.team2)}\n\n"
             f"** Game id:** {game_id}\n\n"
             f"🔽 **Now select the winner!**",
-            view=WinnerSelectionView(game_id, self.team1, self.team2)
-        )
+            view=WinnerSelectionView(game_id, self.team1, self.team2))
+
 
 class WinnerSelectionView(View):
+
     def __init__(self, game_id, team1, team2):
         super().__init__(timeout=None)
         self.game_id = game_id
@@ -800,6 +847,7 @@ class WinnerSelectionView(View):
 
         self.add_item(WinnerButton("Team 1 Wins", game_id, team1, team2))
         self.add_item(WinnerButton("Team 2 Wins", game_id, team2, team1))
+
 
 # Track processed matches to prevent duplicate ELO updates
 
@@ -810,6 +858,7 @@ MATCH_COOLDOWN = 20  # 20 seconds
 
 
 class WinnerButton(Button):
+
     def __init__(self, label, game_id, winning_team, losing_team):
         super().__init__(label=label, style=discord.ButtonStyle.success)
         self.game_id = game_id
@@ -817,14 +866,16 @@ class WinnerButton(Button):
         self.losing_team = losing_team
 
     async def callback(self, interaction: discord.Interaction):
-        
+
         user = interaction.user
         if (user.name not in AUTHORIZED_USERS):
-            await interaction.response.send_message('Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
+            await interaction.response.send_message(
+                'Admin नाय भाऊ तू! कोणी दूसरा आहे का बघ..')
             return
 
         if (self.game_id not in processed_matches):
-            await interaction.response.send_message("⚠️ Invalid Game Id. Try again later.",ephemeral=True)
+            await interaction.response.send_message(
+                "⚠️ Invalid Game Id. Try again later.", ephemeral=True)
             return
 
         if (processed_matches[self.game_id].is_complete):
@@ -859,22 +910,19 @@ class WinnerButton(Button):
         # Update ratings and generate message
         message = "🏆 **Match Result**\n\n"
 
-        embed = discord.Embed(
-            title="📊 Match Result",
-            description="Here are your match results:",
-            color=discord.Color.blue()
-        )
-
-        
-        
+        embed = discord.Embed(title="📊 Match Result",
+                              description="Here are your match results:",
+                              color=discord.Color.blue())
 
         for player in self.winning_team:
             players[player]["current_rating"] += gain
-            players[player]["matchesList"][self.game_id]="W"
+            players[player]["matchesList"][self.game_id] = "W"
             players[player]["matches_played"] += 1
             players[player]["wins"] += 1
-            players[player]["highest_rating"] = max(players[player]["highest_rating"], players[player]["current_rating"])
-            message += f"🎯 **{player}**\t\t+{gain}\t🔥 {players[player]['current_rating']}\t⚔️ {players[player]["matches_played"]}\t🎯 {players[player]["wins"]}\t💀 {players[player]["losses"]}\n"
+            players[player]["highest_rating"] = max(
+                players[player]["highest_rating"],
+                players[player]["current_rating"])
+            message += f"🎯 **{player}**\t\t+{gain}\t🔥 {players[player]['current_rating']}\t⚔️ {players[player]['matches_played']}\t🎯 {players[player]['wins']}\t💀 {players[player]['losses']}\n"
             # embed.add_field(
             #     name=player,
             #     value=f"```"
@@ -884,14 +932,16 @@ class WinnerButton(Button):
             #     f" 💀 {players[player]["losses"]}"
             #     f"```",
             #     inline=False)
-        message+="\n"
+        message += "\n"
         for player in self.losing_team:
             players[player]["current_rating"] += loss
-            players[player]["matchesList"][self.game_id]="L"
+            players[player]["matchesList"][self.game_id] = "L"
             players[player]["matches_played"] += 1
             players[player]["losses"] += 1
-            players[player]["lowest_rating"] = min(players[player]["lowest_rating"], players[player]["current_rating"])            
-            message += f"💀 **{player}**\t\t{loss}\t🔥 {players[player]['current_rating']}\t⚔️ {players[player]["matches_played"]}\t🎯 {players[player]["wins"]}\t💀 {players[player]["losses"]}\n"
+            players[player]["lowest_rating"] = min(
+                players[player]["lowest_rating"],
+                players[player]["current_rating"])
+            message += f"💀 **{player}**\t\t{loss}\t🔥 {players[player]['current_rating']}\t⚔️ {players[player]['matches_played']}\t🎯 {players[player]['wins']}\t💀 {players[player]['losses']}\n"
             # embed.add_field(
             #     name=player,
             #     value=f"```"
@@ -1000,8 +1050,10 @@ def create_matchup_embed(matchups):
 #@bot.command(name="recent")
 @bot.tree.command(name="recent", description="Show recent 10 matches")
 async def show_matches_menu(interaction: discord.Interaction):
-    await interaction.response.send_message("📋 **Matches List - Click below to view last 10 Matches**",
-                   view=MatchesView())
+    await interaction.response.send_message(
+        "📋 **Matches List - Click below to view last 10 Matches**",
+        view=MatchesView())
+
 
 class MatchesView(View):
 
@@ -1009,11 +1061,13 @@ class MatchesView(View):
         super().__init__(timeout=None)
         self.add_item(MatchesButton())  # Reusing the button from Admin Menu
 
+
 #@bot.command(name="streak")
 @bot.tree.command(name="streak", description="Show player streaks")
 async def show_streak_menu(interaction: discord.Interaction):
     await interaction.response.send_message("📋 **Show streaks**",
-                   view=StreakView())
+                                            view=StreakView())
+
 
 class StreakView(View):
 
@@ -1021,11 +1075,13 @@ class StreakView(View):
         super().__init__(timeout=None)
         self.add_item(StreakButton())  # Reusing the button from Admin Menu
 
+
 #@bot.command(name="show")
 @bot.tree.command(name="show", description="Show all players")
 async def show_players_menu(interaction: discord.Interaction):
-    await interaction.response.send_message("📋 **Player List - Click below to view all players**",
-                   view=AllPlayersView())
+    await interaction.response.send_message(
+        "📋 **Player List - Click below to view all players**",
+        view=AllPlayersView())
 
 
 class AllPlayersView(View):
@@ -1035,13 +1091,11 @@ class AllPlayersView(View):
         self.add_item(AllPlayersButton())  # Reusing the button from Admin Menu
 
 
-
 # # Slash command with a parameter
 # @bot.tree.command(name="ping", description="Ping a target user or thing.")
 # @discord.app_commands.describe(target="Who or what you want to ping")
 # async def pinger(interaction: discord.Interaction, target: str):
 #     await interaction.response.send_message(f"🏓 Pong! You pinged **{target}**")
-
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 bot.run(TOKEN)
