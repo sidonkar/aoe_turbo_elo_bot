@@ -1432,5 +1432,22 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-05-03 12:11:36"
+    },
+    "46652039870832": {
+        "team1": [
+            "Dexter",
+            "Addy",
+            "Ghatak"
+        ],
+        "team2": [
+            "Immortal",
+            "@jey@2",
+            "White Eagle"
+        ],
+        "is_complete": true,
+        "id": 46652039870832,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-03 12:35:49"
     }
 }
