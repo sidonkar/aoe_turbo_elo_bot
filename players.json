@@ -863,5 +863,15 @@
             "49090001093474": "W",
             "46920962499057": "L"
         }
+    },
+    "Pitad Karma": {
+        "base_rating": 650,
+        "current_rating": 650,
+        "highest_rating": 650,
+        "lowest_rating": 650,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0,
+        "matchesList": {}
     }
 }
