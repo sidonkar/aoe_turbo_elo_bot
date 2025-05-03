@@ -106,13 +106,13 @@
         }
     },
     "Dexter": {
-        "current_rating": 904,
+        "current_rating": 898,
         "highest_rating": 934,
         "lowest_rating": 844,
         "base_rating": 850,
-        "matches_played": 48,
+        "matches_played": 49,
         "wins": 26,
-        "losses": 22,
+        "losses": 23,
         "matchesList": {
             "72809569186051": "W",
             "63802188612238": "W",
@@ -146,7 +146,8 @@
             "15660031005582": "L",
             "67681393875353": "L",
             "93273224512229": "L",
-            "38779671235584": "L"
+            "38779671235584": "L",
+            "46652039870832": "L"
         }
     },
     "Dee LK": {
@@ -209,12 +210,12 @@
         }
     },
     "Immortal": {
-        "current_rating": 833,
+        "current_rating": 839,
         "highest_rating": 875,
         "lowest_rating": 821,
         "base_rating": 875,
-        "matches_played": 64,
-        "wins": 32,
+        "matches_played": 65,
+        "wins": 33,
         "losses": 32,
         "matchesList": {
             "39489303062308": "W",
@@ -269,7 +270,8 @@
             "93273224512229": "W",
             "74668540063001": "L",
             "96051773102955": "L",
-            "38779671235584": "W"
+            "38779671235584": "W",
+            "46652039870832": "W"
         }
     },
     "Zxc": {
@@ -283,12 +285,12 @@
         "matchesList": {}
     },
     "@jey@2": {
-        "current_rating": 808,
+        "current_rating": 814,
         "highest_rating": 850,
         "lowest_rating": 766,
         "base_rating": 850,
-        "matches_played": 50,
-        "wins": 25,
+        "matches_played": 51,
+        "wins": 26,
         "losses": 25,
         "matchesList": {
             "44918248946158": "W",
@@ -333,7 +335,8 @@
             "96051773102955": "W",
             "49090001093474": "W",
             "46920962499057": "W",
-            "38779671235584": "W"
+            "38779671235584": "W",
+            "46652039870832": "W"
         }
     },
     "2Kminus": {
@@ -376,13 +379,13 @@
         }
     },
     "Addy": {
-        "current_rating": 737,
+        "current_rating": 731,
         "highest_rating": 749,
         "lowest_rating": 725,
         "base_rating": 725,
-        "matches_played": 16,
+        "matches_played": 17,
         "wins": 7,
-        "losses": 9,
+        "losses": 10,
         "matchesList": {
             "40122721469070": "L",
             "67409177064796": "L",
@@ -397,16 +400,17 @@
             "29383473058746": "L",
             "49090001093474": "W",
             "46920962499057": "W",
-            "38779671235584": "L"
+            "38779671235584": "L",
+            "46652039870832": "L"
         }
     },
     "White Eagle": {
-        "current_rating": 701,
+        "current_rating": 707,
         "highest_rating": 785,
         "lowest_rating": 701,
         "base_rating": 725,
-        "matches_played": 21,
-        "wins": 7,
+        "matches_played": 22,
+        "wins": 8,
         "losses": 14,
         "matchesList": {
             "91383254113855": "W",
@@ -429,7 +433,8 @@
             "96051773102955": "L",
             "49090001093474": "L",
             "46920962499057": "L",
-            "38779671235584": "L"
+            "38779671235584": "L",
+            "46652039870832": "W"
         }
     },
     "Kallu": {
@@ -443,13 +448,13 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 716,
+        "current_rating": 710,
         "highest_rating": 734,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 47,
+        "matches_played": 48,
         "wins": 25,
-        "losses": 22,
+        "losses": 23,
         "matchesList": {
             "39489303062308": "W",
             "41688183904221": "W",
@@ -492,7 +497,8 @@
             "47900276874828": "W",
             "95721494336479": "L",
             "833586210919": "W",
-            "38779671235584": "W"
+            "38779671235584": "W",
+            "46652039870832": "L"
         }
     },
     "Endless": {
