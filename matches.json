@@ -1838,5 +1838,24 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-05-04 15:05:46"
+    },
+    "2597795892769": {
+        "team1": [
+            "mAniA",
+            "@jey@2",
+            "Ship",
+            "Ojas"
+        ],
+        "team2": [
+            "Dexter",
+            "Dee LK",
+            "White Eagle",
+            "Mabba"
+        ],
+        "is_complete": true,
+        "id": 2597795892769,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-04 15:28:43"
     }
 }
