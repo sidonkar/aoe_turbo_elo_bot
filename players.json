@@ -974,5 +974,15 @@
             "64738979540213": "W",
             "52114778402425": "L"
         }
+    },
+    "Mesmarizer": {
+        "base_rating": 600,
+        "current_rating": 600,
+        "highest_rating": 600,
+        "lowest_rating": 600,
+        "matches_played": 0,
+        "wins": 0,
+        "losses": 0,
+        "matchesList": {}
     }
 }
