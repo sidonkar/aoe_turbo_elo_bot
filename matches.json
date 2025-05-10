@@ -2128,5 +2128,24 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-05-10 23:57:23"
+    },
+    "45452756872715": {
+        "team1": [
+            "White Eagle",
+            "Varad",
+            "Ghatak",
+            "Gautami"
+        ],
+        "team2": [
+            "@jey@2",
+            "Ojas",
+            "Ship",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 45452756872715,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-05-11 00:17:01"
     }
 }
