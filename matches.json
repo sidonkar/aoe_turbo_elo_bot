@@ -1710,23 +1710,6 @@
         "winTeam": 2,
         "playedDateTime": "2025-05-04 13:06:29"
     },
-    "38281504622510": {
-        "team1": [
-            "Ghatak",
-            "Dee LK",
-            "Ojas",
-            "Mabba"
-        ],
-        "team2": [
-            "Dexter",
-            "White Eagle",
-            "Varad",
-            "Gautami"
-        ],
-        "is_complete": false,
-        "id": 38281504622510,
-        "map": "arabia"
-    },
     "4073951594023": {
         "team1": [
             "Ghatak",
