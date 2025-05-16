@@ -1166,15 +1166,5 @@
         "wins": 0,
         "losses": 0,
         "matchesList": {}
-    },
-    "Test Data": {
-        "base_rating": 1,
-        "current_rating": 1,
-        "highest_rating": 1,
-        "lowest_rating": 1,
-        "matches_played": 0,
-        "wins": 0,
-        "losses": 0,
-        "matchesList": {}
     }
 }
