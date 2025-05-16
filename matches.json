@@ -2273,5 +2273,24 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-05-17 01:09:15"
+    },
+    "65465761788076": {
+        "team1": [
+            "Dee LK",
+            "Immortal",
+            "Mabba",
+            "Mateesh"
+        ],
+        "team2": [
+            "@jey@2",
+            "Ojas",
+            "Ghatak",
+            "2Kminus"
+        ],
+        "is_complete": true,
+        "id": 65465761788076,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-17 01:26:48"
     }
 }
