@@ -176,13 +176,13 @@
         }
     },
     "Dee LK": {
-        "current_rating": 868,
+        "current_rating": 862,
         "highest_rating": 880,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 85,
+        "matches_played": 86,
         "wins": 45,
-        "losses": 40,
+        "losses": 41,
         "matchesList": {
             "72809569186051": "L",
             "63802188612238": "W",
@@ -255,7 +255,8 @@
             "2475714807534": "W",
             "25295611074126": "W",
             "66654991090320": "L",
-            "65465761788076": "L"
+            "65465761788076": "L",
+            "26632571965429": "L"
         }
     },
     "Immortal": {
@@ -352,12 +353,12 @@
         "matchesList": {}
     },
     "@jey@2": {
-        "current_rating": 826,
+        "current_rating": 832,
         "highest_rating": 856,
         "lowest_rating": 766,
         "base_rating": 850,
-        "matches_played": 83,
-        "wins": 43,
+        "matches_played": 84,
+        "wins": 44,
         "losses": 40,
         "matchesList": {
             "44918248946158": "W",
@@ -435,7 +436,8 @@
             "2475714807534": "L",
             "25295611074126": "L",
             "66654991090320": "L",
-            "65465761788076": "W"
+            "65465761788076": "W",
+            "26632571965429": "W"
         }
     },
     "2Kminus": {
@@ -497,12 +499,12 @@
         }
     },
     "Addy": {
-        "current_rating": 695,
+        "current_rating": 701,
         "highest_rating": 749,
         "lowest_rating": 683,
         "base_rating": 725,
-        "matches_played": 31,
-        "wins": 11,
+        "matches_played": 32,
+        "wins": 12,
         "losses": 20,
         "matchesList": {
             "40122721469070": "L",
@@ -533,17 +535,18 @@
             "66634002247662": "L",
             "11146318931908": "L",
             "35676775797388": "W",
-            "3810971846828": "W"
+            "3810971846828": "W",
+            "26632571965429": "W"
         }
     },
     "White Eagle": {
-        "current_rating": 719,
+        "current_rating": 713,
         "highest_rating": 785,
         "lowest_rating": 701,
         "base_rating": 725,
-        "matches_played": 52,
+        "matches_played": 53,
         "wins": 24,
-        "losses": 28,
+        "losses": 29,
         "matchesList": {
             "91383254113855": "W",
             "50134483822084": "L",
@@ -596,7 +599,8 @@
             "56177995236675": "W",
             "99906640767585": "L",
             "20054656890707": "L",
-            "3810971846828": "W"
+            "3810971846828": "W",
+            "26632571965429": "L"
         }
     },
     "Kallu": {
@@ -610,12 +614,12 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 698,
+        "current_rating": 704,
         "highest_rating": 734,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 86,
-        "wins": 43,
+        "matches_played": 87,
+        "wins": 44,
         "losses": 43,
         "matchesList": {
             "39489303062308": "W",
@@ -698,7 +702,8 @@
             "2475714807534": "L",
             "25295611074126": "L",
             "66654991090320": "W",
-            "65465761788076": "W"
+            "65465761788076": "W",
+            "26632571965429": "W"
         }
     },
     "Endless": {
@@ -983,13 +988,13 @@
         }
     },
     "Ship": {
-        "current_rating": 600,
+        "current_rating": 594,
         "highest_rating": 648,
         "lowest_rating": 576,
         "base_rating": 600,
-        "matches_played": 67,
+        "matches_played": 68,
         "wins": 30,
-        "losses": 37,
+        "losses": 38,
         "matchesList": {
             "39489303062308": "L",
             "41688183904221": "W",
@@ -1045,7 +1050,8 @@
             "11146318931908": "W",
             "35676775797388": "W",
             "88927517558532": "W",
-            "2475714807534": "W"
+            "2475714807534": "W",
+            "26632571965429": "L"
         }
     },
     "Outlier": {
