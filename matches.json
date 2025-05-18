@@ -2518,5 +2518,22 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-05-18 14:45:41"
+    },
+    "76109637383604": {
+        "team1": [
+            "Ojas",
+            "Dee LK",
+            "Auror"
+        ],
+        "team2": [
+            "White Eagle",
+            "Varad",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 76109637383604,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-18 15:09:08"
     }
 }
