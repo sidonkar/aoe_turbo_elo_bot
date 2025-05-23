@@ -177,13 +177,13 @@
         }
     },
     "Dee LK": {
-        "current_rating": 838,
+        "current_rating": 832,
         "highest_rating": 880,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 100,
+        "matches_played": 101,
         "wins": 50,
-        "losses": 50,
+        "losses": 51,
         "matchesList": {
             "72809569186051": "L",
             "63802188612238": "W",
@@ -271,7 +271,8 @@
             "77896354821674": "L",
             "76109637383604": "L",
             "11229713641640": "W",
-            "90396553233881": "W"
+            "90396553233881": "W",
+            "61209706206115": "L"
         }
     },
     "Immortal": {
@@ -674,12 +675,12 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 716,
+        "current_rating": 722,
         "highest_rating": 734,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 99,
-        "wins": 51,
+        "matches_played": 100,
+        "wins": 52,
         "losses": 48,
         "matchesList": {
             "39489303062308": "W",
@@ -775,7 +776,8 @@
             "49137134327481": "W",
             "38843790990637": "W",
             "77896354821674": "W",
-            "90396553233881": "L"
+            "90396553233881": "L",
+            "61209706206115": "W"
         }
     },
     "Endless": {
@@ -850,12 +852,12 @@
         }
     },
     "Varad": {
-        "current_rating": 694,
+        "current_rating": 700,
         "highest_rating": 718,
         "lowest_rating": 658,
         "base_rating": 700,
-        "matches_played": 85,
-        "wins": 43,
+        "matches_played": 86,
+        "wins": 44,
         "losses": 42,
         "matchesList": {
             "39489303062308": "L",
@@ -925,7 +927,8 @@
             "38843790990637": "L",
             "77896354821674": "W",
             "76109637383604": "W",
-            "81074209482702": "L"
+            "81074209482702": "L",
+            "61209706206115": "W"
         }
     },
     "Mabba": {
@@ -1082,13 +1085,13 @@
         }
     },
     "Ship": {
-        "current_rating": 588,
+        "current_rating": 582,
         "highest_rating": 648,
         "lowest_rating": 576,
         "base_rating": 600,
-        "matches_played": 73,
+        "matches_played": 74,
         "wins": 32,
-        "losses": 41,
+        "losses": 42,
         "matchesList": {
             "39489303062308": "L",
             "41688183904221": "W",
@@ -1150,7 +1153,8 @@
             "89449388693230": "L",
             "82191795732127": "L",
             "76109637383604": "W",
-            "81074209482702": "W"
+            "81074209482702": "W",
+            "61209706206115": "L"
         }
     },
     "Outlier": {
@@ -1169,12 +1173,12 @@
         }
     },
     "Salazar": {
-        "current_rating": 552,
+        "current_rating": 558,
         "highest_rating": 558,
         "lowest_rating": 540,
         "base_rating": 550,
-        "matches_played": 27,
-        "wins": 14,
+        "matches_played": 28,
+        "wins": 15,
         "losses": 13,
         "matchesList": {
             "67681393875353": "L",
@@ -1185,7 +1189,8 @@
             "46920962499057": "W",
             "86796506572952": "W",
             "66634002247662": "L",
-            "90396553233881": "W"
+            "90396553233881": "W",
+            "61209706206115": "W"
         }
     },
     "Auror": {
@@ -1264,13 +1269,13 @@
         }
     },
     "Mateesh": {
-        "current_rating": 542,
+        "current_rating": 536,
         "highest_rating": 572,
         "lowest_rating": 376,
         "base_rating": 500,
-        "matches_played": 65,
+        "matches_played": 66,
         "wins": 33,
-        "losses": 32,
+        "losses": 33,
         "matchesList": {
             "39489303062308": "W",
             "41688183904221": "L",
@@ -1327,7 +1332,8 @@
             "94463477325697": "L",
             "15077984981010": "W",
             "73555133315899": "L",
-            "53606057095380": "L"
+            "53606057095380": "L",
+            "61209706206115": "L"
         }
     },
     "Mesmarizer": {
