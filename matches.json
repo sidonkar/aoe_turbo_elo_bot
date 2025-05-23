@@ -2609,5 +2609,24 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-05-24 00:55:29"
+    },
+    "97875543729654": {
+        "team1": [
+            "Dee LK",
+            "Varad",
+            "Salazar",
+            "Mateesh"
+        ],
+        "team2": [
+            "Ghatak",
+            "White Eagle",
+            "Mabba",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 97875543729654,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-24 01:22:30"
     }
 }
