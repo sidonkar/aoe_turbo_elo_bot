@@ -2628,5 +2628,41 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-05-24 01:22:30"
+    },
+    "47216614818273": {
+        "team1": [
+            "Ghatak",
+            "Dee LK",
+            "Salazar",
+            "Mateesh"
+        ],
+        "team2": [
+            "Varad",
+            "White Eagle",
+            "Mabba",
+            "Ship"
+        ],
+        "is_complete": false,
+        "id": 47216614818273,
+        "map": "arabia"
+    },
+    "37741564236258": {
+        "team1": [
+            "Ghatak",
+            "Varad",
+            "White Eagle",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ship",
+            "Salazar",
+            "Ojas"
+        ],
+        "is_complete": true,
+        "id": 37741564236258,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-24 01:44:54"
     }
 }
