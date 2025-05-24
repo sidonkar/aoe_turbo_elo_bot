@@ -177,12 +177,12 @@
         }
     },
     "Dee LK": {
-        "current_rating": 844,
+        "current_rating": 850,
         "highest_rating": 880,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 105,
-        "wins": 53,
+        "matches_played": 106,
+        "wins": 54,
         "losses": 52,
         "matchesList": {
             "72809569186051": "L",
@@ -276,7 +276,8 @@
             "97875543729654": "L",
             "37741564236258": "W",
             "67042776008888": "W",
-            "16103025660810": "W"
+            "16103025660810": "W",
+            "67620359487903": "W"
         }
     },
     "Immortal": {
@@ -683,13 +684,13 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 716,
+        "current_rating": 710,
         "highest_rating": 734,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 103,
+        "matches_played": 104,
         "wins": 53,
-        "losses": 50,
+        "losses": 51,
         "matchesList": {
             "39489303062308": "W",
             "41688183904221": "W",
@@ -788,7 +789,8 @@
             "61209706206115": "W",
             "97875543729654": "W",
             "37741564236258": "L",
-            "67042776008888": "L"
+            "67042776008888": "L",
+            "67620359487903": "L"
         }
     },
     "Endless": {
@@ -863,12 +865,12 @@
         }
     },
     "Varad": {
-        "current_rating": 676,
+        "current_rating": 682,
         "highest_rating": 718,
         "lowest_rating": 658,
         "base_rating": 700,
-        "matches_played": 90,
-        "wins": 44,
+        "matches_played": 91,
+        "wins": 45,
         "losses": 46,
         "matchesList": {
             "39489303062308": "L",
@@ -943,7 +945,8 @@
             "97875543729654": "L",
             "37741564236258": "L",
             "67042776008888": "L",
-            "16103025660810": "L"
+            "16103025660810": "L",
+            "67620359487903": "W"
         }
     },
     "Mabba": {
@@ -1000,13 +1003,13 @@
         }
     },
     "Ojas": {
-        "current_rating": 704,
+        "current_rating": 698,
         "highest_rating": 704,
         "lowest_rating": 602,
         "base_rating": 650,
-        "matches_played": 98,
+        "matches_played": 99,
         "wins": 54,
-        "losses": 44,
+        "losses": 45,
         "matchesList": {
             "72809569186051": "W",
             "63802188612238": "W",
@@ -1101,7 +1104,8 @@
             "11229713641640": "W",
             "90396553233881": "W",
             "37741564236258": "W",
-            "16103025660810": "W"
+            "16103025660810": "W",
+            "67620359487903": "L"
         }
     },
     "Ship": {
@@ -1197,13 +1201,13 @@
         }
     },
     "Salazar": {
-        "current_rating": 570,
+        "current_rating": 564,
         "highest_rating": 570,
         "lowest_rating": 540,
         "base_rating": 550,
-        "matches_played": 32,
+        "matches_played": 33,
         "wins": 18,
-        "losses": 14,
+        "losses": 15,
         "matchesList": {
             "67681393875353": "L",
             "93273224512229": "W",
@@ -1218,7 +1222,8 @@
             "97875543729654": "L",
             "37741564236258": "W",
             "67042776008888": "W",
-            "16103025660810": "W"
+            "16103025660810": "W",
+            "67620359487903": "L"
         }
     },
     "Auror": {
@@ -1240,12 +1245,12 @@
         }
     },
     "Gautami": {
-        "current_rating": 542,
+        "current_rating": 548,
         "highest_rating": 554,
         "lowest_rating": 464,
         "base_rating": 500,
-        "matches_played": 60,
-        "wins": 33,
+        "matches_played": 61,
+        "wins": 34,
         "losses": 27,
         "matchesList": {
             "55103162042188": "W",
@@ -1293,7 +1298,8 @@
             "38797911158306": "W",
             "49137134327481": "W",
             "11229713641640": "L",
-            "90396553233881": "L"
+            "90396553233881": "L",
+            "67620359487903": "W"
         }
     },
     "Mateesh": {
