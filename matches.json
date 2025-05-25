@@ -2941,5 +2941,43 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-05-25 11:55:59"
+    },
+    "96050508035326": {
+        "team1": [
+            "Immortal",
+            "White Eagle",
+            "Gautami",
+            "Axiom"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ojas",
+            "Mabba",
+            "Salazar"
+        ],
+        "is_complete": true,
+        "id": 96050508035326,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-05-25 11:55:59"
+    },
+    "56847146399853": {
+        "team1": [
+            "@jey@2",
+            "Mabba",
+            "Immortal",
+            "Gautami"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ojas",
+            "Varad",
+            "White Eagle"
+        ],
+        "is_complete": true,
+        "id": 56847146399853,
+        "map": "arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-05-25 12:41:40"
     }
 }
