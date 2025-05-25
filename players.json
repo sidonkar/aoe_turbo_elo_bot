@@ -177,13 +177,13 @@
         }
     },
     "Dee LK": {
-        "current_rating": 838,
+        "current_rating": 832,
         "highest_rating": 880,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 118,
+        "matches_played": 119,
         "wins": 61,
-        "losses": 57,
+        "losses": 58,
         "matchesList": {
             "72809569186051": "L",
             "63802188612238": "W",
@@ -290,16 +290,17 @@
             "96050508035326": "L",
             "56847146399853": "L",
             "53346119275124": "W",
-            "14089635322032": "L"
+            "14089635322032": "L",
+            "99174292297644": "L"
         }
     },
     "Immortal": {
-        "current_rating": 881,
-        "highest_rating": 881,
+        "current_rating": 887,
+        "highest_rating": 887,
         "lowest_rating": 821,
         "base_rating": 875,
-        "matches_played": 98,
-        "wins": 51,
+        "matches_played": 99,
+        "wins": 52,
         "losses": 47,
         "matchesList": {
             "39489303062308": "W",
@@ -389,7 +390,8 @@
             "96050508035326": "W",
             "56847146399853": "W",
             "53346119275124": "W",
-            "14089635322032": "W"
+            "14089635322032": "W",
+            "99174292297644": "W"
         }
     },
     "Zxc": {
@@ -403,13 +405,13 @@
         "matchesList": {}
     },
     "@jey@2": {
-        "current_rating": 844,
+        "current_rating": 838,
         "highest_rating": 868,
         "lowest_rating": 766,
         "base_rating": 850,
-        "matches_played": 102,
+        "matches_played": 103,
         "wins": 54,
-        "losses": 48,
+        "losses": 49,
         "matchesList": {
             "44918248946158": "W",
             "25032388340691": "W",
@@ -505,7 +507,8 @@
             "75264432771483": "L",
             "56847146399853": "L",
             "53346119275124": "L",
-            "14089635322032": "L"
+            "14089635322032": "L",
+            "99174292297644": "L"
         }
     },
     "2Kminus": {
@@ -621,12 +624,12 @@
         }
     },
     "White Eagle": {
-        "current_rating": 695,
+        "current_rating": 701,
         "highest_rating": 785,
         "lowest_rating": 659,
         "base_rating": 725,
-        "matches_played": 82,
-        "wins": 36,
+        "matches_played": 83,
+        "wins": 37,
         "losses": 46,
         "matchesList": {
             "91383254113855": "W",
@@ -711,7 +714,8 @@
             "96050508035326": "W",
             "56847146399853": "W",
             "53346119275124": "L",
-            "14089635322032": "W"
+            "14089635322032": "W",
+            "99174292297644": "W"
         }
     },
     "Kallu": {
@@ -873,12 +877,12 @@
         }
     },
     "Axiom": {
-        "current_rating": 694,
+        "current_rating": 700,
         "highest_rating": 718,
         "lowest_rating": 658,
         "base_rating": 700,
-        "matches_played": 37,
-        "wins": 18,
+        "matches_played": 38,
+        "wins": 19,
         "losses": 19,
         "matchesList": {
             "72809569186051": "L",
@@ -918,16 +922,17 @@
             "8442427546739": "W",
             "96050508035326": "W",
             "53346119275124": "W",
-            "14089635322032": "W"
+            "14089635322032": "W",
+            "99174292297644": "W"
         }
     },
     "Varad": {
-        "current_rating": 694,
+        "current_rating": 700,
         "highest_rating": 718,
         "lowest_rating": 658,
         "base_rating": 700,
-        "matches_played": 97,
-        "wins": 49,
+        "matches_played": 98,
+        "wins": 50,
         "losses": 48,
         "matchesList": {
             "39489303062308": "L",
@@ -1009,17 +1014,18 @@
             "96050908035326": "W",
             "56847146399853": "W",
             "53346119275124": "L",
-            "14089635322032": "W"
+            "14089635322032": "W",
+            "99174292297644": "W"
         }
     },
     "Mabba": {
-        "current_rating": 626,
+        "current_rating": 620,
         "highest_rating": 680,
-        "lowest_rating": 626,
+        "lowest_rating": 620,
         "base_rating": 650,
-        "matches_played": 59,
+        "matches_played": 60,
         "wins": 27,
-        "losses": 32,
+        "losses": 33,
         "matchesList": {
             "60823556026671": "W",
             "49165087841854": "L",
@@ -1071,17 +1077,18 @@
             "96050908035326": "L",
             "96050508035326": "L",
             "56847146399853": "L",
-            "14089635322032": "L"
+            "14089635322032": "L",
+            "99174292297644": "L"
         }
     },
     "Ojas": {
-        "current_rating": 680,
+        "current_rating": 674,
         "highest_rating": 710,
         "lowest_rating": 602,
         "base_rating": 650,
-        "matches_played": 112,
+        "matches_played": 113,
         "wins": 60,
-        "losses": 52,
+        "losses": 53,
         "matchesList": {
             "72809569186051": "W",
             "63802188612238": "W",
@@ -1191,7 +1198,8 @@
             "96050508035326": "L",
             "56847146399853": "W",
             "53346119275124": "L",
-            "14089635322032": "L"
+            "14089635322032": "L",
+            "99174292297644": "L"
         }
     },
     "Ship": {
