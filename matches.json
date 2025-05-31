@@ -3108,5 +3108,24 @@
         "map": "arabia",
         "winTeam": 1,
         "playedDateTime": "2025-05-31 16:15:14"
+    },
+    "49855971842211": {
+        "team1": [
+            "Ghatak",
+            "Addy",
+            "Axiom",
+            "White Eagle"
+        ],
+        "team2": [
+            "Endless",
+            "Ojas",
+            "Immortal",
+            "Gautami"
+        ],
+        "is_complete": true,
+        "id": 49855971842211,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-05-31 16:41:24"
     }
 }
