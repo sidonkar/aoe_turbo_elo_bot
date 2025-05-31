@@ -3184,5 +3184,41 @@
         "map": "arabia",
         "winTeam": 2,
         "playedDateTime": "2025-06-01 00:02:56"
+    },
+    "20501847089357": {
+        "team1": [
+            "Gautami",
+            "White Eagle",
+            "Axiom",
+            "Ghatak"
+        ],
+        "team2": [
+            "Mateesh",
+            "Dee LK",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": false,
+        "id": 20501847089357,
+        "map": "arabia"
+    },
+    "75937050005205": {
+        "team1": [
+            "Gautami",
+            "White Eagle",
+            "Axiom",
+            "Ghatak"
+        ],
+        "team2": [
+            "Mateesh",
+            "Dee LK",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 75937050005205,
+        "map": "arabia",
+        "winTeam": 1,
+        "playedDateTime": "2025-06-01 00:24:58"
     }
 }
