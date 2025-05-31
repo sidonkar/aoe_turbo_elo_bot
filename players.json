@@ -297,12 +297,12 @@
         }
     },
     "Immortal": {
-        "current_rating": 881,
+        "current_rating": 887,
         "highest_rating": 887,
         "lowest_rating": 821,
         "base_rating": 875,
-        "matches_played": 100,
-        "wins": 52,
+        "matches_played": 101,
+        "wins": 53,
         "losses": 48,
         "matchesList": {
             "39489303062308": "W",
@@ -394,7 +394,8 @@
             "53346119275124": "W",
             "14089635322032": "W",
             "99174292297644": "W",
-            "37735480491587": "L"
+            "37735480491587": "L",
+            "45488698921851": "W"
         }
     },
     "Zxc": {
@@ -577,12 +578,12 @@
         }
     },
     "Addy": {
-        "current_rating": 695,
+        "current_rating": 701,
         "highest_rating": 749,
         "lowest_rating": 683,
         "base_rating": 725,
-        "matches_played": 43,
-        "wins": 17,
+        "matches_played": 44,
+        "wins": 18,
         "losses": 26,
         "matchesList": {
             "40122721469070": "L",
@@ -625,17 +626,18 @@
             "38797911158306": "L",
             "49137134327481": "L",
             "81074209482702": "W",
-            "11229713641640": "L"
+            "11229713641640": "L",
+            "45488698921851": "W"
         }
     },
     "White Eagle": {
-        "current_rating": 701,
+        "current_rating": 695,
         "highest_rating": 785,
         "lowest_rating": 659,
         "base_rating": 725,
-        "matches_played": 85,
+        "matches_played": 86,
         "wins": 38,
-        "losses": 47,
+        "losses": 48,
         "matchesList": {
             "91383254113855": "W",
             "50134483822084": "L",
@@ -722,7 +724,8 @@
             "14089635322032": "W",
             "99174292297644": "W",
             "99384675738794": "W",
-            "37735480491587": "L"
+            "37735480491587": "L",
+            "45488698921851": "L"
         }
     },
     "Kallu": {
@@ -736,13 +739,13 @@
         "matchesList": {}
     },
     "Ghatak": {
-        "current_rating": 698,
+        "current_rating": 692,
         "highest_rating": 734,
         "lowest_rating": 650,
         "base_rating": 650,
-        "matches_played": 110,
+        "matches_played": 111,
         "wins": 55,
-        "losses": 55,
+        "losses": 56,
         "matchesList": {
             "39489303062308": "W",
             "41688183904221": "W",
@@ -848,17 +851,18 @@
             "8442427546739": "L",
             "84901083543005": "W",
             "47640964165090": "L",
-            "96050908035326": "L"
+            "96050908035326": "L",
+            "45488698921851": "L"
         }
     },
     "Endless": {
-        "current_rating": 662,
+        "current_rating": 656,
         "highest_rating": 704,
-        "lowest_rating": 662,
+        "lowest_rating": 656,
         "base_rating": 680,
-        "matches_played": 23,
+        "matches_played": 24,
         "wins": 9,
-        "losses": 14,
+        "losses": 15,
         "matchesList": {
             "39489303062308": "L",
             "41688183904221": "W",
@@ -880,7 +884,8 @@
             "38158945981735": "L",
             "49499175133199": "L",
             "47640964165090": "W",
-            "96050908035326": "L"
+            "96050908035326": "L",
+            "45488698921851": "L"
         }
     },
     "Axiom": {
@@ -1430,12 +1435,12 @@
         }
     },
     "Mateesh": {
-        "current_rating": 518,
+        "current_rating": 524,
         "highest_rating": 572,
         "lowest_rating": 376,
         "base_rating": 500,
-        "matches_played": 75,
-        "wins": 36,
+        "matches_played": 76,
+        "wins": 37,
         "losses": 39,
         "matchesList": {
             "39489303062308": "W",
@@ -1503,7 +1508,8 @@
             "51197714859364": "L",
             "84901083543005": "L",
             "47640964165090": "W",
-            "96050908035326": "W"
+            "96050908035326": "W",
+            "45488698921851": "W"
         }
     },
     "Mesmarizer": {
