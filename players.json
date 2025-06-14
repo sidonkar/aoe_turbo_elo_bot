@@ -177,13 +177,13 @@
         }
     },
     "Dee LK": {
-        "current_rating": 838,
+        "current_rating": 832,
         "highest_rating": 880,
         "lowest_rating": 796,
         "base_rating": 820,
-        "matches_played": 136,
+        "matches_played": 137,
         "wins": 70,
-        "losses": 66,
+        "losses": 67,
         "matchesList": {
             "72809569186051": "L",
             "63802188612238": "W",
@@ -308,16 +308,17 @@
             "38154343234650": "W",
             "35090379689514": "L",
             "94589553737078": "L",
-            "97132361993484": "W"
+            "97132361993484": "W",
+            "91772812431698": "L"
         }
     },
     "Immortal": {
-        "current_rating": 899,
-        "highest_rating": 899,
+        "current_rating": 905,
+        "highest_rating": 905,
         "lowest_rating": 821,
         "base_rating": 875,
-        "matches_played": 111,
-        "wins": 59,
+        "matches_played": 112,
+        "wins": 60,
         "losses": 52,
         "matchesList": {
             "39489303062308": "W",
@@ -420,7 +421,8 @@
             "38154343234650": "L",
             "35090379689514": "W",
             "94589553737078": "W",
-            "97132361993484": "W"
+            "97132361993484": "W",
+            "91772812431698": "W"
         }
     },
     "Zxc": {
@@ -434,12 +436,12 @@
         "matchesList": {}
     },
     "@jey@2": {
-        "current_rating": 832,
+        "current_rating": 838,
         "highest_rating": 868,
         "lowest_rating": 766,
         "base_rating": 850,
-        "matches_played": 112,
-        "wins": 58,
+        "matches_played": 113,
+        "wins": 59,
         "losses": 54,
         "matchesList": {
             "44918248946158": "W",
@@ -546,17 +548,18 @@
             "38154343234650": "W",
             "35090379689514": "L",
             "94589553737078": "L",
-            "97132361993484": "L"
+            "97132361993484": "L",
+            "91772812431698": "W"
         }
     },
     "2Kminus": {
-        "current_rating": 762,
+        "current_rating": 756,
         "highest_rating": 780,
         "lowest_rating": 726,
         "base_rating": 750,
-        "matches_played": 52,
+        "matches_played": 53,
         "wins": 27,
-        "losses": 25,
+        "losses": 26,
         "matchesList": {
             "72809569186051": "W",
             "19303155184793": "L",
@@ -609,7 +612,8 @@
             "89449388693230": "W",
             "38154343234650": "L",
             "35090379689514": "W",
-            "94589553737078": "W"
+            "94589553737078": "W",
+            "91772812431698": "L"
         }
     },
     "Addy": {
@@ -1017,13 +1021,13 @@
         }
     },
     "Varad": {
-        "current_rating": 694,
+        "current_rating": 688,
         "highest_rating": 718,
         "lowest_rating": 658,
         "base_rating": 700,
-        "matches_played": 107,
+        "matches_played": 108,
         "wins": 54,
-        "losses": 53,
+        "losses": 54,
         "matchesList": {
             "39489303062308": "L",
             "41688183904221": "L",
@@ -1114,7 +1118,8 @@
             "38154343234650": "L",
             "35090379689514": "L",
             "94589553737078": "W",
-            "97132361993484": "L"
+            "97132361993484": "L",
+            "91772812431698": "L"
         }
     },
     "Mabba": {
@@ -1478,12 +1483,12 @@
         }
     },
     "Gautami": {
-        "current_rating": 572,
-        "highest_rating": 572,
+        "current_rating": 578,
+        "highest_rating": 578,
         "lowest_rating": 464,
         "base_rating": 500,
-        "matches_played": 79,
-        "wins": 44,
+        "matches_played": 80,
+        "wins": 45,
         "losses": 35,
         "matchesList": {
             "55103162042188": "W",
@@ -1551,7 +1556,8 @@
             "38154343234650": "L",
             "35090379689514": "W",
             "94589553737078": "W",
-            "97132361993484": "W"
+            "97132361993484": "W",
+            "91772812431698": "W"
         }
     },
     "Mateesh": {
