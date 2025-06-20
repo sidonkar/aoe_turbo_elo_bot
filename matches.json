@@ -3540,5 +3540,24 @@
         "map": "Highland",
         "winTeam": 1,
         "playedDateTime": "2025-06-20 22:53:51"
+    },
+    "76002282852963": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "White Eagle",
+            "Gautami"
+        ],
+        "team2": [
+            "Varad",
+            "Dexter",
+            "2Kminus",
+            "Axiom"
+        ],
+        "is_complete": true,
+        "id": 76002282852963,
+        "map": "Yucatan",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-20 23:13:05"
     }
 }
