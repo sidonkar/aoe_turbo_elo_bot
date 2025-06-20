@@ -3633,5 +3633,24 @@
         "map": "Valley",
         "winTeam": 1,
         "playedDateTime": "2025-06-21 00:28:04"
+    },
+    "39684804165217": {
+        "team1": [
+            "Dexter",
+            "White Eagle",
+            "Ojas",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dee LK",
+            "2Kminus",
+            "Gautami",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 39684804165217,
+        "map": "Highland",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-21 00:51:22"
     }
 }
