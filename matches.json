@@ -3652,5 +3652,24 @@
         "map": "Highland",
         "winTeam": 2,
         "playedDateTime": "2025-06-21 00:51:22"
+    },
+    "46706103020702": {
+        "team1": [
+            "2Kminus",
+            "Dexter",
+            "Ship",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dee LK",
+            "Ojas",
+            "White Eagle",
+            "Gautami"
+        ],
+        "is_complete": true,
+        "id": 46706103020702,
+        "map": "Arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-21 01:15:42"
     }
 }
