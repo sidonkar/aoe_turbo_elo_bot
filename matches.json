@@ -3671,5 +3671,41 @@
         "map": "Arabia",
         "winTeam": 2,
         "playedDateTime": "2025-06-21 01:15:42"
+    },
+    "79364133188585": {
+        "team1": [
+            "2Kminus",
+            "Varad",
+            "Dee LK",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dexter",
+            "White Eagle",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": false,
+        "id": 79364133188585,
+        "map": "Goldrush/Golden Pit"
+    },
+    "17025710251329": {
+        "team1": [
+            "2Kminus",
+            "Varad",
+            "Dee LK",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dexter",
+            "White Eagle",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 17025710251329,
+        "map": "Lowland",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-21 01:35:11"
     }
 }
