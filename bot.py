@@ -15,6 +15,7 @@ load_dotenv()
 
 PLAYER_FILE = "players.json"
 MATCHES_FILE = "matches.json"
+RECENT_HISTORY = []  # List to store recently used maps
 
 ################################################## Constants End #################################################
 ################################################## Game Objects Code Start ###########################################
@@ -664,6 +665,7 @@ class MultiColumnPlayerSelectionView(View):
         self.players = player_list
         self.max_selections = max_selections
         self.selected_players = []
+        self.RECENT_HISTORY = RECENT_HISTORY
         self.current_page = 0
         self.players_per_page = 20
         self.total_pages = (len(players) - 1) // self.players_per_page + 1
@@ -773,9 +775,31 @@ class ConfirmMatchupsButton(Button):
             return
 
         matchups = generate_matchups(self.parent_view.selected_players)
+        # Randomly select a map (for now, just using a placeholder)
+        maps = [
+            "Arabia", "Valley", "Highland", "Lowland", "Yucatan", "Steppe",
+            "Random Land Map", "African Clearing", "Haboob", "Lombardia", "Goldrush/Golden Pit", "Black Forest", "Budapest","Land Nomad"
+        ]
+        # Build a list of maps not in recent history
+        available_maps = [m for m in maps if m not in self.parent_view.RECENT_HISTORY]
+
+        # If all maps have been recently used, reset the history
+        if not available_maps:
+            self.parent_view.RECENT_HISTORY = []
+            available_maps = maps.copy()
+
+        selected_map = random.choice(available_maps)
+        self.parent_view.RECENT_HISTORY.append(selected_map)
+
+        # Keep only the last 5
+        if len(self.parent_view.RECENT_HISTORY) > 5:
+            self.parent_view.RECENT_HISTORY.pop(0)
+
+        # selected_map = random.choice(maps)
+        print(f"🎲 Selected Map: {selected_map}")
         await interaction.response.send_message(
-            embed=create_matchup_embed(matchups),
-            view=MatchupSelectionView(matchups))
+            embed=create_matchup_embed(matchups,selected_map),
+            view=MatchupSelectionView(matchups,selected_map))
 
 
 # class ClearSelectionButton(Button):
@@ -793,23 +817,24 @@ class ConfirmMatchupsButton(Button):
 
 class MatchupSelectionView(View):
 
-    def __init__(self, matchups):
+    def __init__(self, matchups,selected_map):
         super().__init__(timeout=None)
         self.matchups = matchups
 
         for i, (team1, team2, rating1, rating2, diff) in enumerate(matchups,
                                                                    start=1):
             label = f"Select Matchup {i}"
-            self.add_item(MatchupButton(label, team1, team2))
+            self.add_item(MatchupButton(label, team1, team2,selected_map))
 
 
 class MatchupButton(Button):
 
-    def __init__(self, label, team1, team2):
+    def __init__(self, label, team1, team2,selected_map):
         super().__init__(label=label, style=discord.ButtonStyle.primary)
         self.is_selected = False
         self.team1 = team1
         self.team2 = team2
+        self.selected_map = selected_map
 
     async def callback(self, interaction: discord.Interaction):
         if self.is_selected:
@@ -823,7 +848,7 @@ class MatchupButton(Button):
 
         game_ids.add(game_id)
         game = Game(game_id, team1=self.team1, team2=self.team2,
-                    map="arabia")  #TODO pass the map here
+                    map=self.selected_map)  #TODO pass the map here
         # print(f"game:{game}")
         processed_matches[game_id] = game
         # print(json.dumps(processed_matches[game_id], indent=2))
@@ -1030,7 +1055,7 @@ def generate_matchups(selected_players):
     return matchups
 
 
-def create_matchup_embed(matchups):
+def create_matchup_embed(matchups,selected_map):
     embed = discord.Embed(title="🔀 Matchup Options",
                           description="Choose a balanced team matchup!",
                           color=discord.Color.blue())
@@ -1044,6 +1069,8 @@ def create_matchup_embed(matchups):
                         f"Difference: {diff}"
                         f"```",
                         inline=False)
+        
+    embed.add_field(name="🗺️ Selected Map", value=selected_map, inline=False)
     return embed
 
 
