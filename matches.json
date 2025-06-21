@@ -3745,5 +3745,24 @@
         "map": "Haboob",
         "winTeam": 2,
         "playedDateTime": "2025-06-21 23:26:07"
+    },
+    "43973986852161": {
+        "team1": [
+            "Dexter",
+            "Dee LK",
+            "Gautami",
+            "Mateesh"
+        ],
+        "team2": [
+            "Immortal",
+            "White Eagle",
+            "Ojas",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 43973986852161,
+        "map": "Black Forest",
+        "winTeam": 1,
+        "playedDateTime": "2025-06-21 23:53:38"
     }
 }
