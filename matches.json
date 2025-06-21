@@ -3726,5 +3726,24 @@
         "map": "Random Land Map",
         "winTeam": 2,
         "playedDateTime": "2025-06-21 22:56:53"
+    },
+    "66818722213404": {
+        "team1": [
+            "White Eagle",
+            "2Kminus",
+            "Ojas",
+            "Addy"
+        ],
+        "team2": [
+            "Dee LK",
+            "Dexter",
+            "Ship",
+            "Mateesh"
+        ],
+        "is_complete": true,
+        "id": 66818722213404,
+        "map": "Haboob",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-21 23:26:07"
     }
 }
