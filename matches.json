@@ -3783,5 +3783,58 @@
         "map": "Goldrush/Golden Pit",
         "winTeam": 1,
         "playedDateTime": "2025-06-22 00:26:44"
+    },
+    "32822478379050": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "Ojas",
+            "Mateesh"
+        ],
+        "team2": [
+            "2Kminus",
+            "White Eagle",
+            "Gautami",
+            "Dexter"
+        ],
+        "is_complete": false,
+        "id": 32822478379050,
+        "map": "Lowland"
+    },
+    "4055056661390": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "Ojas",
+            "Mateesh"
+        ],
+        "team2": [
+            "2Kminus",
+            "White Eagle",
+            "Dexter",
+            "Gautami"
+        ],
+        "is_complete": false,
+        "id": 4055056661390,
+        "map": "Lombardia"
+    },
+    "94212391400163": {
+        "team1": [
+            "Immortal",
+            "Dee LK",
+            "Ojas",
+            "Mateesh"
+        ],
+        "team2": [
+            "2Kminus",
+            "White Eagle",
+            "Dexter",
+            "Gautami"
+        ],
+        "is_complete": true,
+        "id": 94212391400163,
+        "map": "Arabia",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-22 00:50:24"
     }
 }
