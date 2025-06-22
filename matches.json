@@ -3836,5 +3836,24 @@
         "map": "Arabia",
         "winTeam": 2,
         "playedDateTime": "2025-06-22 00:50:24"
+    },
+    "1359655624504": {
+        "team1": [
+            "Immortal",
+            "@jey@2",
+            "White Eagle",
+            "Ojas"
+        ],
+        "team2": [
+            "Dee LK",
+            "Baji",
+            "Axiom",
+            "Salazar"
+        ],
+        "is_complete": true,
+        "id": 1359655624504,
+        "map": "Black Forest",
+        "winTeam": 2,
+        "playedDateTime": "2025-06-22 15:53:20"
     }
 }
