@@ -3855,5 +3855,37 @@
         "map": "Black Forest",
         "winTeam": 2,
         "playedDateTime": "2025-06-22 15:53:20"
+    },
+    "58035935764950": {
+        "team1": [
+            "Immortal",
+            "@jey@2",
+            "Mateesh"
+        ],
+        "team2": [
+            "Dee LK",
+            "White Eagle",
+            "Ojas"
+        ],
+        "is_complete": false,
+        "id": 58035935764950,
+        "map": "Goldrush/Golden Pit"
+    },
+    "9741085960974": {
+        "team1": [
+            "2Kminus",
+            "Ojas",
+            "Dee LK"
+        ],
+        "team2": [
+            "White Eagle",
+            "Baji",
+            "Ship"
+        ],
+        "is_complete": true,
+        "id": 9741085960974,
+        "map": "Yucatan",
+        "winTeam": 1,
+        "playedDateTime": "2025-06-27 23:03:43"
     }
 }
